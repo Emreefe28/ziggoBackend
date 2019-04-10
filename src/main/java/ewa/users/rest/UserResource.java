@@ -1,17 +1,17 @@
-package nl.hva.web.workshops.user.rest;
+package ewa.users.rest;
 
-import nl.hva.web.workshops.user.rest.model.ClientError;
+import ewa.users.model.User;
+import ewa.users.service.UserRepositoryService;
+import ewa.users.service.impl.UserRepositoryServiceImpl;
+import ewa.users.rest.model.ClientError;
 import java.util.List;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import nl.hva.web.workshops.user.model.User;
-import nl.hva.web.workshops.user.service.impl.RepositoryServiceImpl;
-import nl.hva.web.workshops.user.service.RepositoryService;
 
 
 /**
- * The flash card REST resource
+ * The user REST resource
  * 
  * @author Emre Efe
  */
@@ -19,15 +19,15 @@ import nl.hva.web.workshops.user.service.RepositoryService;
 public class UserResource {
     
     /** a reference to the repository service */
-    private RepositoryService service;
+    private UserRepositoryService service;
     
     public UserResource() {
-        service = RepositoryServiceImpl.getInstance();
+        service = UserRepositoryServiceImpl.getInstance();
     }
     
     /**
-     * Get all flash cards
-     * @return a JSON representation of a list of cards
+     * Get all users
+     * @return a JSON representation of a list of users
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -37,31 +37,31 @@ public class UserResource {
     }
     
     /**
-     * Getting a specific flash card
-     * @param id
+     * Getting a specific username
+     * @param username
      * @return 
      */
     @GET
-    @Path("/{userId}")
+    @Path("/{username}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getUser(@PathParam("userId") int id) {
+    public Response getUser(@PathParam("username") String username) {
         
-        User fc = service.getUserFromId(id);
+        User user = service.getUserFromUsername(username);
         
-        if(fc == null) {
+        if(user == null) {
             return Response.status(Response.Status.NOT_FOUND).
-                    entity(new ClientError("resource not found for id " + id)).build();
+                    entity(new ClientError("resource not found for username " + username)).build();
         } else {
-            return Response.status(Response.Status.OK).entity(fc).build();
+            return Response.status(Response.Status.OK).entity(user).build();
         }        
     }
 
     @POST
-    @Path("/adduser/{userName}/{password}")
+    @Path("/adduser/{username}/{password}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response addUser(
-            @PathParam("userName") String username,
+            @PathParam("username") String username,
             @PathParam("password") String password) {
 
         User user = new User(username, password);

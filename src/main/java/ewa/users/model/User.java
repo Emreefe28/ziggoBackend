@@ -1,10 +1,10 @@
-package nl.hva.web.workshops.user.model;
+package ewa.users.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * A flash card representation containing a set of questions
+ * A user representation
  * 
  * @author Emre Efe
  */
@@ -15,7 +15,7 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private String userName;
+    private String username;
 
 
     private String password;
@@ -39,11 +39,11 @@ public class User implements Serializable {
     }
 
     public String getUserName() {
-        return userName;
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

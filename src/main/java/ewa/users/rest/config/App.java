@@ -1,4 +1,4 @@
-package nl.hva.web.workshops.user.rest.config;
+package ewa.users.rest.config;
 
 
 import javax.ws.rs.ApplicationPath;

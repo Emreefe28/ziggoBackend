@@ -1,4 +1,4 @@
-package nl.hva.web.workshops.user.config;
+package ewa.users.config;
 
 import javax.ejb.Stateless;
 

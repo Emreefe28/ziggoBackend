@@ -1,12 +1,12 @@
-package nl.hva.web.workshops.user.service;
+package ewa.users.service;
 
 import java.util.List;
-import nl.hva.web.workshops.user.model.User;
+import ewa.users.model.User;
 /**
- * An interface containing utility methods to manage flash card data
+ * An interface containing utility methods to manage user data
  * @author Emre Efe
  */
-public interface RepositoryService {
+public interface UserRepositoryService {
     
     /**
      * Getting all users
@@ -16,10 +16,10 @@ public interface RepositoryService {
     
     /**
      * Getting a specific user
-     * @param userId
+     * @param username
      * @return 
      */
-    User getUserFromId(int userId);
+    User getUserFromUsername(String username);
 
     /**
      * Adding a user

@@ -1,11 +1,12 @@
-package nl.hva.web.workshops.user.service.impl;
+package ewa.users.service.impl;
 
 import java.util.List;
 
-import nl.hva.web.workshops.user.model.User;
-import nl.hva.web.workshops.user.service.RepositoryService;
+import ewa.users.service.UserRepositoryService;
+import ewa.users.model.User;
 
 import javax.persistence.*;
+import javax.persistence.criteria.*;
 
 /**
  *
@@ -16,25 +17,25 @@ import javax.persistence.*;
  * @author Emre Efe
  */
 
-public class RepositoryServiceImpl implements RepositoryService {
+public class UserRepositoryServiceImpl implements UserRepositoryService {
 
     private EntityManagerFactory entityManagerFactory;
 
     // A singleton reference
-    private static RepositoryServiceImpl instance;
+    private static UserRepositoryServiceImpl instance;
 
     // An instance of the service is created and during class initialisation
     static {
-        instance = new RepositoryServiceImpl();
+        instance = new UserRepositoryServiceImpl();
         instance.loadExamples();
     }
 
     //  Method to get a reference to the instance (singleton)
-    public static RepositoryService getInstance() {
+    public static UserRepositoryService getInstance() {
         return instance;
     }
 
-    private RepositoryServiceImpl() {
+    private UserRepositoryServiceImpl() {
 
         entityManagerFactory = Persistence.createEntityManagerFactory("userPU");
     }
@@ -57,15 +58,20 @@ public class RepositoryServiceImpl implements RepositoryService {
     }
 
     @Override
-    public User getUserFromId(int id) {
+    public User getUserFromUsername(String name) {
 
         EntityManager em = getEntityManager();
+        CriteriaBuilder cb = em.getCriteriaBuilder();
 
-        User fc = em.find(User.class,id);
-
+        CriteriaQuery<User> q = cb.createQuery(User.class);
+        Root<User> c = q.from(User.class);
+        Predicate usernamePredicate = cb.equal(c.get("username"), name);
+        q.where(usernamePredicate);
+        TypedQuery<User> query = em.createQuery(q);
+        User user = query.getSingleResult();
         em.close();
 
-        return fc;
+        return user;
     }
 
     @Override
@@ -82,7 +88,7 @@ public class RepositoryServiceImpl implements RepositoryService {
 
     private void loadExamples() {
 
-        User us = new User("testt", "pw1");
+        User us = new User("test", "pw1");
         addUser(us);
     }
 }

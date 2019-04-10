@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="application/json">
+    </head>
+    <body>
+        <h2>User</h2>
+        <ul>
+            <li><a href="services/rest/users">GET /services/rest/users</a></li>
+            <li><a href="services/rest/users/1">GET /services/rest/users/1</a></li>
+            <li><form action="url" method="POST" enctype="multipart/form-data">>
+                <input type="submit" value="Submit">
+            </form></li>
+        </ul>
+    </body>
+    <script type="text/javascript">
+        var filter1 = {username: "test", password: "test"};
+        var filter2 = {username: "test", password: "test"};
+        filter1 = jQuery.param( filter1 );
+        filter2 = jQuery.param( filter2 );
+        console.log("filters ", filter1, filter2 );
+
+        window.location.href = 'services/rest/users/adduser/'+filter1+'/'+filter2;
+    </script>
+</html>

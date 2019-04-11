@@ -9,8 +9,10 @@
         <module name="login" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="login" target="1.8" />
-    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="login" options="-endorseddirs C:\Users\Emre-PC\Documents\Hva\EWA\EWAZiggo-backend\target/endorsed" />
+    </option>
   </component>
 </project>

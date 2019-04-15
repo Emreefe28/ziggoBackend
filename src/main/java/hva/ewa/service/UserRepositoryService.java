@@ -29,4 +29,6 @@ public interface UserRepositoryService {
      */
     void addUser(User user);
 
+    User checkCredentials(String username, String password);
+
 }

@@ -68,7 +68,14 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
         Predicate usernamePredicate = cb.equal(c.get("username"), name);
         q.where(usernamePredicate);
         TypedQuery<User> query = em.createQuery(q);
-        User user = query.getSingleResult();
+
+        User user;
+        try {
+            user = query.getSingleResult();
+        } catch (NoResultException e) {
+            user = null;
+        }
+
         em.close();
 
         return user;
@@ -78,13 +85,39 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
     public void addUser(User user) {
 
         EntityManager em = getEntityManager();
-
         em.getTransaction().begin();
         em.persist(user);
         em.getTransaction().commit();
 
         em.close();
     }
+
+    @Override
+    public User checkCredentials(String username, String password) {
+
+        EntityManager em = getEntityManager();
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+
+        CriteriaQuery<User> q = cb.createQuery(User.class);
+        Root<User> c = q.from(User.class);
+        Predicate usernamePredicate = cb.equal(c.get("username"), username);
+        Predicate passwordPredicate = cb.equal(c.get("password"), password);
+        q.where(usernamePredicate, passwordPredicate);
+        TypedQuery<User> query = em.createQuery(q);
+
+        User user;
+        try {
+            user = query.getSingleResult();
+        } catch (NoResultException e) {
+            user = null;
+        }
+
+        em.close();
+
+        return user;
+    }
+
+
 
     private void loadExamples() {
 

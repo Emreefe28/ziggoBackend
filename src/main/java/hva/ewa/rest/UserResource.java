@@ -1,6 +1,8 @@
 package hva.ewa.rest;
 
+import com.google.gson.Gson;
 import hva.ewa.model.User;
+import hva.ewa.rest.model.WebToken;
 import hva.ewa.service.UserRepositoryService;
 import hva.ewa.service.impl.UserRepositoryServiceImpl;
 import hva.ewa.rest.model.ClientError;
@@ -31,7 +33,7 @@ public class UserResource {
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<User> getAllCards() {
+    public List<User> getAllUsers() {
 
         return service.getAllUsers();
     }
@@ -57,19 +59,49 @@ public class UserResource {
     }
 
     @POST
-    @Path("/adduser/{username}/{password}")
+    @Path("/adduser")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addUser(
-            @PathParam("username") String username,
-            @PathParam("password") String password) {
+    public Response addUser(@QueryParam("username") String username,
+                            @QueryParam("password") String password) {
 
-        User user = new User(username, password);
-        service.addUser(user);
+        User user = service.getUserFromUsername(username);
 
-        return Response.status(Response.Status.CREATED).build();
+        if (user != null) {
+            return Response.status(Response.Status.OK).
+                    entity(new ClientError("user exists : " + username)).build();
+        } else {
+            User newUser = new User(username, password);
+            service.addUser(newUser);
+            return Response.status(Response.Status.CREATED).entity(newUser).build();
+        }
+    }
+
+    @POST
+    @Path("/login")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response checkUser(@QueryParam("username") String username,
+                            @QueryParam("password") String password) {
+        WebToken jwt = new WebToken();
+        Gson g = new Gson();
+
+        User user = service.checkCredentials(username, password);
+
+        if(user != null) {
+            return Response.status(Response.Status.CREATED).entity(g.toJson(jwt.generateToken())).build();
+        }
+        else{
+            return Response.status(Response.Status.OK).
+                    entity(new ClientError("invalid credentials")).build();
+
+        }
+
+
 
     }
+
+
 
 
 

@@ -8,9 +8,13 @@ import javax.persistence.EntityManager;
 public class ChatRepository {
     private EntityManager em;
 
-
-    public void saveChat(Chat chat){
+    public void saveChat(Chat chat) {
         em = new Database().getFactory().createEntityManager();
-        em.persist(chat);
+        em.getTransaction().begin();
+        if (chat != null) {
+            em.persist(chat);
+            em.flush();
+            em.getTransaction().commit();
+        }
     }
 }

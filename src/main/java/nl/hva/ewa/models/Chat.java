@@ -11,7 +11,7 @@ public class Chat {
 
     @Id
     private String chatId;
-    private LocalDate created;
+    private long created;
 
     @OneToMany
     private List<Message> messages;
@@ -26,11 +26,11 @@ public class Chat {
         this.chatId = chatId;
     }
 
-    public LocalDate getCreated() {
+    public long getCreated() {
         return created;
     }
 
-    public void setCreated(LocalDate created) {
+    public void setCreated(long created) {
         this.created = created;
     }
 

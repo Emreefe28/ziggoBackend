@@ -6,7 +6,6 @@ import nl.hva.ewa.services.UserRepository;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.logging.Logger;
 
 @Path("/employee") //http://localhost:8080/VodafoneZiggoAPI-1.0/rest/employee
 @Produces(MediaType.APPLICATION_JSON)
@@ -25,10 +24,9 @@ public class EmployeeResource {
     }
 
     @POST
-    public void createEmployee(User employee){
-        System.out.println(employee);
+    public Response createEmployee(User employee){
         employeeDao = new UserRepository();
         employeeDao.saveEmployee(employee);
-
+        return Response.status(Response.Status.OK).entity(employee).build();
     }
 }

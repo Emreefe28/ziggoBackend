@@ -17,10 +17,10 @@ public class UserRepository {
         return query.getResultList();
     }
     public void saveEmployee(User user){
-        User those = new User();
-        those.setName("G");
-        those.setUsername("GORAD");
         em = new Database().getFactory().createEntityManager();
-        em.persist(those);
+        em.getTransaction().begin();
+        em.persist(user);
+        em.flush();
+        em.getTransaction().commit();
     }
 }

@@ -31,4 +31,6 @@ public interface UserRepositoryService {
 
     User checkCredentials(String username, String password);
 
+    User getUserFromId(int id);
+
 }

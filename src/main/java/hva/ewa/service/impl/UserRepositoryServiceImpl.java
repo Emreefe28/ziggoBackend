@@ -2,6 +2,7 @@ package hva.ewa.service.impl;
 
 import java.util.List;
 
+import hva.ewa.rest.model.WebToken;
 import hva.ewa.service.UserRepositoryService;
 import hva.ewa.model.User;
 
@@ -65,8 +66,32 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
 
         CriteriaQuery<User> q = cb.createQuery(User.class);
         Root<User> c = q.from(User.class);
-        Predicate usernamePredicate = cb.equal(c.get("username"), name);
+        Predicate usernamePredicate = cb.equal(c.get("userName"), name);
         q.where(usernamePredicate);
+        TypedQuery<User> query = em.createQuery(q);
+
+        User user;
+        try {
+            user = query.getSingleResult();
+        } catch (NoResultException e) {
+            user = null;
+        }
+
+        em.close();
+
+        return user;
+    }
+
+    @Override
+    public User getUserFromId(int id) {
+
+        EntityManager em = getEntityManager();
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+
+        CriteriaQuery<User> q = cb.createQuery(User.class);
+        Root<User> c = q.from(User.class);
+        Predicate idPredicate = cb.equal(c.get("id"), id);
+        q.where(idPredicate);
         TypedQuery<User> query = em.createQuery(q);
 
         User user;
@@ -100,14 +125,17 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
 
         CriteriaQuery<User> q = cb.createQuery(User.class);
         Root<User> c = q.from(User.class);
-        Predicate usernamePredicate = cb.equal(c.get("username"), username);
+        Predicate usernamePredicate = cb.equal(c.get("userName"), username);
         Predicate passwordPredicate = cb.equal(c.get("password"), password);
         q.where(usernamePredicate, passwordPredicate);
         TypedQuery<User> query = em.createQuery(q);
 
+        WebToken jwt = new WebToken();
+
         User user;
         try {
             user = query.getSingleResult();
+            user.setJwtToken(jwt.generateToken(user));
         } catch (NoResultException e) {
             user = null;
         }
@@ -116,8 +144,6 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
 
         return user;
     }
-
-
 
     private void loadExamples() {
 

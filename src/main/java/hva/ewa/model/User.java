@@ -15,18 +15,19 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private String username;
-
+    private String userName;
 
     private String password;
+
+    private String jwtToken;
 
 
     public User() {
     }
 
 
-    public User(String username, String password) {
-        setUserName(username);
+    public User(String userName, String password) {
+        setUserName(userName);
         setPassword(password);
     }
 
@@ -39,11 +40,11 @@ public class User implements Serializable {
     }
 
     public String getUserName() {
-        return username;
+        return userName;
     }
 
-    public void setUserName(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -54,5 +55,11 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public String getJwtToken() {
+        return jwtToken;
+    }
 
+    public void setJwtToken(String jwtToken) {
+        this.jwtToken = jwtToken;
+    }
 }

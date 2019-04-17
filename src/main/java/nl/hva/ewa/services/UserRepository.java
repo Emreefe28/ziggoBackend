@@ -14,7 +14,6 @@ public class UserRepository {
     public List<User> getAllEmployees(){
         em = new Database().getFactory().createEntityManager();
         Query query = em.createQuery("SELECT e FROM User e WHERE e.role = 2");
-        List<User> users = query.getResultList();
-        return users;
+        return query.getResultList();
     }
 }

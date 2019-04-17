@@ -52,13 +52,17 @@ io.on('connection', (socket) => {
     });
 
     socket.on('chat-request', (token) => {
-        token.receiver = employees[orderIndex];
-        if (employees.length > 1) {
-            if (orderIndex === employees.length - 1) {
-                orderIndex = 0;
-            } else {
-                orderIndex++;
-            }
+        token.socketId = socket.id;
+        if (employees.length === 0) {
+            io.sockets.to(socket.id).emit('chat-request-re', false);
+            console.log('no employees online');
+        } else {
+            let room = token.username + employees[orderIndex].username;
+            console.log(token.username + " AND " + employees[orderIndex].username + " ARE CHATTING");
+            socket.join(room);
+            io.sockets.to(token.socketId).emit('chatroom', room);
+
+            io.sockets.to(employees[orderIndex].socketId).emit('chatroom', room);
         }
     });
 
@@ -67,14 +71,10 @@ io.on('connection', (socket) => {
         console.log(message.room)
     });
 
-    socket.on('create', function (room) {
-        socket.join(room);
-        console.log(`user created  room ` + room);
-    });
 
     socket.on('join', function (room) {
         socket.join(room);
-        console.log(io.sockets.clients().toString() + ` joined room ` + room);
+        console.log(socket.id + ` joined room ` + room);
     });
 
 });

@@ -1,5 +1,6 @@
 package nl.hva.ewa;
 
+import nl.hva.ewa.rest.ChatResource;
 import nl.hva.ewa.rest.EmployeeResource;
 import nl.hva.ewa.rest.filters.CORSFilter;
 
@@ -15,6 +16,7 @@ public class App extends Application {
     public Set<Class<?>> getClasses() {
         Set<Class<?>> classes = new HashSet<>();
         classes.add(EmployeeResource.class);
+        classes.add(ChatResource.class);
         return classes;
     }
 

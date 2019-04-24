@@ -1,17 +1,11 @@
 package hva.ewa.service.impl;
 
 import hva.ewa.model.Chat;
-import hva.ewa.model.User;
-import hva.ewa.rest.model.WebToken;
 import hva.ewa.service.ChatRepositoryService;
-import hva.ewa.service.UserRepositoryService;
 
-import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
-import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *

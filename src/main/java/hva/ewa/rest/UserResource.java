@@ -4,7 +4,6 @@ import hva.ewa.model.User;
 import hva.ewa.rest.model.WebToken;
 import hva.ewa.service.UserRepositoryService;
 import hva.ewa.service.impl.UserRepositoryServiceImpl;
-import hva.ewa.rest.model.ClientError;
 import java.util.List;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

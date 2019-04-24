@@ -9,6 +9,8 @@
     <list default="true" id="1526bc6a-da32-4508-83de-c784fe725bb3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/model/WebToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/model/WebToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/ChatRepositoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/ChatRepositoryServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,10 +23,10 @@
     <session id="-705776896">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -32,7 +34,7 @@
           <entry key="gitignore" value="1" />
           <entry key="html" value="1" />
           <entry key="iml" value="3" />
-          <entry key="java" value="25" />
+          <entry key="java" value="33" />
           <entry key="js" value="2" />
           <entry key="xml" value="3" />
         </counts>
@@ -41,7 +43,7 @@
         <counts>
           <entry key="HTML" value="1" />
           <entry key="IDEA_MODULE" value="3" />
-          <entry key="JAVA" value="25" />
+          <entry key="JAVA" value="33" />
           <entry key="JavaScript" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="3" />
@@ -61,14 +63,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/ChatResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="721">
-              <caret line="82" column="70" lean-forward="true" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
+            <state relative-caret-position="289">
+              <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#415#416#0" expanded="true" />
+                <element signature="e#480#481#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/model/WebToken.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-469">
+              <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -85,7 +98,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>userName</find>
-      <find>user</find>
       <find>userDao</find>
       <find>usernamePredicate</find>
       <find>jwt</find>
@@ -94,6 +106,8 @@
       <find>login-regis</find>
       <find>login</find>
       <find>.war</find>
+      <find>userreposi</find>
+      <find>user</find>
     </findStrings>
     <replaceStrings>
       <replace>username</replace>
@@ -117,6 +131,7 @@
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/rest/ChatResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/rest/model/WebToken.java" />
       </list>
     </option>
   </component>
@@ -292,7 +307,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556121222583" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556126011645" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -321,7 +336,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Cucumber java.All Features in: chat-server">
+  <component name="RunManager" selected="GlassFish Server.payara5">
     <configuration name="All Features in: chat-server" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="3" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/webapp/chat-server" />
@@ -440,7 +455,8 @@
       <workItem from="1556108067614" duration="6496000" />
       <workItem from="1556116169147" duration="1978000" />
       <workItem from="1556119480228" duration="768000" />
-      <workItem from="1556121518855" duration="119000" />
+      <workItem from="1556121518855" duration="327000" />
+      <workItem from="1556125939476" duration="73000" />
     </task>
     <servers />
   </component>
@@ -453,13 +469,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2889000" />
+    <option name="totallyTimeSpent" value="3170000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2771855" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2803838" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -520,13 +536,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/ChatRepository.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/UserRepositoryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -541,31 +550,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/ChatRepositoryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/ChatRepositoryServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/chat-server/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
           <caret line="64" column="81" lean-forward="true" selection-start-line="64" selection-start-column="81" selection-end-line="64" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/UserRepositoryServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="148" column="22" selection-start-line="148" selection-start-column="22" selection-end-line="148" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -600,10 +588,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/UserRepositoryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" lean-forward="true" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/ChatRepositoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="11" column="52" lean-forward="true" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/UserRepositoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/ChatRepositoryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="54" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/ChatResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#415#416#0" expanded="true" />
@@ -612,13 +641,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/model/WebToken.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="721">
-          <caret line="82" column="70" lean-forward="true" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-469">
+          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
         </state>
       </provider>
     </entry>

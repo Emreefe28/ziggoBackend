@@ -12,8 +12,6 @@ import hva.ewa.service.UserRepositoryService;
 import hva.ewa.service.impl.UserRepositoryServiceImpl;
 
 import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.time.ZonedDateTime;
 import java.util.Date;
 

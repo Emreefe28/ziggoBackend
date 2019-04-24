@@ -39,7 +39,7 @@ public class QuestionResource {
             return Response.status(Response.Status.NOT_FOUND).
                     entity(new ClientError("Categorie not found for id " + categorieId)).build();
         }
-        
+
         List<Question> questions = service.getQuestionsOfCategorie(categorie);
         
         return Response.status(Response.Status.OK).

@@ -18,10 +18,10 @@ public interface UserRepositoryService {
 
     /**
      * Getting a specific user
-     * @param username
+     * @param user
      * @return
      */
-    User getUserFromUsername(String username);
+    User getUser(User user);
 
     /**
      * Adding a user
@@ -29,7 +29,7 @@ public interface UserRepositoryService {
      */
     void addUser(User user);
 
-    User checkCredentials(String username, String password);
+    User checkCredentials(String email, String password);
 
     User getUserFromId(int id);
 

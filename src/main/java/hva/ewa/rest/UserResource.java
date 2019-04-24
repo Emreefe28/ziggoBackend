@@ -37,41 +37,19 @@ public class UserResource {
         return service.getAllUsers();
     }
 
-    /**
-     * Getting a specific username
-     * @param username
-     * @return
-     */
-    @GET
-    @Path("/{username}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getUser(@PathParam("username") String username) {
-
-        User user = service.getUserFromUsername(username);
-
-        if(user == null) {
-            return Response.status(Response.Status.NOT_FOUND).
-                    entity(new ClientError("resource not found for username " + username)).build();
-        } else {
-            return Response.status(Response.Status.OK).entity(user).build();
-        }
-    }
-
     @POST
     @Path("/adduser")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addUser(@QueryParam("userName") String username,
-                            @QueryParam("password") String password) {
+    public Response addUser(User user) {
 
-        User user = service.getUserFromUsername(username);
+        User existingUser = service.getUser(user);
 
-        if (user != null) {
-            return Response.status(Response.Status.NOT_FOUND).build();
+        if (existingUser == null) {
+            service.addUser(user);
+            return Response.status(Response.Status.CREATED).entity(user).build();
         } else {
-            User newUser = new User(username, password);
-            service.addUser(newUser);
-            return Response.status(Response.Status.CREATED).entity(newUser).build();
+            return Response.status(Response.Status.BAD_REQUEST).entity("user already exists").build();
         }
     }
 
@@ -79,16 +57,15 @@ public class UserResource {
     @Path("/login")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response checkUser(@QueryParam("userName") String username,
-                              @QueryParam("password") String password) {
+    public Response checkUser(User user) {
 
-        User user = service.checkCredentials(username, password);
+        user = service.checkCredentials(user.getEmail(), user.getPassword());
 
         if(user != null) {
             return Response.status(Response.Status.CREATED).entity(user).build();
         }
         else{
-            return Response.status(Response.Status.NOT_FOUND).build();
+            return Response.status(Response.Status.BAD_REQUEST).build();
         }
 
     }

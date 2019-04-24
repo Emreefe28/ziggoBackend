@@ -59,18 +59,17 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
     }
 
     @Override
-    public User getUserFromUsername(String name) {
+    public User getUser(User user) {
 
         EntityManager em = getEntityManager();
         CriteriaBuilder cb = em.getCriteriaBuilder();
 
         CriteriaQuery<User> q = cb.createQuery(User.class);
         Root<User> c = q.from(User.class);
-        Predicate usernamePredicate = cb.equal(c.get("userName"), name);
-        q.where(usernamePredicate);
+        Predicate emailPredicate = cb.equal(c.get("email"), user.getEmail());
+        q.where(emailPredicate);
         TypedQuery<User> query = em.createQuery(q);
 
-        User user;
         try {
             user = query.getSingleResult();
         } catch (NoResultException e) {
@@ -118,16 +117,16 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
     }
 
     @Override
-    public User checkCredentials(String username, String password) {
+    public User checkCredentials(String email, String password) {
 
         EntityManager em = getEntityManager();
         CriteriaBuilder cb = em.getCriteriaBuilder();
 
         CriteriaQuery<User> q = cb.createQuery(User.class);
         Root<User> c = q.from(User.class);
-        Predicate usernamePredicate = cb.equal(c.get("userName"), username);
+        Predicate emailPredicate = cb.equal(c.get("email"), email);
         Predicate passwordPredicate = cb.equal(c.get("password"), password);
-        q.where(usernamePredicate, passwordPredicate);
+        q.where(emailPredicate, passwordPredicate);
         TypedQuery<User> query = em.createQuery(q);
 
         WebToken jwt = new WebToken();
@@ -147,7 +146,7 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
 
     private void loadExamples() {
 
-        User us = new User("test", "pw1");
+        User us = new User("t", "t");
         addUser(us);
     }
 }

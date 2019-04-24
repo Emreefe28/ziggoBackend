@@ -25,6 +25,8 @@ public class User implements Serializable {
 
     private String jwtToken;
 
+    private int role;
+
 
     public User() {
     }
@@ -81,5 +83,13 @@ public class User implements Serializable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
     }
 }

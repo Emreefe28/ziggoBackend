@@ -79,6 +79,10 @@ public class UserResource {
 
         User user = jwt.validateToken(jwtToken);
 
+        if(user==null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+
         return Response.status(Response.Status.OK).entity(user).build();
 
 

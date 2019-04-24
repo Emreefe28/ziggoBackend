@@ -10,27 +10,19 @@ import java.util.List;
 public class Chat {
 
     @Id
-    private String chatId;
-    private long created;
+    private int created;
 
     @OneToMany
     private List<Message> messages;
     public Chat(){
         messages = new ArrayList<>();
     }
-    public String getChatId() {
-        return chatId;
-    }
 
-    public void setChatId(String chatId) {
-        this.chatId = chatId;
-    }
-
-    public long getCreated() {
+    public int getCreated() {
         return created;
     }
 
-    public void setCreated(long created) {
+    public void setCreated(int created) {
         this.created = created;
     }
 

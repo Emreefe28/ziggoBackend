@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="vodafoneziggo@localhost">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.14">
+<dataSource name="MySQL - vodafoneziggo@localhost">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.15">
     <root id="1">
       <ServerVersion>5.7.20</ServerVersion>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -958,117 +958,113 @@
     <table id="244" parent="20" name="chat_message"/>
     <table id="245" parent="20" name="message"/>
     <table id="246" parent="20" name="user"/>
-    <column id="247" parent="243" name="chatId">
+    <column id="247" parent="243" name="created">
       <Position>1</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="243" name="created">
-      <Position>2</Position>
-      <DataType>tinyblob|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="249" parent="243" name="PRIMARY">
+    <key id="248" parent="243" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>chatId</ColNames>
+      <ColNames>created</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="250" parent="244" name="Chat_chatId">
+    <column id="249" parent="244" name="Chat_created">
       <Position>1</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="244" name="messages_id">
+    <column id="250" parent="244" name="messages_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="252" parent="244" name="UK_i7xd6x9csr600iiy3c9qp0l15">
+    <index id="251" parent="244" name="UK_i7xd6x9csr600iiy3c9qp0l15">
       <ColNames>messages_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="253" parent="244" name="FK87v3c7uqud3e4fv2vc9wcf45r">
-      <ColNames>Chat_chatId</ColNames>
+    <index id="252" parent="244" name="FKop0makhxhajdojegqt1q7dgis">
+      <ColNames>Chat_created</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="254" parent="244" name="UK_i7xd6x9csr600iiy3c9qp0l15">
+    <key id="253" parent="244" name="UK_i7xd6x9csr600iiy3c9qp0l15">
       <ColNames>messages_id</ColNames>
       <UnderlyingIndexName>UK_i7xd6x9csr600iiy3c9qp0l15</UnderlyingIndexName>
     </key>
-    <foreign-key id="255" parent="244" name="FK87v3c7uqud3e4fv2vc9wcf45r">
-      <ColNames>Chat_chatId</ColNames>
+    <foreign-key id="254" parent="244" name="FKop0makhxhajdojegqt1q7dgis">
+      <ColNames>Chat_created</ColNames>
       <RefSchemaName>vodafoneziggo</RefSchemaName>
       <RefTableName>chat</RefTableName>
-      <RefColNames>chatId</RefColNames>
+      <RefColNames>created</RefColNames>
     </foreign-key>
-    <foreign-key id="256" parent="244" name="FKi753lktn1oeu4t4prfewihb8i">
+    <foreign-key id="255" parent="244" name="FKi753lktn1oeu4t4prfewihb8i">
       <ColNames>messages_id</ColNames>
       <RefSchemaName>vodafoneziggo</RefSchemaName>
       <RefTableName>message</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="257" parent="245" name="id">
+    <column id="256" parent="245" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="245" name="author">
+    <column id="257" parent="245" name="author">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="245" name="content">
+    <column id="258" parent="245" name="content">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="245" name="dateSent">
+    <column id="259" parent="245" name="dateSent">
       <Position>4</Position>
       <DataType>tinyblob|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="261" parent="245" name="PRIMARY">
+    <key id="260" parent="245" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="262" parent="246" name="username">
+    <column id="261" parent="246" name="username">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="263" parent="246" name="email">
+    <column id="262" parent="246" name="email">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="246" name="name">
+    <column id="263" parent="246" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="246" name="password">
+    <column id="264" parent="246" name="password">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="246" name="role">
+    <column id="265" parent="246" name="role">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="246" name="surname">
+    <column id="266" parent="246" name="surname">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="268" parent="246" name="PRIMARY">
+    <key id="267" parent="246" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>username</ColNames>
       <Primary>1</Primary>

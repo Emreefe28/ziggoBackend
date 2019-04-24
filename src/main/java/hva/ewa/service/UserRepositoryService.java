@@ -33,4 +33,8 @@ public interface UserRepositoryService {
 
     User getUserFromId(int id);
 
+    void deleteUser(User user);
+
+    void changeUser(User user);
+
 }

@@ -87,4 +87,33 @@ public class UserResource {
 
     }
 
+    @DELETE
+    @Path("/delete/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deletePathParam(@PathParam("id") int id) {
+        User user = service.getUserFromId(id);
+        try {
+            service.deleteUser(user);
+        }
+        catch(Exception e){
+            return Response.status(Response.Status.OK).entity(e).build();
+        }
+        return Response.status(Response.Status.OK).build();
+
+    }
+
+    @Path("/change")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @PUT
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response changeUser(User user){
+        try {
+                service.changeUser(user);
+                return Response.status(Response.Status.OK).entity(user).build();
+            } catch (Exception e) {
+                return Response.status(Response.Status.NOT_FOUND).entity(e).build();
+            }
+
+    }
+
 }

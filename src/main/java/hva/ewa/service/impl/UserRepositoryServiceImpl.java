@@ -117,6 +117,27 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
     }
 
     @Override
+    public void deleteUser(User user){
+
+        EntityManager em = getEntityManager();
+        em.getTransaction().begin();
+        user = em.merge(user);
+        em.remove(user);
+        em.getTransaction().commit();
+        em.close();
+    }
+
+    @Override
+    public void changeUser(User user){
+        EntityManager em = getEntityManager();
+        em.getTransaction().begin();
+        user = em.merge(user);
+        em.persist(user);
+        em.getTransaction().commit();
+
+        em.close();
+    }
+    @Override
     public User checkCredentials(String email, String password) {
 
         EntityManager em = getEntityManager();
@@ -143,6 +164,7 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
 
         return user;
     }
+
 
     private void loadExamples() {
 

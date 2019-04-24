@@ -4,11 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A question of a flash card
- * 
- * @author marciofk
- */
 public class Question implements Serializable {
     
     private int id;

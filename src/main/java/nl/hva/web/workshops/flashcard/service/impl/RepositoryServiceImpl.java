@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import nl.hva.web.workshops.flashcard.model.Answer;
-import nl.hva.web.workshops.flashcard.model.FlashCard;
+import nl.hva.web.workshops.flashcard.model.Categorie;
 import nl.hva.web.workshops.flashcard.model.Question;
 import nl.hva.web.workshops.flashcard.service.RepositoryService;
 
@@ -35,7 +35,7 @@ public class RepositoryServiceImpl implements RepositoryService {
     }
 
     // An attribute that stores all cards (in memory)
-    private Map<Integer, FlashCard> elements;
+    private Map<Integer, Categorie> elements;
 
     private RepositoryServiceImpl() {
 
@@ -43,29 +43,29 @@ public class RepositoryServiceImpl implements RepositoryService {
     }
 
     @Override
-    public List<FlashCard> getAllFlashCards() {
+    public List<Categorie> getAllFlashCards() {
 
         return new ArrayList<>(elements.values());
     }
 
     @Override
-    public void addFlashCard(FlashCard card) {
+    public void addFlashCard(Categorie card) {
         elements.put(card.getId(), card);
     }
 
     @Override
-    public FlashCard getFlashCardFromId(int id) {
+    public Categorie getFlashCardFromId(int id) {
         return elements.get(id);
     }
 
     @Override
-    public List<Question> getQuestionsOfFlashCard(FlashCard flashCard) {
-        return flashCard.getQuestions();
+    public List<Question> getQuestionsOfFlashCard(Categorie categorie) {
+        return categorie.getQuestions();
     }
 
     @Override
-    public Question getQuestionOfFlashCard(FlashCard flashCard, int questionId) {
-        List<Question> questions = getQuestionsOfFlashCard(flashCard);
+    public Question getQuestionOfFlashCard(Categorie categorie, int questionId) {
+        List<Question> questions = getQuestionsOfFlashCard(categorie);
 
         if (questions == null) {
             return null;
@@ -97,7 +97,7 @@ public class RepositoryServiceImpl implements RepositoryService {
     }
 
     @Override
-    public boolean addQuestion(FlashCard card, Question question) {
+    public boolean addQuestion(Categorie card, Question question) {
         
         return card.addQuestion(question);       
     }
@@ -106,7 +106,7 @@ public class RepositoryServiceImpl implements RepositoryService {
      * Some dummy examples to play with
      */
     private void loadExamples() {
-        FlashCard fc = new FlashCard(1, "Astronomy");
+        Categorie fc = new Categorie(1, "Astronomy");
         addFlashCard(fc);
         Question q1 = new Question(1, "Earth to the moon", "What is the distance from the Earth to the Moon");
         q1.addAnswer(new Answer(1, "250000 Km", false));
@@ -123,7 +123,7 @@ public class RepositoryServiceImpl implements RepositoryService {
         fc.addQuestion(q1);
         fc.addQuestion(q2);
 
-        fc = new FlashCard(2, "Games");
+        fc = new Categorie(2, "Games");
         addFlashCard(fc);
         
         q1 = new Question(1, "Mario", "In which game, Mario, the character of Nintendo, appeared for the first time?");
@@ -139,7 +139,7 @@ public class RepositoryServiceImpl implements RepositoryService {
         fc.addQuestion(q1);
         fc.addQuestion(q2);
         
-        fc = new FlashCard(3, "Movies");
+        fc = new Categorie(3, "Movies");
         addFlashCard(fc);
         q1 = new Question(1, "Pioneers of Cinema", "Who invented the cinema");
         q1.addAnswer(new Answer(1, "Righteous Brothers", false));

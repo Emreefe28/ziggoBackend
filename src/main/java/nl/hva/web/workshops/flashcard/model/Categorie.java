@@ -4,20 +4,16 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A flash card representation containing a set of questions
- * 
- * @author marciofk
- */
-public class FlashCard implements Serializable {
+
+public class Categorie implements Serializable {
     
     private int id;
     private String name;   
     private List<Question> questions;
     
-    public FlashCard() {}
+    public Categorie() {}
     
-    public FlashCard(int id, String name) {
+    public Categorie(int id, String name) {
         setId(id);
         setName(name);
         setQuestions(new ArrayList<>());

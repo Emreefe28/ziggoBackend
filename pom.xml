@@ -32,6 +32,11 @@
             <artifactId>jersey-media-json-jackson1</artifactId>
             <version>2.26</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.4</version>
+        </dependency>
         <!-- jax-rs-related dependencies end -->
     </dependencies>
 

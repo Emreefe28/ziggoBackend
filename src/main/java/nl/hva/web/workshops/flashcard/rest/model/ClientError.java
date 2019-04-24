@@ -7,11 +7,7 @@ package nl.hva.web.workshops.flashcard.rest.model;
 
 import java.io.Serializable;
 
-/**
- * A simple class representing a client error
- * 
- * @author marciofk
- */
+
 public class ClientError implements Serializable {
     
     private String message;

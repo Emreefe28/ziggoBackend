@@ -5,92 +5,69 @@
  */
 package nl.hva.web.workshops.flashcard.rest;
 
+import javafx.util.Callback;
 import nl.hva.web.workshops.flashcard.rest.model.ClientError;
 import java.util.List;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import nl.hva.web.workshops.flashcard.model.FlashCard;
+import nl.hva.web.workshops.flashcard.model.Categorie;
 import nl.hva.web.workshops.flashcard.model.Question;
 import nl.hva.web.workshops.flashcard.service.RepositoryService;
 import nl.hva.web.workshops.flashcard.service.impl.RepositoryServiceImpl;
 
-/**
- *
- * The question REST sub-resource
- * 
- * @author marciofk
- */
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+
 public class QuestionResource {
     
     /** A reference to the repository service */
     private RepositoryService service;
-    
+
     public QuestionResource() {
         service = RepositoryServiceImpl.getInstance();
     }    
-    
-    /**
-     * Getting all questions of a flash card
-     * @param flashCardId the flash card id
-     * @return could be a list of questions or a client error
-     */
+
     @GET
     @Path("/")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(APPLICATION_JSON)
     public Response getAllQuestions(
-            @PathParam("flashCardId") int flashCardId) {
+            @PathParam("categorieId") int categorieId) {
+
+        Categorie categorie = service.getCategorieFromId(categorieId);
         
-        // Getting flash card
-        FlashCard flashCard = service.getFlashCardFromId(flashCardId);
-        
-        if(flashCard == null) {
+        if(categorie == null) {
             return Response.status(Response.Status.NOT_FOUND).
-                    entity(new ClientError("Flash card not found for id " + flashCardId)).build();
+                    entity(new ClientError("Categorie not found for id " + categorieId)).build();
         }
         
-        // Getting questions
-        List<Question> questions = service.getQuestionsOfFlashCard(flashCard);
+        List<Question> questions = service.getQuestionsOfCategorie(categorie);
         
         return Response.status(Response.Status.OK).
                     entity(questions).build();
     }
     
-    
-    /**
-     * Get a specific question
-     * @param flashCardId the flash card id
-     * @param questionId the question id
-     * @return A question representation or a client error
-     */
+
     @GET
     @Path("/{questionId}")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(APPLICATION_JSON)
     public Response getQuestion(
-                @PathParam("flashCardId") int flashCardId,
+                @PathParam("categorieId") int categorieId,
                 @PathParam("questionId") int questionId) {
                 
         Response resp;
+
+        Categorie categorie = service.getCategorieFromId(categorieId);
         
-        // Getting the flash card
-        FlashCard flashCard = service.getFlashCardFromId(flashCardId);
-        
-        if(flashCard == null) {
+        if(categorie == null) {
             return Response.status(Response.Status.NOT_FOUND).
-                    entity(new ClientError("Flash card not found for id " + flashCardId)).build();
+                    entity(new ClientError("Question not found for id " + categorieId)).build();
         }            
-        
-        // Getting the question
-        Question question = service.getQuestionOfFlashCard(flashCard, questionId);
+
+        Question question = service.getQuestionOfCategorie(categorie, questionId);
         
         if(question == null) {
             resp = Response.status(Response.Status.NOT_FOUND).
-                    entity(new ClientError("resource not found for question id " + questionId)).build();
+                    entity(new ClientError("Resource not found for question id " + questionId)).build();
         } else {
             resp = Response.status(Response.Status.OK).
                     entity(question).build();
@@ -100,48 +77,67 @@ public class QuestionResource {
         return resp;        
     }
 
-    /**
-     * Adding a question into the flashcard
-     * @param flashCardId the flash card id
-     * @param question the question representation
-     * @return a success response or a client error
-     */
+    @DELETE
+    @Path("/question/{id}")
+    @Produces(APPLICATION_JSON)
+    public Response deleteQuestion(@PathParam("id") String id){
+        Question question = new Question();
+        try{
+            service.deleteQuestion();
+            service.setResponce("Succes");
+        }
+        catch (Exception e){
+            service.setResponce("Failed");
+            e.printStackTrace();
+        }
+        return Response.status(200).entity(question).build();
+    }
+
+    @PUT
+    @Path("/customers/{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response updateQuestion(@PathParam("id") int id,
+                                   Question updateQuestion) {
+
+        Question quest = service.getQuestionFromId(id);
+        if (quest == null) {
+            throw new WebApplicationException("Cannot find question", 404);
+        }
+
+        quest.setTitle(updateQuestion.getTitle());
+        quest.setQuestion(updateQuestion.getQuestion());
+
+
+        return Response.noContent().build();
+    }
+
+
     @POST
     @Path("/")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)    
+    @Consumes(APPLICATION_JSON)
+    @Produces(APPLICATION_JSON)
     public Response addQuestion(
-            @PathParam("flashCardId") int flashCardId,
+            @PathParam("questionId") int questionId,
             Question question) {
-        
-        // Getting the flash card
-        FlashCard card = service.getFlashCardFromId(flashCardId);
+
+        Categorie card = service.getCategorieFromId(questionId);
         
         if(card == null) {
             return Response.status(Response.Status.NOT_FOUND).
-                        entity(new ClientError("flash card not found for id " + flashCardId)).build();
+                        entity(new ClientError("Question not found for id " + questionId)).build();
         }
-        
-        // Create the questing (checking duplicate id)
+
         boolean created = service.addQuestion(card, question);
         
         if(created) {
             return Response.status(Response.Status.CREATED).build();            
         } else {
             return Response.status(Response.Status.BAD_REQUEST).
-                        entity(new ClientError("question already exists for id " + question.getId())).build();
-            
+                        entity(new ClientError("Question already exists for id " + question.getId())).build();
+
         }
-        
+
     }
-    
-    /**
-     * Creates a answer sub-resource
-     * @return 
-     */
-    @Path("/{questionId}/answers")
-    public AnswerResource getAnswers() {
-        return new AnswerResource();
-    }
+
     
 }

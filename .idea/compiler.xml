@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="EWAZiggo-backend" options="-endorseddirs &quot;C:\Users\Youssef\Documents\GitHub\Ewa angular\EWAZiggo-backend\target/endorsed&quot;" />
+      <module name="EWAZiggo-backend" options="" />
     </option>
   </component>
 </project>

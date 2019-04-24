@@ -3,18 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nl.hva.web.workshops.flashcard.rest;
+package nl.hva.web.questionaire.rest;
 
-import javafx.util.Callback;
-import nl.hva.web.workshops.flashcard.rest.model.ClientError;
+import nl.hva.web.questionaire.model.Categorie;
+import nl.hva.web.questionaire.model.Question;
+import nl.hva.web.questionaire.service.RepositoryService;
+import nl.hva.web.questionaire.service.impl.RepositoryServiceImpl;
+import nl.hva.web.questionaire.rest.model.ClientError;
 import java.util.List;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import nl.hva.web.workshops.flashcard.model.Categorie;
-import nl.hva.web.workshops.flashcard.model.Question;
-import nl.hva.web.workshops.flashcard.service.RepositoryService;
-import nl.hva.web.workshops.flashcard.service.impl.RepositoryServiceImpl;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
@@ -39,7 +38,6 @@ public class QuestionResource {
             return Response.status(Response.Status.NOT_FOUND).
                     entity(new ClientError("Categorie not found for id " + categorieId)).build();
         }
-
         List<Question> questions = service.getQuestionsOfCategorie(categorie);
         
         return Response.status(Response.Status.OK).

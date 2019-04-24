@@ -1,4 +1,4 @@
-package nl.hva.web.workshops.flashcard.model;
+package nl.hva.web.questionaire.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;

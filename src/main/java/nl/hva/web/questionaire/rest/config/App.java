@@ -1,4 +1,4 @@
-package nl.hva.web.workshops.flashcard.rest.config;
+package nl.hva.web.questionaire.rest.config;
 
 
 import javax.ws.rs.ApplicationPath;

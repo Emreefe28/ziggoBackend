@@ -1,14 +1,14 @@
-package nl.hva.web.workshops.flashcard.service.impl;
+package nl.hva.web.questionaire.service.impl;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import nl.hva.web.workshops.flashcard.model.Answer;
-import nl.hva.web.workshops.flashcard.model.Categorie;
-import nl.hva.web.workshops.flashcard.model.Question;
-import nl.hva.web.workshops.flashcard.service.RepositoryService;
+
+import nl.hva.web.questionaire.model.Categorie;
+import nl.hva.web.questionaire.model.Question;
+import nl.hva.web.questionaire.service.RepositoryService;
 
 /**
  *
@@ -42,28 +42,25 @@ public class RepositoryServiceImpl implements RepositoryService {
         elements = new LinkedHashMap<>();
     }
 
-    @Override
     public List<Categorie> getAllFlashCards() {
 
         return new ArrayList<>(elements.values());
     }
 
-    @Override
+
     public void addFlashCard(Categorie card) {
         elements.put(card.getId(), card);
     }
 
-    @Override
+
     public Categorie getFlashCardFromId(int id) {
         return elements.get(id);
     }
 
-    @Override
     public List<Question> getQuestionsOfFlashCard(Categorie categorie) {
         return categorie.getQuestions();
     }
 
-    @Override
     public Question getQuestionOfFlashCard(Categorie categorie, int questionId) {
         List<Question> questions = getQuestionsOfFlashCard(categorie);
 
@@ -87,7 +84,12 @@ public class RepositoryServiceImpl implements RepositoryService {
         return question.getAnswers().stream().filter(
                             p -> p.isCorrect() == true).
                                 collect(Collectors.toList());
-    }    
+    }
+
+    @Override
+    public void setResponce(String test) {
+
+    }
 
 
     @Override
@@ -97,9 +99,54 @@ public class RepositoryServiceImpl implements RepositoryService {
     }
 
     @Override
+    public List<Categorie> getAllCategorie() {
+        return null;
+    }
+
+    @Override
+    public List<Question> getAllQuestion() {
+        return null;
+    }
+
+    @Override
+    public Question getQuestionFromId(int questionId) {
+        return null;
+    }
+
+    @Override
+    public Categorie getCategorieFromId(int categorieId) {
+        return null;
+    }
+
+    @Override
+    public void addCategorie(Categorie cat) {
+
+    }
+
+    @Override
+    public void setResponce(Question question) {
+
+    }
+
+    @Override
+    public void deleteQuestion() {
+
+    }
+
+    @Override
     public boolean addQuestion(Categorie card, Question question) {
         
         return card.addQuestion(question);       
+    }
+
+    @Override
+    public List<Question> getQuestionsOfCategorie(Categorie card) {
+        return null;
+    }
+
+    @Override
+    public Question getQuestionOfCategorie(Categorie categorie, int questionId) {
+        return null;
     }
 
     /**

@@ -1,13 +1,13 @@
-package nl.hva.web.workshops.flashcard.rest;
+package nl.hva.web.questionaire.rest;
 
-import nl.hva.web.workshops.flashcard.rest.model.ClientError;
+import nl.hva.web.questionaire.model.Categorie;
+import nl.hva.web.questionaire.service.RepositoryService;
+import nl.hva.web.questionaire.service.impl.RepositoryServiceImpl;
+import nl.hva.web.questionaire.rest.model.ClientError;
 import java.util.List;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import nl.hva.web.workshops.flashcard.model.Categorie;
-import nl.hva.web.workshops.flashcard.service.impl.RepositoryServiceImpl;
-import nl.hva.web.workshops.flashcard.service.RepositoryService;
 
 @Path("flashcards")
 public class CategorieResource {

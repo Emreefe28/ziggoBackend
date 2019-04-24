@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nl.hva.web.workshops.flashcard.rest.model;
+package nl.hva.web.questionaire.rest.model;
 
 import java.io.Serializable;
 

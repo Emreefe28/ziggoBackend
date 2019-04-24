@@ -1,9 +1,9 @@
-package nl.hva.web.workshops.flashcard.service;
+package nl.hva.web.questionaire.service;
 
 import java.util.List;
-import nl.hva.web.workshops.flashcard.model.Answer;
-import nl.hva.web.workshops.flashcard.model.Categorie;
-import nl.hva.web.workshops.flashcard.model.Question;
+
+import nl.hva.web.questionaire.model.Categorie;
+import nl.hva.web.questionaire.model.Question;
 
 public interface RepositoryService {
 

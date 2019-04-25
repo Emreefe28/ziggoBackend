@@ -2,33 +2,13 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="EWAZiggo-backend:war" />
+      <artifact name="VodafoneZiggoAPI:war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29f8fb2b-6773-4f4b-bd97-264db38331d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/EWAZiggo-backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4ef79a7a-ab33-40cd-9b71-d3c983fb4d0d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4ef79a7a-ab33-40cd-9b71-d3c983fb4d0d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hva/ewa/models/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hva/ewa/models/Chat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hva/ewa/rest/ChatResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hva/ewa/rest/ChatResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/chat-server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/chat-server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/VodafoneZiggoAPI-1.0.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/VodafoneZiggoAPI-1.0.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/VodafoneZiggoAPI-1.0/WEB-INF/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/VodafoneZiggoAPI-1.0/WEB-INF/classes/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/VodafoneZiggoAPI-1.0/WEB-INF/classes/nl/hva/ewa/models/Chat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/VodafoneZiggoAPI-1.0/WEB-INF/classes/nl/hva/ewa/models/Chat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/VodafoneZiggoAPI-1.0/WEB-INF/classes/nl/hva/ewa/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/VodafoneZiggoAPI-1.0/WEB-INF/classes/nl/hva/ewa/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/VodafoneZiggoAPI-1.0/WEB-INF/classes/nl/hva/ewa/rest/ChatResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/VodafoneZiggoAPI-1.0/WEB-INF/classes/nl/hva/ewa/rest/ChatResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/VodafoneZiggoAPI-1.0/chat-server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/VodafoneZiggoAPI-1.0/chat-server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/EWAZiggo-backend.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/VodafoneZiggoAPI.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/hva/ewa/models/Chat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/hva/ewa/models/Chat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/hva/ewa/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/hva/ewa/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/hva/ewa/rest/ChatResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/hva/ewa/rest/ChatResource.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,57 +28,31 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL - vodafoneziggo@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL - vodafoneziggo@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL - vodafoneziggo@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="vodafoneziggo: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL - vodafoneziggo@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="vodafoneziggo: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="chat_message: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="VodafoneZiggoAPI" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/chat-server/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+            <state relative-caret-position="136">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nl/hva/ewa/models/Message.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#387#388#0" expanded="true" />
-                <element signature="e#412#413#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="510">
+              <caret line="36" selection-start-line="35" selection-start-column="20" selection-end-line="36" />
             </state>
           </provider>
         </entry>
@@ -136,8 +90,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/main/java/nl/hva/ewa/models/User.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/chat-server/index.js" />
         <option value="$PROJECT_DIR$/src/main/java/nl/hva/ewa/models/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/chat-server/index.js" />
       </list>
     </option>
   </component>
@@ -162,9 +116,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="727" />
+    <option name="x" value="726" />
     <option name="width" value="1200" />
-    <option name="height" value="1038" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -174,7 +128,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -198,12 +151,20 @@
               <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -248,7 +209,7 @@
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/VodafoneZiggoAPI-1.0/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="EWAZiggo-backend:war">
+        <artifact name="VodafoneZiggoAPI:war">
           <settings />
         </artifact>
       </deployment>
@@ -338,11 +299,12 @@
       <workItem from="1555500866978" duration="9896000" />
       <workItem from="1556025347823" duration="2921000" />
       <workItem from="1556045513376" duration="23904000" />
+      <workItem from="1556174614902" duration="5769000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96495000" />
+    <option name="totallyTimeSpent" value="105135000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -355,25 +317,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6860707" visible="true" weight="0.19798657" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Persistence" order="2" sideWeight="0.31392932" side_tool="true" visible="true" weight="0.19798657" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.68421054" visible="true" weight="0.20067114" />
+      <window_info id="Structure" order="1" sideWeight="0.31600833" side_tool="true" weight="0.20067114" />
+      <window_info id="Persistence" order="2" sideWeight="0.31578946" side_tool="true" visible="true" weight="0.20067114" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Favorites" order="5" sideWeight="0.31600833" side_tool="true" weight="0.20067114" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.50067115" weight="0.32577905" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7147651" weight="0.30028328" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.714094" visible="true" weight="0.30028328" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49932885" weight="0.3286119" />
       <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.49932885" weight="0.32719547" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49731544" visible="true" weight="0.3186969" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4966443" weight="0.3186969" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5026846" side_tool="true" visible="true" weight="0.3186969" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.28590605" side_tool="true" visible="true" weight="0.30028328" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" sideWeight="0.49932885" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="12" sideWeight="0.49930653" weight="0.3295129" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49932885" weight="0.3286119" />
@@ -383,7 +346,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="JSF" order="4" />
-      <window_info anchor="right" id="Database" order="5" weight="0.5489933" />
+      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.19597316" />
       <window_info anchor="right" id="Maven" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="CDI" order="8" />
@@ -467,13 +430,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nl/hva/ewa/config/Database.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -533,20 +489,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/hva/ewa/models/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/hva/ewa/models/Test.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
     <entry file="uml://Persistence/JavaeeElement:/1e1625ea/VodafoneZiggoDB/EWAZiggo-backend/jpa/JPA/PersistenceModel">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -563,9 +507,10 @@
           <SelectedNodes />
           <Categories>
             <Category>Properties</Category>
-            <Category>Superclasses</Category>
             <Category>Embeddables</Category>
+            <Category>Superclasses</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
@@ -586,13 +531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/chat-server/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nl/hva/ewa/models/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -602,6 +540,20 @@
             <element signature="e#387#388#0" expanded="true" />
             <element signature="e#412#413#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/chat-server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="36" selection-start-line="35" selection-start-column="20" selection-end-line="36" />
         </state>
       </provider>
     </entry>

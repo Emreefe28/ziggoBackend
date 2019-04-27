@@ -9,7 +9,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.time.LocalDateTime;
 
 @Path("/chat") // http://localhost:8080/VodafoneZiggoAPI-1.0/rest/chat
 @Produces(MediaType.APPLICATION_JSON)

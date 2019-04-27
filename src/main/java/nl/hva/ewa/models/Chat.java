@@ -1,21 +1,23 @@
 package nl.hva.ewa.models;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="chat")
+@Table(name = "chat")
 public class Chat {
 
     @Id
     private int created;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL,
+            orphanRemoval = true)
     private List<Message> messages;
-    public Chat(){
-        messages = new ArrayList<>();
+    private int rating;
+
+    public Chat() {
+        setMessages(new ArrayList<>());
     }
 
     public int getCreated() {
@@ -34,7 +36,11 @@ public class Chat {
         this.messages = messages;
     }
 
-    public void addMessage(Message message){
-        messages.add(message);
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }

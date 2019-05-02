@@ -27,9 +27,5 @@ public interface RepositoryService {
 
     Question getQuestionOfCategorie(Categorie categorie, int questionId);
 
-    List<Answer> getAllAnswersOfQuestion(Question question);    
-
-    List<Answer> getCorrectAnswersOfQuestion(Question question);
-
     void setResponce(String test);
 }

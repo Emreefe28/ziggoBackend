@@ -51,11 +51,8 @@ public class QuestionResource {
     public Response getQuestion(
                 @PathParam("categorieId") int categorieId,
                 @PathParam("questionId") int questionId) {
-                
         Response resp;
-
         Categorie categorie = service.getCategorieFromId(categorieId);
-        
         if(categorie == null) {
             return Response.status(Response.Status.NOT_FOUND).
                     entity(new ClientError("Question not found for id " + categorieId)).build();
@@ -76,7 +73,7 @@ public class QuestionResource {
     }
 
     @DELETE
-    @Path("/question/{id}")
+    @Path("categorie/question/{id}")
     @Produces(APPLICATION_JSON)
     public Response deleteQuestion(@PathParam("id") String id){
         Question question = new Question();
@@ -111,11 +108,11 @@ public class QuestionResource {
 
 
     @POST
-    @Path("/")
+    @Path("/question/{id}")
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
     public Response addQuestion(
-            @PathParam("questionId") int questionId,
+            @PathParam("id") int questionId,
             Question question) {
 
         Categorie card = service.getCategorieFromId(questionId);

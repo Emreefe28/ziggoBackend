@@ -9,7 +9,6 @@ public class Question implements Serializable {
     private int id;
     private String title;
     private String question;
-    private List<Answer> answers;
     
     public Question() {}
     
@@ -17,7 +16,6 @@ public class Question implements Serializable {
         setId(id);
         setTitle(title);
         setQuestion(question);
-        setAnswers(new ArrayList<>());
     }
 
     public int getId() {
@@ -44,16 +42,5 @@ public class Question implements Serializable {
         this.question = question;
     }
 
-    public List<Answer> getAnswers() {
-        return answers;
-    }
-
-    public final void setAnswers(List<Answer> answers) {
-        this.answers = answers;
-    }
-    
-    public void addAnswer(Answer a) {
-        getAnswers().add(a);
-    }
     
 }

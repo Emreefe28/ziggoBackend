@@ -1,37 +1,32 @@
 package hva.ewa.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import hva.ewa.model.Message;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "chat")
 public class Chat {
 
     @Id
-    private String chatId;
-    private long created;
+    private int created;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL,
+            orphanRemoval = true)
     private List<Message> messages;
-    public Chat(){
-        messages = new ArrayList<>();
-    }
-    public String getChatId() {
-        return chatId;
+    private int rating;
+
+    public Chat() {
+        setMessages(new ArrayList<>());
     }
 
-    public void setChatId(String chatId) {
-        this.chatId = chatId;
-    }
-
-    public long getCreated() {
+    public int getCreated() {
         return created;
     }
 
-    public void setCreated(long created) {
+    public void setCreated(int created) {
         this.created = created;
     }
 
@@ -43,7 +38,11 @@ public class Chat {
         this.messages = messages;
     }
 
-    public void addMessage(Message message){
-        messages.add(message);
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }

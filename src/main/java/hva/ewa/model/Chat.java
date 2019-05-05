@@ -1,21 +1,22 @@
 package hva.ewa.model;
 
-import hva.ewa.model.Message;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "chat")
-public class Chat {
+public class Chat implements Serializable {
 
     @Id
+    @Column(name = "created")
     private int created;
-
-    @OneToMany(cascade = CascadeType.ALL,
-            orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "chat")
     private List<Message> messages;
+    @Column(name = "created")
     private int rating;
 
     public Chat() {

@@ -26,7 +26,7 @@ io.on('connection', (socket) => {
         console.log('checking in...' + employee);
         employees.push(employee);
     });
-    
+
     socket.on('new-message', (message) => {
         io.in(message.room).emit('new-message', message);
     });

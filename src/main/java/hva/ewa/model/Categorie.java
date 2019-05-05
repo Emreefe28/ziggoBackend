@@ -1,14 +1,24 @@
 package hva.ewa.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 
+@Entity
 public class Categorie implements Serializable {
-    
+
+    @Id
     private int id;
-    private String name;   
+    private String name;
+
+
+    @OneToMany(cascade = CascadeType.ALL,
+            orphanRemoval = true)
     private List<Question> questions;
     
     public Categorie() {}

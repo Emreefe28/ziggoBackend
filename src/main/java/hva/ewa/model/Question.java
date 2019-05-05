@@ -1,15 +1,20 @@
 package hva.ewa.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Question implements Serializable {
-    
+
+    @Id
     private int id;
     private String title;
     private String question;
-    
+
+    private boolean answer;
     public Question() {}
     
     public Question(int id, String title, String question) {
@@ -17,6 +22,15 @@ public class Question implements Serializable {
         setTitle(title);
         setQuestion(question);
     }
+
+    public Question(Question questie, boolean answer) {
+        setId(questie.getId());
+        setTitle(questie.getTitle());
+        setQuestion(questie.getQuestion());
+        setAnswer(answer);
+
+    }
+
 
     public int getId() {
         return id;
@@ -42,5 +56,11 @@ public class Question implements Serializable {
         this.question = question;
     }
 
-    
+    public boolean isAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(boolean answer) {
+        this.answer = answer;
+    }
 }

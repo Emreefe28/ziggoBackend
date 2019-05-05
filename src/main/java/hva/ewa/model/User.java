@@ -2,6 +2,7 @@ package hva.ewa.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * A user representation
@@ -15,6 +16,7 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+
     private String firstName;
 
     private String lastName;
@@ -26,6 +28,11 @@ public class User implements Serializable {
     private String jwtToken;
 
     private int role;
+
+    @OneToMany(cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    private List<Questionnaire> questionnaires;
+
 
 
     public User() {

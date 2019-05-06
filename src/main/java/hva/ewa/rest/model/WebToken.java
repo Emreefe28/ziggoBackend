@@ -39,7 +39,7 @@ public class WebToken {
                     // Expiration date.
                     .withExpiresAt(expirationDate)
                     // User id - here we can put anything we want, but for the example userId is appropriate.
-                    .withClaim("userId", user.getId())
+                    .withClaim("userId", user.getIdUser())
                     // Issuer of the token.
                     .withIssuer("jwtauth")
                     // And the signing algorithm.

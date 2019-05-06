@@ -9,32 +9,42 @@ import java.io.Serializable;
  * @author Emre Efe
  */
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-
-    private String firstName;
-
-    private String lastName;
-
+    @Column(name = "idUser")
+    private int idUser;
+    @Basic
+    @Column(name = "email", unique = true)
     private String email;
-
+    @Basic
+    @Column(name = "password")
     private String password;
+    @Basic
+    @Column(name = "name")
+    private String name;
+    @Basic
+    @Column(name = "surname")
+    private String surname;
 
+    @Transient
     private String jwtToken;
-
-    private int role;
-
 
     public User() {
     }
 
-
     public User(String email, String password) {
-        setEmail(email);
-        setPassword(password);
+        this.email = email;
+        this.password = password;
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     public String getEmail() {
@@ -45,14 +55,6 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -61,35 +63,27 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
     public String getJwtToken() {
         return jwtToken;
     }
 
     public void setJwtToken(String jwtToken) {
         this.jwtToken = jwtToken;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getRole() {
-        return role;
-    }
-
-    public void setRole(int role) {
-        this.role = role;
     }
 }

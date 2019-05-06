@@ -1,31 +1,45 @@
 package hva.ewa.model;
 
+import hva.ewa.model.embeddable.MessageId;
+
 import javax.persistence.*;
+import java.io.Serializable;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Entity
-public class Message {
+public class Message implements Serializable {
 
-    @Id
-    private int id;
-    private String author;
+    @EmbeddedId
+    private MessageId id;
+
+    @Basic
+    @Column(name = "sent")
+    private Timestamp sent;
+
+    @Basic
+    @Column(name = "content")
     private String content;
-    private LocalDateTime dateSent;
 
-    public int getId() {
+    @ManyToOne
+    @JoinColumn(name = "user", nullable = false)
+    private User user;
+
+
+    public MessageId getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(MessageId id) {
         this.id = id;
     }
 
-    public String getAuthor() {
-        return author;
+    public Timestamp getSent() {
+        return sent;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setSent(Timestamp sent) {
+        this.sent = sent;
     }
 
     public String getContent() {
@@ -36,13 +50,11 @@ public class Message {
         this.content = content;
     }
 
-    public LocalDateTime getDateSent() {
-        return dateSent;
+    public User getUser() {
+        return user;
     }
 
-    public void setDateSent(LocalDateTime dateSent) {
-        this.dateSent = dateSent;
+    public void setUser(User user) {
+        this.user = user;
     }
-
-
 }

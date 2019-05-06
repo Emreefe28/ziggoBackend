@@ -17,7 +17,6 @@ public class EmployeeResource {
     }
 
     @GET
-    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response getEmployees() {
         if (service.getAllEmployees().isEmpty()) {

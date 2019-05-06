@@ -1,13 +1,25 @@
 package hva.ewa.model;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Question implements Serializable {
-    
+
+    @Id
+    @Column(name = "id")
     private int id;
+
+    @Basic
+    @Column(name = "title")
     private String title;
+    @Basic
+    @Column(name = "question")
     private String question;
     
     public Question() {}
@@ -18,11 +30,12 @@ public class Question implements Serializable {
         setQuestion(question);
     }
 
+
     public int getId() {
         return id;
     }
 
-    public final void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -30,7 +43,7 @@ public class Question implements Serializable {
         return title;
     }
 
-    public final void setTitle(String title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
@@ -38,9 +51,7 @@ public class Question implements Serializable {
         return question;
     }
 
-    public final void setQuestion(String question) {
+    public void setQuestion(String question) {
         this.question = question;
     }
-
-    
 }

@@ -1,6 +1,6 @@
 package hva.ewa.service;
 
-import hva.ewa.model.Categorie;
+import hva.ewa.model.Category;
 import hva.ewa.model.Question;
 
 import java.util.List;
@@ -8,25 +8,25 @@ import java.util.List;
 
 public interface QuestionnaireRepositoryService {
 
-    List<Categorie> getAllCategorie();
+    List<Category> getAllCategorie();
 
     List<Question> getAllQuestion();
 
     Question getQuestionFromId(int questionId);
 
-    Categorie getCategorieFromId(int categorieId);
+    Category getCategorieFromId(int categorieId);
 
-    void addCategorie(Categorie cat);
+    void addCategorie(Category cat);
 
     void setResponce(Question question);
 
     void deleteQuestion();
 
-    boolean addQuestion(Categorie cat, Question question);
+    boolean addQuestion(Category cat, Question question);
 
-    List<Question> getQuestionsOfCategorie(Categorie card);
+    List<Question> getQuestionsOfCategorie(Category card);
 
-    Question getQuestionOfCategorie(Categorie categorie, int questionId);
+    Question getQuestionOfCategorie(Category category, int questionId);
 
     void setResponce(String test);
 }

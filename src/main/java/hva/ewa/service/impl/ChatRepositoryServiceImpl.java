@@ -5,6 +5,8 @@ import hva.ewa.service.ChatRepositoryService;
 import hva.ewa.service.RepositoryService;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import java.util.List;
 
 
 public class ChatRepositoryServiceImpl extends RepositoryService implements ChatRepositoryService {
@@ -24,4 +26,10 @@ public class ChatRepositoryServiceImpl extends RepositoryService implements Chat
         em.close();
     }
 
+    @Override
+    public List<Chat> getAllChats() {
+        EntityManager em = getEntityManager();
+        Query query = em.createQuery("SELECT c FROM Chat c ");
+        return query.getResultList();
+    }
 }

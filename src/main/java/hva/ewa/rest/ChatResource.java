@@ -3,6 +3,7 @@ package hva.ewa.rest;
 import hva.ewa.model.Chat;
 import hva.ewa.service.ChatRepositoryService;
 import hva.ewa.service.impl.ChatRepositoryServiceImpl;
+import jdk.nashorn.internal.objects.annotations.Getter;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -29,6 +30,16 @@ public class ChatResource {
     public Response saveChat(Chat chat) {
         service.saveChat(chat);
         return Response.status(Response.Status.OK).entity(chat).build();
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllChats(){
+        if (service.getAllChats().isEmpty()) {
+            return Response.status(Response.Status.NO_CONTENT).build();
+        } else {
+            return Response.status(Response.Status.OK).entity(service.getAllChats()).build();
+        }
     }
 
 }

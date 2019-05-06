@@ -1,49 +1,58 @@
 package hva.ewa.model;
 
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Timestamp;
+import java.util.Collection;
 
 @Entity
-@Table(name = "chat")
 public class Chat implements Serializable {
-
     @Id
-    @Column(name = "created")
-    private int created;
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "chat")
-    private List<Message> messages;
-    @Column(name = "rating")
-    private int rating;
+    @Column(name = "id")
+    private String id;
 
-    public Chat() {
-        setMessages(new ArrayList<>());
+    @Basic
+    @Column(name = "created")
+    private Timestamp created;
+
+    @Basic
+    @Column(name = "rating")
+    private Integer rating;
+
+    @OneToMany(mappedBy="id.chat", cascade = CascadeType.ALL,
+            orphanRemoval = true,fetch = FetchType.LAZY)
+    private Collection<Message> messages;
+
+    public String getId() {
+        return id;
     }
 
-    public int getCreated() {
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Timestamp getCreated() {
         return created;
     }
 
-    public void setCreated(int created) {
+    public void setCreated(Timestamp created) {
         this.created = created;
     }
 
-    public List<Message> getMessages() {
-        return messages;
-    }
-
-    public void setMessages(List<Message> messages) {
-        this.messages = messages;
-    }
-
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(Integer rating) {
         this.rating = rating;
+    }
+
+
+    public Collection<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(Collection<Message> messages) {
+        this.messages = messages;
     }
 }

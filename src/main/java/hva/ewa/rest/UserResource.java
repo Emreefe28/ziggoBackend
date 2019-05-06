@@ -15,7 +15,7 @@ import javax.ws.rs.core.Response;
  *
  * @author Emre Efe
  */
-@Path("users")
+@Path("users") // http://localhost:8080/VodafoneZiggoApi-1.2/services/rest/users
 public class UserResource {
 
     /** a reference to the repository service */

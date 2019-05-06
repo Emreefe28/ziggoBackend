@@ -13,4 +13,9 @@
       <module name="EWAZiggo-backend" target="1.8" />
     </bytecodeTargetLevel>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="EWAZiggo-backend" options="-endorseddirs C:\Users\GG\Documents\GitHub\EWAZiggo-backend\target/endorsed" />
+    </option>
+  </component>
 </project>

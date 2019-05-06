@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import hva.ewa.model.Categorie;
 import hva.ewa.model.Question;
-import hva.ewa.service.RepositoryService;
-import hva.ewa.service.impl.RepositoryServiceImpl;
+import hva.ewa.service.QuestionnaireRepositoryService;
 
 /**
  *
@@ -19,25 +17,25 @@ import hva.ewa.service.impl.RepositoryServiceImpl;
  * 
  * @author marciofk
  */
-public class RepositoryServiceImpl implements RepositoryService {
+public class QuestionnaireRepositoryServiceImpl implements QuestionnaireRepositoryService {
 
     // A singleton reference
-    private static RepositoryServiceImpl instance;
+    private static QuestionnaireRepositoryServiceImpl instance;
 
     // An instance of the service is created and during class initialisation
     static {
-        instance = new RepositoryServiceImpl();
+        instance = new QuestionnaireRepositoryServiceImpl();
     }
 
     //  Method to get a reference to the instance (singleton)
-    public static RepositoryService getInstance() {
+    public static QuestionnaireRepositoryService getInstance() {
         return instance;
     }
 
     // An attribute that stores all cards (in memory)
     private Map<Integer, Categorie> elements;
 
-    private RepositoryServiceImpl() {
+    private QuestionnaireRepositoryServiceImpl() {
 
         elements = new LinkedHashMap<>();
     }

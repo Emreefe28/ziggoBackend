@@ -38,7 +38,7 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
 
     private UserRepositoryServiceImpl() {
 
-        entityManagerFactory = Persistence.createEntityManagerFactory("userPU");
+        entityManagerFactory = Persistence.createEntityManagerFactory("vodafoneziggoPU");
     }
 
     private EntityManager getEntityManager() {

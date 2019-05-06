@@ -8,8 +8,8 @@ package hva.ewa.rest;
 import hva.ewa.model.Categorie;
 import hva.ewa.model.Question;
 import hva.ewa.rest.model.ClientError;
-import hva.ewa.service.RepositoryService;
-import hva.ewa.service.impl.RepositoryServiceImpl;
+import hva.ewa.service.QuestionnaireRepositoryService;
+import hva.ewa.service.impl.QuestionnaireRepositoryServiceImpl;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -21,10 +21,10 @@ import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 public class QuestionResource {
     
     /** A reference to the repository service */
-    private RepositoryService service;
+    private QuestionnaireRepositoryService service;
 
     public QuestionResource() {
-        service = RepositoryServiceImpl.getInstance();
+        service = QuestionnaireRepositoryServiceImpl.getInstance();
     }    
 
     @GET

@@ -10,11 +10,11 @@ import javax.ws.rs.core.Response;
 
 
 /**
- * The user REST resource
+ * The chat REST resource
  *
- * @author Emre Efe
+ * @author José Niemel
  */
-@Path("chat")
+@Path("chat") // http://localhost:8080/VodafoneZiggoApi-1.2/services/rest/chat
 public class ChatResource {
 
     private ChatRepositoryService service;
@@ -23,15 +23,12 @@ public class ChatResource {
         service = ChatRepositoryServiceImpl.getInstance();
     }
 
-
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response saveChat(Chat chat) {
-
         service.saveChat(chat);
         return Response.status(Response.Status.OK).entity(chat).build();
-
     }
 
 }

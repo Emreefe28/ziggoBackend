@@ -1,8 +1,8 @@
 package hva.ewa.rest;
 import hva.ewa.model.Categorie;
 import hva.ewa.rest.model.ClientError;
-import hva.ewa.service.RepositoryService;
-import hva.ewa.service.impl.RepositoryServiceImpl;
+import hva.ewa.service.QuestionnaireRepositoryService;
+import hva.ewa.service.impl.QuestionnaireRepositoryServiceImpl;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -12,18 +12,16 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Path("flashcards")
 public class CategorieResource {
     
     /** a reference to the repository service */
-    private RepositoryService service;
+    private QuestionnaireRepositoryService service;
     
     public CategorieResource() {
-        service = RepositoryServiceImpl.getInstance();
+        service = QuestionnaireRepositoryServiceImpl.getInstance();
     }
     
     /**

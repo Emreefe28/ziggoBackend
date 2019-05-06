@@ -16,7 +16,7 @@ public class Chat implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "chat")
     private List<Message> messages;
-    @Column(name = "created")
+    @Column(name = "rating")
     private int rating;
 
     public Chat() {

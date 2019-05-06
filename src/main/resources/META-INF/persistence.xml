@@ -3,9 +3,9 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0">
 
-    <persistence-unit name="userPU" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="vodafoneziggoPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <non-jta-data-source>java:comp/env/jdbc/userDb</non-jta-data-source>
+        <non-jta-data-source>java:comp/env/jdbc/vodafoneziggoDb</non-jta-data-source>
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
             <property name="javax.persistence.sql-load-script-source" value="sql/data.sql" />

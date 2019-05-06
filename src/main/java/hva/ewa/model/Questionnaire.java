@@ -45,4 +45,31 @@ public class Questionnaire {
     public void setCategory(Category category) {
         this.category = category;
     }
+
+    public Collection<Question> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(Collection<Question> questions) {
+        this.questions = questions;
+    }
+
+
+
+    public boolean addQuestion(Question q) {
+        if(checkDuplicates(q)) {
+            return false;
+        }
+        getQuestions().add(q);
+        return true;
+    }
+
+    private boolean checkDuplicates(Question q) {
+        for(Question check : getQuestions()) {
+            if(check.getId() == q.getId()) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

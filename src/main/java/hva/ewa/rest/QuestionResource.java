@@ -92,10 +92,12 @@ private QuestionnaireRepositoryService service;
     @Path("/addquestionnaire")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addQuestionnaire(Questionnaire questionnaire) {
 
+    public Response addQuestionnaire(Questionnaire questionnaire) {
+        System.out.println("dit is het begin");
         Questionnaire existingQuestion = service.getQuestionnaire(questionnaire.getId());
 
+        System.out.println("we zijn hier voorbij");
         if (existingQuestion == null) {
             service.addQuestionnaire(questionnaire);
             return Response.status(Response.Status.CREATED).entity(questionnaire).build();

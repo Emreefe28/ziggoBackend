@@ -26,8 +26,6 @@ public class Customer extends User implements Serializable {
     @Column(name = "mobilePhone")
     private String mobilePhone;
 
-    @OneToMany
-    private Collection<Questionnaire> issues;
 
     public String getKlantNummer() {
         return klantNummer;
@@ -70,11 +68,4 @@ public class Customer extends User implements Serializable {
     }
 
 
-    public Collection<Questionnaire> getIssues() {
-        return issues;
-    }
-
-    public void setIssues(Collection<Questionnaire> issues) {
-        this.issues = issues;
-    }
 }

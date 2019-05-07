@@ -36,6 +36,7 @@ public class UserResource {
         return service.getAllUsers();
     }
 
+
     @POST
     @Path("/adduser")
     @Consumes(MediaType.APPLICATION_JSON)

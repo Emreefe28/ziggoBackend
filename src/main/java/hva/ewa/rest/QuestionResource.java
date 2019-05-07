@@ -8,7 +8,6 @@ package hva.ewa.rest;
 import hva.ewa.model.Category;
 import hva.ewa.model.Question;
 import hva.ewa.model.Questionnaire;
-import hva.ewa.rest.model.ClientError;
 import hva.ewa.service.QuestionnaireRepositoryService;
 import hva.ewa.service.impl.QuestionnaireRepositoryServiceImpl;
 //import hva.ewa.service.impl.QuestionnaireRepositoryServiceImpl;
@@ -18,10 +17,8 @@ import javax.ws.rs.core.Response;
 
 import java.util.List;
 
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
-
-    //http://localhost:8080/VodafoneZiggoApi-1.2/services/rest/question
+//http://localhost:8080/VodafoneZiggoApi-1.2/services/rest/question
 
 @Path("/question")
 public class QuestionResource {
@@ -94,15 +91,44 @@ private QuestionnaireRepositoryService service;
     @Produces(MediaType.APPLICATION_JSON)
 
     public Response addQuestionnaire(Questionnaire questionnaire) {
-        System.out.println("dit is het begin");
         Questionnaire existingQuestion = service.getQuestionnaire(questionnaire.getId());
 
-        System.out.println("we zijn hier voorbij");
         if (existingQuestion == null) {
             service.addQuestionnaire(questionnaire);
             return Response.status(Response.Status.CREATED).entity(questionnaire).build();
         } else {
             return Response.status(Response.Status.BAD_REQUEST).entity("user already exists").build();
+        }
+    }
+
+    @POST
+    @Path("/addcategory")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+
+    public Response addCategory(Category category) {
+        System.out.println("dit is het begin");
+        Category existingCategory = service.getCategory(category.getId());
+
+        System.out.println("we zijn hier voorbij");
+        if (existingCategory == null) {
+            service.addCategory(category);
+            return Response.status(Response.Status.CREATED).entity(category).build();
+        } else {
+            return Response.status(Response.Status.BAD_REQUEST).entity("user already exists").build();
+        }
+    }
+
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/category/{id}")
+    public Response getCategory(@PathParam("id") int id) {
+        Category category = service.getCategory(id);
+        if (category != null) {
+            return Response.status(Response.Status.OK).entity(category).build();
+        } else {
+            return Response.status(Response.Status.NO_CONTENT).build();
         }
     }
 

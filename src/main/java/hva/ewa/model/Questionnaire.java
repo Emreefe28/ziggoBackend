@@ -1,6 +1,7 @@
 package hva.ewa.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import javax.json.bind.annotation.JsonbDateFormat;
 import javax.json.bind.annotation.JsonbTransient;
@@ -17,8 +18,8 @@ public class Questionnaire {
 
     @Basic
     @Column(name = "created")
-    @JsonbDateFormat
-    private Timestamp created;
+    @JsonDeserialize
+    private String created;
 
     @ManyToOne
     @JoinColumn(name = "category", nullable = false)
@@ -37,11 +38,11 @@ public class Questionnaire {
         this.id = id;
     }
 
-    public Timestamp getCreated() {
+    public String getCreated() {
         return created;
     }
 
-    public void setCreated(Timestamp created) {
+    public void setCreated(String created) {
         this.created = created;
     }
 

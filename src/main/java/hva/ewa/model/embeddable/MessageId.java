@@ -8,6 +8,7 @@ import java.io.Serializable;
 @Embeddable
 public class MessageId implements Serializable {
 
+
     @Column(name = "id")
     private int id;
 

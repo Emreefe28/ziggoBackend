@@ -63,14 +63,16 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         return em.find(Question.class, questionId);
     }
 
-    @Override
-    public Category getCategorieFromId(int categorieId) {
-        return null;
-    }
+
 
     @Override
-    public void addCategorie(Category cat) {
+    public void addCategory(Category cat) {
+        EntityManager em = getEntityManager();
+        em.getTransaction().begin();
+        em.persist(cat);
+        em.getTransaction().commit();
 
+        em.close();
     }
 
     @Override
@@ -109,6 +111,14 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         System.out.println("GET QUESTIONNAIRE");
         System.out.println(em.find(Questionnaire.class, id));
         return em.find(Questionnaire.class, id);
+    }
+
+    @Override
+    public Category getCategory(int id) {
+        EntityManager em = getEntityManager();
+        System.out.println("GET QUESTION BITCH");
+        System.out.println(em.find(Category.class, id));
+        return em.find(Category.class, id);
     }
 
     @Override

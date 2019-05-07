@@ -15,9 +15,8 @@ public interface QuestionnaireRepositoryService {
 
     Question getQuestionFromId(int questionId);
 
-    Category getCategorieFromId(int categorieId);
 
-    void addCategorie(Category cat);
+    void addCategory(Category cat);
 
     void setResponce(Question question);
 
@@ -25,11 +24,14 @@ public interface QuestionnaireRepositoryService {
 
     void addQuestion(Question question);
 
+
     List<Question> getQuestionsOfQuestionnaire(Questionnaire questionnaire);
 
     Question getQuestionOfQuestionnaire(Questionnaire questionnaire, int questionId);
 
     Questionnaire getQuestionnaire(int id);
+
+    Category getCategory(int id);
 
     void addQuestionnaire(Questionnaire questionnaire);
 

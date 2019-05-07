@@ -62,7 +62,9 @@ private QuestionnaireRepositoryService service;
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/questionnaire/{id}")
     public Response getQuestionnaire(@PathParam("id") int id) {
+        System.out.println("eerste gedeelte");
         Questionnaire questionnaire = service.getQuestionnaire(id);
+        System.out.println("tweede gedeelte");
         if (questionnaire != null) {
             return Response.status(Response.Status.OK).entity(questionnaire).build();
         } else {
@@ -70,6 +72,37 @@ private QuestionnaireRepositoryService service;
         }
     }
 
+    @POST
+    @Path("/addquestion")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addQuestion(Question question) {
+
+        Question existingQuestion = service.getQuestionFromId(question.getId());
+
+        if (existingQuestion == null) {
+            service.addQuestion(question);
+            return Response.status(Response.Status.CREATED).entity(question).build();
+        } else {
+            return Response.status(Response.Status.BAD_REQUEST).entity("question already exists").build();
+        }
+    }
+
+    @POST
+    @Path("/addquestionnaire")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addQuestionnaire(Questionnaire questionnaire) {
+
+        Questionnaire existingQuestion = service.getQuestionnaire(questionnaire.getId());
+
+        if (existingQuestion == null) {
+            service.addQuestionnaire(questionnaire);
+            return Response.status(Response.Status.CREATED).entity(questionnaire).build();
+        } else {
+            return Response.status(Response.Status.BAD_REQUEST).entity("user already exists").build();
+        }
+    }
 
 
 
@@ -136,20 +169,6 @@ private QuestionnaireRepositoryService service;
 //    }
 //
 //
-    @POST
-    @Path("/addquestion")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response addQuestion(Question question) {
 
-        Question existingQuestion = service.getQuestionFromId(question.getId());
-
-        if (existingQuestion == null) {
-            service.addQuestion(question);
-            return Response.status(Response.Status.CREATED).entity(question).build();
-        } else {
-            return Response.status(Response.Status.BAD_REQUEST).entity("user already exists").build();
-        }
-    }
 
 }

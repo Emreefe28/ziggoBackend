@@ -106,9 +106,19 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
     @Override
     public Questionnaire getQuestionnaire(int id) {
         EntityManager em = getEntityManager();
-        System.out.println("GET QUESTION BITCH");
+        System.out.println("GET QUESTIONNAIRE");
         System.out.println(em.find(Questionnaire.class, id));
         return em.find(Questionnaire.class, id);
+    }
+
+    @Override
+    public void addQuestionnaire(Questionnaire questionnaire) {
+        EntityManager em = getEntityManager();
+        em.getTransaction().begin();
+        em.persist(questionnaire);
+        em.getTransaction().commit();
+
+        em.close();
     }
 
     @Override

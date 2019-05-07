@@ -31,6 +31,8 @@ public interface QuestionnaireRepositoryService {
 
     Questionnaire getQuestionnaire(int id);
 
+    void addQuestionnaire(Questionnaire questionnaire);
+
     void setResponce(String test);
 
 }

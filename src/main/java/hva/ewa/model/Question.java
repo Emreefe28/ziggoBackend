@@ -21,7 +21,12 @@ public class Question implements Serializable {
     @Basic
     @Column(name = "question")
     private String question;
-    
+//
+//    @Basic
+//    @Column(name = "answer")
+//    private boolean answer;
+
+
     public Question() {}
     
     public Question(int id, String title, String question) {

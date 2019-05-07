@@ -16,6 +16,9 @@ public class CustomerResource {
     public CustomerResource() {
         service = CustomerRepositoryServiceImpl.getInstance();
     }
+
+
+
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)

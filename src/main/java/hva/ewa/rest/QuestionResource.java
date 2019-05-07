@@ -1,51 +1,64 @@
-///*
-// * To change this license header, choose License Headers in Project Properties.
-// * To change this template file, choose Tools | Templates
-// * and open the template in the editor.
-// */
-//package hva.ewa.rest;
-//
-//import hva.ewa.model.Category;
-//import hva.ewa.model.Question;
-//import hva.ewa.rest.model.ClientError;
-//import hva.ewa.service.QuestionnaireRepositoryService;
-////import hva.ewa.service.impl.QuestionnaireRepositoryServiceImpl;
-//import javax.ws.rs.*;
-//import javax.ws.rs.core.MediaType;
-//import javax.ws.rs.core.Response;
-//
-//import java.util.List;
-//
-//import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
-//
-//public class QuestionResource {
-//
-//    /** A reference to the repository service */
-//    private QuestionnaireRepositoryService service;
-//
-//    public QuestionResource() {
-//        service = QuestionnaireRepositoryServiceImpl.getInstance();
-//    }
-//
-//    @GET
-//    @Path("/")
-//    @Produces(APPLICATION_JSON)
-//    public Response getAllQuestions(
-//            @PathParam("categorieId") int categorieId) {
-//
-//        Category category = service.getCategorieFromId(categorieId);
-//
-//        if(category == null) {
-//            return Response.status(Response.Status.NOT_FOUND).
-//                    entity(new ClientError("Category not found for id " + categorieId)).build();
-//        }
-//        List<Question> questions = service.getQuestionsOfCategorie(category);
-//
-//        return Response.status(Response.Status.OK).
-//                    entity(questions).build();
-//    }
-//
-//
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hva.ewa.rest;
+
+import hva.ewa.model.Category;
+import hva.ewa.model.Question;
+import hva.ewa.rest.model.ClientError;
+import hva.ewa.service.QuestionnaireRepositoryService;
+import hva.ewa.service.impl.QuestionnaireRepositoryServiceImpl;
+//import hva.ewa.service.impl.QuestionnaireRepositoryServiceImpl;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import java.util.List;
+
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+
+
+    //http://localhost:8080/VodafoneZiggoApi-1.2/services/rest/question
+
+@Path("/question")
+public class QuestionResource {
+
+    /**
+ * A reference to the repository service
+ */
+private QuestionnaireRepositoryService service;
+
+    public QuestionResource() {
+        service = QuestionnaireRepositoryServiceImpl.getInstance();
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Question> getAllQuestion() {
+
+        return service.getAllQuestion();
+    }
+
+
+
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{id}")
+    public Response getCustomer(@PathParam("id") int id) {
+        Question question = service.getQuestionFromId(id);
+        if (question != null) {
+            return Response.status(Response.Status.OK).entity(question).build();
+        } else {
+            return Response.status(Response.Status.NO_CONTENT).build();
+        }
+    }
+
+
+
+    //
 //    @GET
 //    @Path("/{questionId}")
 //    @Produces(APPLICATION_JSON)
@@ -108,32 +121,20 @@
 //    }
 //
 //
-//    @POST
-//    @Path("/question/{id}")
-//    @Consumes(APPLICATION_JSON)
-//    @Produces(APPLICATION_JSON)
-//    public Response addQuestion(
-//            @PathParam("id") int questionId,
-//            Question question) {
-//
-//        Category card = service.getCategorieFromId(questionId);
-//
-//        if(card == null) {
-//            return Response.status(Response.Status.NOT_FOUND).
-//                        entity(new ClientError("Question not found for id " + questionId)).build();
-//        }
-//
-//        boolean created = service.addQuestion(card, question);
-//
-//        if(created) {
-//            return Response.status(Response.Status.CREATED).build();
-//        } else {
-//            return Response.status(Response.Status.BAD_REQUEST).
-//                        entity(new ClientError("Question already exists for id " + question.getId())).build();
-//
-//        }
-//
-//    }
-//
-//
-//}
+    @POST
+    @Path("/addquestion")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addQuestion(Question question) {
+
+        Question existingQuestion = service.getQuestionFromId(question.getId());
+
+        if (existingQuestion == null) {
+            service.addQuestion(question);
+            return Response.status(Response.Status.CREATED).entity(question).build();
+        } else {
+            return Response.status(Response.Status.BAD_REQUEST).entity("user already exists").build();
+        }
+    }
+
+}

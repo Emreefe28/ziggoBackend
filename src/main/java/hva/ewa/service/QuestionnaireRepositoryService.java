@@ -29,6 +29,8 @@ public interface QuestionnaireRepositoryService {
 
     Question getQuestionOfQuestionnaire(Questionnaire questionnaire, int questionId);
 
+    Questionnaire getQuestionnaire(int id);
+
     void setResponce(String test);
 
 }

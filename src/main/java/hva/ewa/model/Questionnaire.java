@@ -55,14 +55,25 @@ public class Questionnaire {
     }
 
 
-
     public boolean addQuestion(Question q) {
-        if(checkDuplicates(q)) {
+        if (checkDuplicates(q)) {
             return false;
         }
         getQuestions().add(q);
         return true;
     }
+
+    public Question getQuestionFromId(int id) {
+        for (Question quest : questions) {
+            if (quest.getId() == id) {
+                return quest;
+            }
+            
+        }
+        Question nullo = new Question();
+        return nullo;
+    }
+
 
     private boolean checkDuplicates(Question q) {
         for(Question check : getQuestions()) {

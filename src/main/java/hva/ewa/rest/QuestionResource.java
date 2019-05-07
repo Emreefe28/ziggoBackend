@@ -7,6 +7,7 @@ package hva.ewa.rest;
 
 import hva.ewa.model.Category;
 import hva.ewa.model.Question;
+import hva.ewa.model.Questionnaire;
 import hva.ewa.rest.model.ClientError;
 import hva.ewa.service.QuestionnaireRepositoryService;
 import hva.ewa.service.impl.QuestionnaireRepositoryServiceImpl;
@@ -47,7 +48,7 @@ private QuestionnaireRepositoryService service;
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{id}")
-    public Response getCustomer(@PathParam("id") int id) {
+    public Response getQuestion(@PathParam("id") int id) {
         Question question = service.getQuestionFromId(id);
         if (question != null) {
             return Response.status(Response.Status.OK).entity(question).build();
@@ -55,6 +56,20 @@ private QuestionnaireRepositoryService service;
             return Response.status(Response.Status.NO_CONTENT).build();
         }
     }
+
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/questionnaire/{id}")
+    public Response getQuestionnaire(@PathParam("id") int id) {
+        Questionnaire questionnaire = service.getQuestionnaire(id);
+        if (questionnaire != null) {
+            return Response.status(Response.Status.OK).entity(questionnaire).build();
+        } else {
+            return Response.status(Response.Status.NO_CONTENT).build();
+        }
+    }
+
 
 
 

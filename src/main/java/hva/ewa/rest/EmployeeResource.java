@@ -1,5 +1,6 @@
 package hva.ewa.rest;
 
+import hva.ewa.model.Employee;
 import hva.ewa.model.User;
 import hva.ewa.service.EmployeeRepositoryService;
 import hva.ewa.service.impl.EmployeeRespositoryServiceImpl;
@@ -29,7 +30,7 @@ public class EmployeeResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createEmployee(User employee){
+    public Response createEmployee(Employee employee){
         boolean isSaved = service.saveEmployee(employee);
         if(isSaved) {
             return Response.status(Response.Status.CREATED).entity(employee).build();

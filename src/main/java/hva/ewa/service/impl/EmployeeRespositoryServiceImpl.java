@@ -1,5 +1,6 @@
 package hva.ewa.service.impl;
 
+import hva.ewa.model.Employee;
 import hva.ewa.model.User;
 import hva.ewa.service.EmployeeRepositoryService;
 import hva.ewa.service.RepositoryService;
@@ -17,15 +18,16 @@ public class EmployeeRespositoryServiceImpl extends RepositoryService implements
     }
 
     @Override
-    public boolean saveEmployee(User user) {
+    public boolean saveEmployee(Employee employee) {
         try {
             EntityManager em = getEntityManager();
             em.getTransaction().begin();
-            em.persist(user);
+            em.persist(employee);
             em.getTransaction().commit();
             em.close();
             return true;
-        }catch(Exception e){
+        } catch (Exception e) {
+
             return false;
         }
     }
@@ -33,12 +35,12 @@ public class EmployeeRespositoryServiceImpl extends RepositoryService implements
     @Override
     public List<User> getAllEmployees() {
         EntityManager em = getEntityManager();
-        Query query = em.createQuery("SELECT e FROM User e WHERE e.role = 2");
+        Query query = em.createQuery("SELECT e FROM Employee e");
         return query.getResultList();
     }
 
     @Override
-    public boolean deleteEmployee(int id) {
+    public boolean deleteEmployee(Employee employee) {
         return false;
     }
 
@@ -48,7 +50,7 @@ public class EmployeeRespositoryServiceImpl extends RepositoryService implements
     }
 
     @Override
-    public boolean editEmployee(int id) {
+    public boolean editEmployee(Employee employee) {
         return false;
     }
 }

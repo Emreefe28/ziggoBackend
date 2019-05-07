@@ -1,5 +1,8 @@
 package hva.ewa.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
@@ -17,9 +20,11 @@ public class Questionnaire {
 
     @ManyToOne
     @JoinColumn(name = "category", nullable = false)
+    @JsonbTransient
     private Category category;
 
     @OneToMany
+    @JsonbTransient
     private Collection<Question> questions;
 
     public int getId() {
@@ -68,7 +73,7 @@ public class Questionnaire {
             if (quest.getId() == id) {
                 return quest;
             }
-            
+
         }
         Question nullo = new Question();
         return nullo;

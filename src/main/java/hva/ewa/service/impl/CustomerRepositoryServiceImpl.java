@@ -1,11 +1,14 @@
 package hva.ewa.service.impl;
 
 import hva.ewa.model.Customer;
+import hva.ewa.model.MonteursAfspraak;
 import hva.ewa.service.CustomerRepositoryService;
 import hva.ewa.service.RepositoryService;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceException;
+import javax.persistence.Query;
+import java.util.List;
 
 public class CustomerRepositoryServiceImpl extends RepositoryService implements CustomerRepositoryService {
 
@@ -18,9 +21,7 @@ public class CustomerRepositoryServiceImpl extends RepositoryService implements 
     @Override
     public Customer getCustomer(int id) {
         EntityManager em = getEntityManager();
-        System.out.println("GET CUSTOMER BITCH");
-        System.out.println(em.find(Customer.class, id));
-        return em.find(Customer.class, id);
+         return em.find(Customer.class, id);
     }
 
     @Override
@@ -30,7 +31,15 @@ public class CustomerRepositoryServiceImpl extends RepositoryService implements 
             em.merge(customer);
             return true;
         } catch (PersistenceException pE){
+            pE.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public List<MonteursAfspraak> getMonteursAfspraken(int id) {
+        EntityManager em = getEntityManager();
+        Query query = em.createQuery("SELECT m FROM MonteursAfspraak m WHERE m.id.customer.id = "  + id );
+        return query.getResultList();
     }
 }

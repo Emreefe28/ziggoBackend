@@ -1,7 +1,6 @@
 package hva.ewa.rest;
 
 import hva.ewa.model.Employee;
-import hva.ewa.model.User;
 import hva.ewa.service.EmployeeRepositoryService;
 import hva.ewa.service.impl.EmployeeRespositoryServiceImpl;
 

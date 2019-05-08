@@ -70,5 +70,9 @@ public class Customer extends User implements Serializable {
         this.mobilePhone = mobilePhone;
     }
 
+    public void addIssues(Questionnaire questionnaire){
+        issues.add(questionnaire);
+    }
+
 
 }

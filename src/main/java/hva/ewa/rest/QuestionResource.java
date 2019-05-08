@@ -131,19 +131,32 @@ private QuestionnaireRepositoryService service;
         }
     }
 
-//
-//    @POST
-//    @Path("/questionnaire/addquestion")
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    @Produces(MediaType.APPLICATION_JSON)
-//
-//    public void addQuestionToQuestionnaire(int questionnaireId, int questionId) {
-//
-//        service.addQuestionToQuestionnaire(questionnaireId, questionId);
-//        System.out.println("we zijn hier voorbij");
-//    }
+    @POST
+    @Path("/addquestion/questionnaire/{questionnaireId}/{questionId}")
+    @Produces(MediaType.APPLICATION_JSON)
+
+    public Response addQuestionToQuestionnaire (@PathParam("questionnaireId") int id, @PathParam("questionId") int questionId) {
 
 
+        service.addQuestionToQuestionnaire(id,questionId);
+
+        return Response.ok().build();
+
+    }
+
+
+    @POST
+    @Path("/addquestionaire/user/{customerId}/{questionnaireId}")
+    @Produces(MediaType.APPLICATION_JSON)
+
+    public Response addQuestionnaireToCustomer (@PathParam("customerId") int customerId, @PathParam("questionnaireId") int questionnaireId) {
+
+
+        service.addQuestionnaireToCustomer(customerId,questionnaireId);
+
+        return Response.ok().build();
+
+    }
 
     //
 //    @GET

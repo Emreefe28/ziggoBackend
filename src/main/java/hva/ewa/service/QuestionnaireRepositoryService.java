@@ -34,7 +34,9 @@ public interface QuestionnaireRepositoryService {
 
     void addQuestionnaire(int category, Questionnaire questionnaire);
 
-    void addQuestionToQuestionnaire(int questionId, int questionnaireId);
+    void addQuestionToQuestionnaire(int questionnaireId, int questionId);
+
+    void addQuestionnaireToCustomer(int user, int questionnaireId);
 
     void setResponce(String test);
 

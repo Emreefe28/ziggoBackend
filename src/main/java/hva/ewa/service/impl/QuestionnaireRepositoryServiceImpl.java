@@ -5,10 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import hva.ewa.model.Category;
-import hva.ewa.model.Customer;
-import hva.ewa.model.Question;
-import hva.ewa.model.Questionnaire;
+import hva.ewa.model.*;
 import hva.ewa.service.QuestionnaireRepositoryService;
 import hva.ewa.service.RepositoryService;
 
@@ -124,6 +121,8 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
     @Override
     public void addQuestionnaire(int categoryId, Questionnaire questionnaire) {
 
+        questionnaire.setCategory(getCategory(categoryId));
+
         EntityManager em = getEntityManager();
         em.getTransaction().begin();
 
@@ -132,14 +131,52 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         em.getTransaction().commit();
 
         em.close();
-
     }
 
     @Override
     public void addQuestionToQuestionnaire(int questionnaireId, int questionId) {
 
-        getQuestionnaire(questionnaireId).addQuestion(getQuestionFromId(questionId));
+        //retrieve het questionaiire object van database, voeg er een question aan toe en persist t
+        Questionnaire questionnaire = getQuestionnaire(questionnaireId);
+        Question question = getQuestionFromId(questionId);
+
+
+        questionnaire.addQuestion(question);
+        EntityManager em = getEntityManager();
+        em.getTransaction().begin();
+
+        em.merge(questionnaire);
+
+        em.getTransaction().commit();
+
+        em.close();
+
     }
+
+    @Override
+    public void addQuestionnaireToCustomer(int user, int questionnaireId) {
+
+
+        CustomerRepositoryServiceImpl instance = new CustomerRepositoryServiceImpl();
+        Customer customer = instance.getCustomer(user);
+        Questionnaire questionnaire = getQuestionnaire(questionnaireId);
+
+
+        System.out.println("--------------DIT IS DE LINE VAN CUSTOMER:"+customer.getAdres()+"--------------");
+        System.out.println("--------------DIT IS DE LINE VAN QUESTIONNAIRE"+questionnaire.getId()+"-------------");
+        customer.addIssues(questionnaire);
+
+
+        EntityManager em = getEntityManager();
+        em.getTransaction().begin();
+
+        em.merge(customer);
+
+        em.getTransaction().commit();
+
+        em.close();
+    }
+
 
     @Override
     public void setResponce(String test) {

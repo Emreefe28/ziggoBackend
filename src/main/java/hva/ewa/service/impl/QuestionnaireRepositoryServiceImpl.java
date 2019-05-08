@@ -122,13 +122,23 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
     }
 
     @Override
-    public void addQuestionnaire(Questionnaire questionnaire) {
+    public void addQuestionnaire(int categoryId, Questionnaire questionnaire) {
+
         EntityManager em = getEntityManager();
         em.getTransaction().begin();
+
         em.persist(questionnaire);
+
         em.getTransaction().commit();
 
         em.close();
+
+    }
+
+    @Override
+    public void addQuestionToQuestionnaire(int questionnaireId, int questionId) {
+
+        getQuestionnaire(questionnaireId).addQuestion(getQuestionFromId(questionId));
     }
 
     @Override

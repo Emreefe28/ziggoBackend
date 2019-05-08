@@ -34,6 +34,11 @@ public class Category implements Serializable {
         this.name = name;
     }
 
+    public Questionnaire  addQuestionnaire(Questionnaire questionnaire){
+//        questionnaires.add(questionnaire);
+        return questionnaire;
+
+    }
     public Collection<Questionnaire> getQuestionnaires() {
         return questionnaires;
     }

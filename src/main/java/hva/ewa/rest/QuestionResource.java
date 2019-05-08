@@ -86,19 +86,17 @@ private QuestionnaireRepositoryService service;
     }
 
     @POST
-    @Path("/addquestionnaire")
+    @Path("/addquestionnaire/{categoryId}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
 
-    public Response addQuestionnaire(Questionnaire questionnaire) {
-        Questionnaire existingQuestion = service.getQuestionnaire(questionnaire.getId());
+    public Response addQuestionnaire (@PathParam("categoryId") int id, Questionnaire questionnaire) {
 
-        if (existingQuestion == null) {
-            service.addQuestionnaire(questionnaire);
+
+            service.addQuestionnaire(id,questionnaire);
             return Response.status(Response.Status.CREATED).entity(questionnaire).build();
-        } else {
-            return Response.status(Response.Status.BAD_REQUEST).entity("user already exists").build();
-        }
+
+
     }
 
     @POST
@@ -119,6 +117,7 @@ private QuestionnaireRepositoryService service;
         }
     }
 
+
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -131,6 +130,18 @@ private QuestionnaireRepositoryService service;
             return Response.status(Response.Status.NO_CONTENT).build();
         }
     }
+
+//
+//    @POST
+//    @Path("/questionnaire/addquestion")
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    @Produces(MediaType.APPLICATION_JSON)
+//
+//    public void addQuestionToQuestionnaire(int questionnaireId, int questionId) {
+//
+//        service.addQuestionToQuestionnaire(questionnaireId, questionId);
+//        System.out.println("we zijn hier voorbij");
+//    }
 
 
 

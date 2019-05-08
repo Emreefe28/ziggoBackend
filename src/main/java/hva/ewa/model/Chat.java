@@ -20,7 +20,7 @@ public class Chat implements Serializable {
     private Integer rating;
 
     @OneToMany(mappedBy="id.chat", cascade = CascadeType.ALL,
-            orphanRemoval = true,fetch = FetchType.LAZY)
+            orphanRemoval = true, fetch = FetchType.LAZY)
     private Collection<Message> messages;
 
     public String getId() {

@@ -27,6 +27,9 @@ public class Customer extends User implements Serializable {
     private String mobilePhone;
 
 
+    @OneToMany
+    private Collection<Questionnaire> issues;
+
     public String getKlantNummer() {
         return klantNummer;
     }

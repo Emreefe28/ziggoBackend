@@ -15,6 +15,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import java.util.Collection;
 import java.util.List;
 
 
@@ -32,6 +33,12 @@ private QuestionnaireRepositoryService service;
         service = QuestionnaireRepositoryServiceImpl.getInstance();
     }
 
+    /*
+    ---------------------------------------------------------------------------------
+    HIERZO ZIJN METHODES DIE MET QUESTION TE MAKEN HEBBEN MET QUESTION OPHALEN/POSTEN
+    ---------------------------------------------------------------------------------
+     */
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Question> getAllQuestion() {
@@ -39,34 +46,12 @@ private QuestionnaireRepositoryService service;
         return service.getAllQuestion();
     }
 
-
-
+    @Path("/questions/{questionnaireId}")
     @GET
-    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{id}")
-    public Response getQuestion(@PathParam("id") int id) {
-        Question question = service.getQuestionFromId(id);
-        if (question != null) {
-            return Response.status(Response.Status.OK).entity(question).build();
-        } else {
-            return Response.status(Response.Status.NO_CONTENT).build();
-        }
-    }
+    public Collection<Question> getAllQuestionOfQuestionnaire(@PathParam("questionnaireId") int questionnaireId) {
 
-    @GET
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/questionnaire/{id}")
-    public Response getQuestionnaire(@PathParam("id") int id) {
-        System.out.println("eerste gedeelte");
-        Questionnaire questionnaire = service.getQuestionnaire(id);
-        System.out.println("tweede gedeelte");
-        if (questionnaire != null) {
-            return Response.status(Response.Status.OK).entity(questionnaire).build();
-        } else {
-            return Response.status(Response.Status.NO_CONTENT).build();
-        }
+        return service.getQuestionsOfQuestionnaire(questionnaireId);
     }
 
     @POST
@@ -85,6 +70,81 @@ private QuestionnaireRepositoryService service;
         }
     }
 
+
+
+
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{id}")
+    public Response getQuestion(@PathParam("id") int id) {
+        Question question = service.getQuestionFromId(id);
+        if (question != null) {
+            return Response.status(Response.Status.OK).entity(question).build();
+        } else {
+            return Response.status(Response.Status.NO_CONTENT).build();
+        }
+    }
+
+
+    @POST
+    @Path("/addquestion/questionnaire/{questionnaireId}/{questionId}")
+    @Produces(MediaType.APPLICATION_JSON)
+
+    public Response addQuestionToQuestionnaire (@PathParam("questionnaireId") int id, @PathParam("questionId") int questionId) {
+
+
+        service.addQuestionToQuestionnaire(id,questionId);
+
+        return Response.ok().build();
+
+    }
+
+
+    /*
+    ---------------------------------------------------------------------------
+    HIER ZIJN DE METHODES DIE TE MAKEN HEBBEN MET QUESTIONNAIRES POSTEN/OPHALEN
+    ---------------------------------------------------------------------------
+     */
+
+    @POST
+    @Path("/addquestionaire/user/{customerId}/{questionnaireId}")
+    @Produces(MediaType.APPLICATION_JSON)
+
+    public Response addQuestionnaireToCustomer (@PathParam("customerId") int customerId, @PathParam("questionnaireId") int questionnaireId) {
+
+
+        service.addQuestionnaireToCustomer(customerId,questionnaireId);
+
+        return Response.ok().build();
+
+    }
+
+
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/questionnaire/{id}")
+    public Response getQuestionnaire(@PathParam("id") int id) {
+        System.out.println("eerste gedeelte");
+        Questionnaire questionnaire = service.getQuestionnaire(id);
+        System.out.println("tweede gedeelte");
+        if (questionnaire != null) {
+            return Response.status(Response.Status.OK).entity(questionnaire).build();
+        } else {
+            return Response.status(Response.Status.NO_CONTENT).build();
+        }
+    }
+    @Path("/userquestionnaires/{userId}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Collection<Questionnaire> getQuestionnairesFromUser(@PathParam("userId") int userId) {
+
+       return service.getQuestionnairesFromUser(userId);
+    }
+
+
+
     @POST
     @Path("/addquestionnaire/{categoryId}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -96,9 +156,14 @@ private QuestionnaireRepositoryService service;
             service.addQuestionnaire(id,questionnaire);
             return Response.status(Response.Status.CREATED).entity(questionnaire).build();
 
-
     }
 
+
+    /*
+    ---------------------------------------------------------------------
+    HIER ZIJN DE METHODES DIE TE MAKEN HEBBEN MET CATEGORY OPHALEN/POSTEN
+    ---------------------------------------------------------------------
+     */
     @POST
     @Path("/addcategory")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -131,32 +196,9 @@ private QuestionnaireRepositoryService service;
         }
     }
 
-    @POST
-    @Path("/addquestion/questionnaire/{questionnaireId}/{questionId}")
-    @Produces(MediaType.APPLICATION_JSON)
-
-    public Response addQuestionToQuestionnaire (@PathParam("questionnaireId") int id, @PathParam("questionId") int questionId) {
 
 
-        service.addQuestionToQuestionnaire(id,questionId);
 
-        return Response.ok().build();
-
-    }
-
-
-    @POST
-    @Path("/addquestionaire/user/{customerId}/{questionnaireId}")
-    @Produces(MediaType.APPLICATION_JSON)
-
-    public Response addQuestionnaireToCustomer (@PathParam("customerId") int customerId, @PathParam("questionnaireId") int questionnaireId) {
-
-
-        service.addQuestionnaireToCustomer(customerId,questionnaireId);
-
-        return Response.ok().build();
-
-    }
 
     //
 //    @GET

@@ -4,6 +4,7 @@ import hva.ewa.model.Category;
 import hva.ewa.model.Question;
 import hva.ewa.model.Questionnaire;
 
+import java.util.Collection;
 import java.util.List;
 
 
@@ -24,13 +25,18 @@ public interface QuestionnaireRepositoryService {
 
     void addQuestion(Question question);
 
-    List<Question> getQuestionsOfQuestionnaire(Questionnaire questionnaire);
+    Collection<Question> getQuestionsOfQuestionnaire(int questionnaireId);
 
     Question getQuestionOfQuestionnaire(Questionnaire questionnaire, int questionId);
 
     Questionnaire getQuestionnaire(int id);
 
     Category getCategory(int id);
+
+    Collection<Questionnaire> getQuestionnairesFromUser(int userId);
+
+    Questionnaire getQuestionnaireFromUser(int userId, int questionId);
+
 
     void addQuestionnaire(int category, Questionnaire questionnaire);
 

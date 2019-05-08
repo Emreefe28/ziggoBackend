@@ -1,9 +1,6 @@
 package hva.ewa.service.impl;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import hva.ewa.model.*;
 import hva.ewa.service.QuestionnaireRepositoryService;
@@ -11,6 +8,7 @@ import hva.ewa.service.RepositoryService;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
 
 /**
  *
@@ -41,14 +39,10 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         @Override
         public List<Question> getAllQuestion() {
 
-            EntityManager em = entityManagerFactory.createEntityManager();
+            EntityManager em = getEntityManager();
+            Query query = em.createQuery("SELECT q FROM Question q");
+            return query.getResultList();
 
-            List<Question> questions =
-                    em.createQuery("SELECT q FROM Question q WHERE id is not null ").getResultList();
-
-            em.close();
-
-            return questions;
         }
 
 
@@ -58,6 +52,8 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         System.out.println("GET QUESTION BITCH");
         System.out.println(em.find(Question.class, questionId));
         return em.find(Question.class, questionId);
+
+
     }
 
 
@@ -93,8 +89,12 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
     }
 
     @Override
-    public List<Question> getQuestionsOfQuestionnaire(Questionnaire questionnaire) {
-        return null;
+    public Collection<Question> getQuestionsOfQuestionnaire(int questionnaireId) {
+
+       Questionnaire questionnaire=getQuestionnaire(questionnaireId);
+       return questionnaire.getQuestions();
+
+
     }
 
     @Override
@@ -119,6 +119,22 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
     }
 
     @Override
+    public Collection<Questionnaire> getQuestionnairesFromUser(int userId) {
+
+        CustomerRepositoryServiceImpl instance = new CustomerRepositoryServiceImpl();
+        Customer customer= instance.getCustomer(userId);
+
+        return customer.getIssues();
+
+
+    }
+
+    @Override
+    public Questionnaire getQuestionnaireFromUser(int userId, int questionId) {
+        return null;
+    }
+
+    @Override
     public void addQuestionnaire(int categoryId, Questionnaire questionnaire) {
 
         questionnaire.setCategory(getCategory(categoryId));
@@ -136,7 +152,7 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
     @Override
     public void addQuestionToQuestionnaire(int questionnaireId, int questionId) {
 
-        //retrieve het questionaiire object van database, voeg er een question aan toe en persist t
+        //retrieve het questionnaire object van database, voeg er een question aan toe en persist t
         Questionnaire questionnaire = getQuestionnaire(questionnaireId);
         Question question = getQuestionFromId(questionId);
 

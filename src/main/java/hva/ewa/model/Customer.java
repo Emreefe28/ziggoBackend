@@ -74,5 +74,11 @@ public class Customer extends User implements Serializable {
         issues.add(questionnaire);
     }
 
+    public Collection<Questionnaire> getIssues() {
+        return issues;
+    }
 
+    public void setIssues(Collection<Questionnaire> issues) {
+        this.issues = issues;
+    }
 }

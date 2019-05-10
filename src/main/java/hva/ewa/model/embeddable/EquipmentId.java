@@ -1,28 +1,29 @@
 package hva.ewa.model.embeddable;
 
 import hva.ewa.model.Customer;
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.io.Serializable;
-import java.sql.Timestamp;
 
 @Embeddable
-public class MonteurAfspraakId implements Serializable {
+public class EquipmentId implements Serializable {
 
-    @Column(name = "datum", nullable = false)
-    private Timestamp datum;
+    @Column(name = "type")
+    private String type;
 
     @ManyToOne
     @JoinColumn(name = "idUser", nullable = false)
     private Customer customer;
 
 
-    public Timestamp getDatum() {
-        return datum;
+    public String getType() {
+        return type;
     }
 
-    public void setDatum(Timestamp datum) {
-        this.datum = datum;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Customer getCustomer() {

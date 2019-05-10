@@ -9,14 +9,15 @@ import java.io.Serializable;
 public class Employee extends User implements Serializable {
 
     @Basic
-    @Column(name = "afdeling")
-    private String afdeling;
+    @Column(name = "department")
+    private String department;
 
-    public String getAfdeling() {
-        return afdeling;
+
+    public String getDepartment() {
+        return department;
     }
 
-    public void setAfdeling(String afdeling) {
-        this.afdeling = afdeling;
+    public void setDepartment(String department) {
+        this.department = department;
     }
 }

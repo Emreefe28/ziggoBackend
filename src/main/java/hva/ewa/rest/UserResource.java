@@ -1,9 +1,13 @@
 package hva.ewa.rest;
 
+import hva.ewa.model.Employee;
 import hva.ewa.model.User;
 import hva.ewa.rest.model.WebToken;
 import hva.ewa.service.UserRepositoryService;
+import hva.ewa.service.impl.CustomerRepositoryServiceImpl;
+import hva.ewa.service.impl.EmployeeRespositoryServiceImpl;
 import hva.ewa.service.impl.UserRepositoryServiceImpl;
+
 import java.util.List;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -18,7 +22,9 @@ import javax.ws.rs.core.Response;
 @Path("users") // http://localhost:8080/VodafoneZiggoApi-1.2/services/rest/users
 public class UserResource {
 
-    /** a reference to the repository service */
+    /**
+     * a reference to the repository service
+     */
     private UserRepositoryService service;
 
     public UserResource() {
@@ -27,6 +33,7 @@ public class UserResource {
 
     /**
      * Get all users
+     *
      * @return a JSON representation of a list of users
      */
     @GET
@@ -60,10 +67,9 @@ public class UserResource {
 
         user = service.checkCredentials(user.getEmail(), user.getPassword());
 
-        if(user != null) {
+        if (user != null) {
             return Response.status(Response.Status.CREATED).entity(user).build();
-        }
-        else{
+        } else {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
 
@@ -78,7 +84,7 @@ public class UserResource {
 
         User user = jwt.validateToken(jwtToken);
 
-        if(user==null) {
+        if (user == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
 
@@ -94,8 +100,7 @@ public class UserResource {
         User user = service.getUserFromId(id);
         try {
             service.deleteUser(user);
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             return Response.status(Response.Status.OK).entity(e).build();
         }
         return Response.status(Response.Status.OK).build();
@@ -106,14 +111,26 @@ public class UserResource {
     @Consumes({MediaType.APPLICATION_JSON})
     @PUT
     @Produces({MediaType.APPLICATION_JSON})
-    public Response changeUser(User user){
+    public Response changeUser(User user) {
         try {
-                service.changeUser(user);
-                return Response.status(Response.Status.OK).entity(user).build();
-            } catch (Exception e) {
-                return Response.status(Response.Status.NOT_FOUND).entity(e).build();
-            }
+            service.changeUser(user);
+            return Response.status(Response.Status.OK).entity(user).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.NOT_FOUND).entity(e).build();
+        }
 
     }
 
+    @GET
+    @Path("/{id}/type")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response checkUserType(@PathParam("id") int id) {
+        User user = CustomerRepositoryServiceImpl.getInstance().getCustomer(id);
+        String userType = "customer";
+        if (user == null) {
+            Employee employee = EmployeeRespositoryServiceImpl.getInstance().getEmployee(id);
+            userType = employee.getDepartment();
+        }
+        return Response.status(Response.Status.OK).entity(userType).build();
+    }
 }

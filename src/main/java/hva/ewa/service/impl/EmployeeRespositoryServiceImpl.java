@@ -1,7 +1,6 @@
 package hva.ewa.service.impl;
 
 import hva.ewa.model.Employee;
-import hva.ewa.model.User;
 import hva.ewa.service.EmployeeRepositoryService;
 import hva.ewa.service.RepositoryService;
 
@@ -33,7 +32,7 @@ public class EmployeeRespositoryServiceImpl extends RepositoryService implements
     }
 
     @Override
-    public List<User> getAllEmployees() {
+    public List<Employee> getAllEmployees() {
         EntityManager em = getEntityManager();
         Query query = em.createQuery("SELECT e FROM Employee e");
         return query.getResultList();
@@ -45,8 +44,9 @@ public class EmployeeRespositoryServiceImpl extends RepositoryService implements
     }
 
     @Override
-    public User getEmployee(int id) {
-        return null;
+    public Employee getEmployee(int id) {
+        EntityManager em = getEntityManager();
+        return em.find(Employee.class, id);
     }
 
     @Override

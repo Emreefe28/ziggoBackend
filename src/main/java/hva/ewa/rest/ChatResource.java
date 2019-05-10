@@ -3,7 +3,6 @@ package hva.ewa.rest;
 import hva.ewa.model.Chat;
 import hva.ewa.service.ChatRepositoryService;
 import hva.ewa.service.impl.ChatRepositoryServiceImpl;
-import jdk.nashorn.internal.objects.annotations.Getter;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

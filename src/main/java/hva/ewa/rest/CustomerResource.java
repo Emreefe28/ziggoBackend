@@ -1,7 +1,7 @@
 package hva.ewa.rest;
 
 import hva.ewa.model.Customer;
-import hva.ewa.model.MonteursAfspraak;
+import hva.ewa.model.Appointment;
 import hva.ewa.service.CustomerRepositoryService;
 import hva.ewa.service.impl.CustomerRepositoryServiceImpl;
 
@@ -32,11 +32,11 @@ public class CustomerResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{id}/monteursafspraken")
-    public Response getMonteurAfspraken(@PathParam("id") int id) {
-        List<MonteursAfspraak> monteursAfspraken = service.getMonteursAfspraken(id);
-        if (monteursAfspraken != null) {
-            return Response.status(Response.Status.OK).entity(monteursAfspraken).build();
+    @Path("/{id}/appointments")
+    public Response getAppointments(@PathParam("id") int id) {
+        List<Appointment> appointments = service.getAppointments(id);
+        if (appointments != null) {
+            return Response.status(Response.Status.OK).entity(appointments).build();
         } else {
             return Response.status(Response.Status.NO_CONTENT).build();
         }

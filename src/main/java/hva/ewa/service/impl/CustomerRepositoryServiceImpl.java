@@ -1,7 +1,7 @@
 package hva.ewa.service.impl;
 
 import hva.ewa.model.Customer;
-import hva.ewa.model.MonteursAfspraak;
+import hva.ewa.model.Appointment;
 import hva.ewa.service.CustomerRepositoryService;
 import hva.ewa.service.RepositoryService;
 
@@ -37,9 +37,9 @@ public class CustomerRepositoryServiceImpl extends RepositoryService implements 
     }
 
     @Override
-    public List<MonteursAfspraak> getMonteursAfspraken(int id) {
+    public List<Appointment> getAppointments(int id) {
         EntityManager em = getEntityManager();
-        Query query = em.createQuery("SELECT m FROM MonteursAfspraak m WHERE m.id.customer.id = "  + id );
+        Query query = em.createQuery("SELECT m FROM Appointment m WHERE m.id.customer.id = "  + id );
         return query.getResultList();
     }
 }

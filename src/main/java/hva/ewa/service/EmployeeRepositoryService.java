@@ -8,11 +8,11 @@ import java.util.List;
 public interface EmployeeRepositoryService {
     boolean saveEmployee(Employee employee);
 
-    List<User> getAllEmployees();
+    List<Employee> getAllEmployees();
 
     boolean deleteEmployee(Employee employee);
 
-    User getEmployee(int id);
+    Employee getEmployee(int id);
 
     boolean editEmployee(Employee employee);
 }

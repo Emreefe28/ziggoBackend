@@ -8,15 +8,15 @@ import java.util.Collection;
 public class Customer extends User implements Serializable {
 
     @Basic
-    @Column(name = "klantNummer", nullable = false, unique = true)
-    private String klantNummer;
+    @Column(name = " customerCode", nullable = false, unique = true)
+    private String customerCode;
 
     @Basic
-    @Column(name = "adres", nullable = false, unique = true)
-    private String adres;
+    @Column(name = "address", nullable = false, unique = true)
+    private String address;
     @Basic
-    @Column(name = "birthday", nullable = false)
-    private Date birthday;
+    @Column(name = "birthdate", nullable = false)
+    private Date birthdate;
 
     @Basic
     @Column(name = "phone", nullable = false, unique = true)
@@ -29,28 +29,29 @@ public class Customer extends User implements Serializable {
     @OneToMany
     private Collection<Questionnaire> issues;
 
-    public String getKlantNummer() {
-        return klantNummer;
+
+    public String getCustomerCode() {
+        return customerCode;
     }
 
-    public void setKlantNummer(String klantNummer) {
-        this.klantNummer = klantNummer;
+    public void setCustomerCode(String customerCode) {
+        this.customerCode = customerCode;
     }
 
-    public String getAdres() {
-        return adres;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdres(String adres) {
-        this.adres = adres;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public Date getBirthday() {
-        return birthday;
+    public Date getBirthdate() {
+        return birthdate;
     }
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
     }
 
     public String getPhone() {
@@ -68,7 +69,6 @@ public class Customer extends User implements Serializable {
     public void setMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
     }
-
 
     public Collection<Questionnaire> getIssues() {
         return issues;

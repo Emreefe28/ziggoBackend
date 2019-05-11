@@ -34,7 +34,7 @@ io.on('connection', (socket) => {
     socket.on('check-out', () => {
         for (var i = 0; i < employees.length; ++i) {
             var e = employees[i];
-            console.log(employees[i].employee.name + ' checked out');
+            console.log(employees[i].employee + ' checked out');
             if (e.socketId === socket.id) {
                 employees.splice(i, 1);
             }
@@ -65,7 +65,7 @@ io.on('connection', (socket) => {
     socket.on('disconnect', function () {
         for (var i = 0; i < employees.length; ++i) {
             var e = employees[i];
-            console.log(employees[i].employee.name + ' terminated the connection');
+            console.log(employees[i].employee + ' terminated the connection');
             if (e.socketId === socket.id) {
                 employees.splice(i, 1);
             }

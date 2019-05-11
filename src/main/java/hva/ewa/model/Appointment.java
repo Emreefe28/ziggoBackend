@@ -1,5 +1,7 @@
 package hva.ewa.model;
 
+import hva.ewa.model.embeddable.AppointmentId;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -10,17 +12,17 @@ import java.io.Serializable;
 public class Appointment implements Serializable {
 
     @EmbeddedId
-    private hva.ewa.model.embeddable.Appointment id;
+    private AppointmentId id;
 
     @Basic
     @Column(name = "status", nullable = false)
     private String status;
 
-    public hva.ewa.model.embeddable.Appointment getId() {
+    public AppointmentId getId() {
         return id;
     }
 
-    public void setId(hva.ewa.model.embeddable.Appointment id) {
+    public void setId(AppointmentId id) {
         this.id = id;
     }
 

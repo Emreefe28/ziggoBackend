@@ -1,10 +1,10 @@
 package hva.ewa.model.embeddable;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import hva.ewa.model.Customer;
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
+import javax.json.bind.annotation.JsonbTransient;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Embeddable
@@ -13,6 +13,7 @@ public class EquipmentId implements Serializable {
     @Column(name = "type")
     private String type;
 
+    @JsonbTransient
     @ManyToOne
     @JoinColumn(name = "idUser", nullable = false)
     private Customer customer;

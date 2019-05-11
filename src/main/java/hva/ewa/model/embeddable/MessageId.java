@@ -2,6 +2,7 @@ package hva.ewa.model.embeddable;
 
 import hva.ewa.model.Chat;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -11,6 +12,7 @@ public class MessageId implements Serializable {
     @Column(name = "id")
     private int id;
 
+    @JsonbTransient
     @ManyToOne
     @JoinColumn(name = "chat")
     private Chat chat;

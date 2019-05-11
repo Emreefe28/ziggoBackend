@@ -2,16 +2,18 @@ package hva.ewa.model.embeddable;
 
 import hva.ewa.model.Customer;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Embeddable
-public class Appointment implements Serializable {
+public class AppointmentId implements Serializable {
 
     @Column(name = "date", nullable = false)
     private Timestamp date;
 
+    @JsonbTransient
     @ManyToOne
     @JoinColumn(name = "idUser", nullable = false)
     private Customer customer;

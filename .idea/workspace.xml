@@ -7,20 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1526bc6a-da32-4508-83de-c784fe725bb3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/model/MonteursAfspraak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/model/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/model/embeddable/MonteurAfspraakId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/model/embeddable/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/ChatResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/ChatResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/CustomerResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/CustomerResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/service/CustomerRepositoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/service/CustomerRepositoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/service/EmployeeRepositoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/service/EmployeeRepositoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/CustomerRepositoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/CustomerRepositoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/EmployeeRespositoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/EmployeeRespositoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/data.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,19 +40,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-95">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="374">
+              <caret line="28" column="39" lean-forward="true" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Chat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#703#704#0" expanded="true" />
+                <element signature="e#733#734#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
+            <state relative-caret-position="751">
               <caret line="129" column="27" lean-forward="true" selection-start-line="129" selection-start-column="27" selection-end-line="129" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -182,10 +186,10 @@
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/rest/CustomerResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/service/EmployeeRepositoryService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/sql/data.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/rest/ChatResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/EmployeeRespositoryServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java" />
       </list>
     </option>
   </component>
@@ -204,9 +208,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
+    <option name="x" value="-9" />
+    <option name="width" value="1069" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -248,6 +252,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ewa" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ewa" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
@@ -542,7 +555,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72702000" />
+    <option name="totallyTimeSpent" value="74527000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -557,7 +570,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6802575" visible="true" weight="0.14295302" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6802575" visible="true" weight="0.14295302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -568,7 +581,7 @@
       <window_info id="Persistence" order="8" sideWeight="0.3197425" side_tool="true" visible="true" weight="0.40188384" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32719547" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49930653" visible="true" weight="0.49433428" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49930653" visible="true" weight="0.49433428" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39910313" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -907,18 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Chat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#703#704#0" expanded="true" />
-            <element signature="e#733#734#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1034,13 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/sql/data.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1093,8 +1087,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
+        <state relative-caret-position="751">
           <caret line="129" column="27" lean-forward="true" selection-start-line="129" selection-start-column="27" selection-end-line="129" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Chat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#703#704#0" expanded="true" />
+            <element signature="e#733#734#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="39" lean-forward="true" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

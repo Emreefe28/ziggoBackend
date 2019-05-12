@@ -19,7 +19,7 @@ public class Questionnaire {
     @Basic
     @Column(name = "created")
     @JsonDeserialize
-    private String created;
+    private Long created;
 
     @ManyToOne
     @JoinColumn(name = "category", nullable = false)
@@ -38,11 +38,11 @@ public class Questionnaire {
         this.id = id;
     }
 
-    public String getCreated() {
+    public Long getCreated() {
         return created;
     }
 
-    public void setCreated(String created) {
+    public void setCreated(Long created) {
         this.created = created;
     }
 

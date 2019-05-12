@@ -21,9 +21,9 @@ INSERT INTO `vodafoneziggo`.`category` (`id`, `name`) VALUES ('1', 'geen interne
 INSERT INTO `vodafoneziggo`.`category` (`id`, `name`) VALUES ('2', 'traag wifi');
 INSERT INTO `vodafoneziggo`.`category` (`id`, `name`) VALUES ('3', 'geen wifi');
 
-INSERT INTO `vodafoneziggo`.`questionnaire` (`id`, `created`, `category`) VALUES ('1', '2012-02-09 14:45:00', '1');
-INSERT INTO `vodafoneziggo`.`questionnaire` (`id`, `created`, `category`) VALUES ('2', '2012-02-09 12:10:00', '2');
-INSERT INTO `vodafoneziggo`.`questionnaire` (`id`, `created`, `category`) VALUES ('3', '2013-02-09 12:11:00', '3');
+INSERT INTO `vodafoneziggo`.`questionnaire` (`id`, `created`, `category`) VALUES ('1', '2012', '1');
+INSERT INTO `vodafoneziggo`.`questionnaire` (`id`, `created`, `category`) VALUES ('2', '2012', '2');
+INSERT INTO `vodafoneziggo`.`questionnaire` (`id`, `created`, `category`) VALUES ('3', '2013', '3');
 
 INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('1', 'werkt internet?', 'check verbinding');
 INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('2', 'hoeveel mensen zijn op uw wifi', 'check gebruikers');

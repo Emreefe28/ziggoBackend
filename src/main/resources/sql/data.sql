@@ -36,5 +36,5 @@ INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `quest
 INSERT INTO `vodafoneziggo`.`equipment` (`type`, `model`, `idUser`) VALUES ('splitter', 'POA-01-UPC', '1557216');
 INSERT INTO `vodafoneziggo`.`equipment` (`type`, `model`, `idUser`) VALUES ('modem', 'Mediabox XL', '1557216');
 INSERT INTO `vodafoneziggo`.`equipment` (`type`, `model`, `idUser`) VALUES ('modem', 'Connectbox', '2335216');
-INSERT INTO `vodafoneziggo`.`equipment` (`type`, `model`, `idUser`) VALUES ('modem', 'Technicolor', '1557216');
+INSERT INTO `vodafoneziggo`.`equipment` (`type`, `model`, `idUser`) VALUES ('modem', 'Technicolor', '1544216');
 

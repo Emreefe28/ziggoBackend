@@ -17,6 +17,13 @@ public class MessageId implements Serializable {
     @JoinColumn(name = "chat")
     private Chat chat;
 
+    public MessageId() {
+    }
+
+    public MessageId(Chat chat, int id) {
+        this.chat = chat;
+        this.id = id;
+    }
 
     public int getId() {
         return id;

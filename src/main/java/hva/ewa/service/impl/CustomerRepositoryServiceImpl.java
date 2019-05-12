@@ -27,13 +27,17 @@ public class CustomerRepositoryServiceImpl extends RepositoryService implements 
     public List<Appointment> getAppointments(int id) {
         EntityManager em = getEntityManager();
         Query query = em.createQuery("SELECT m FROM Appointment m WHERE m.id.customer.id = "  + id );
-        return query.getResultList();
+        List<Appointment> appointments = query.getResultList();
+        em.close();
+        return appointments;
     }
 
     @Override
     public List<Equipment> getEquipment(int id) {
         EntityManager em = getEntityManager();
         Query query = em.createQuery("SELECT m FROM Equipment m WHERE m.id.customer.id = "  + id );
-        return query.getResultList();
+        List<Equipment> equipment = query.getResultList();
+        em.close();
+        return equipment;
     }
 }

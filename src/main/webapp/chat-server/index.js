@@ -50,7 +50,7 @@ io.on('connection', (socket) => {
     socket.on('match', (token) => {
         console.log('MATCHING...');
         let employee = employees[next];
-        console.log('matched with ' + employees[next].employee.name);
+        console.log('matched with ' + employees[next].employee);
         token.employee = employee.employee;
         socket.join(token.chat.id);
         if (next >= employees.length - 1) {
@@ -71,6 +71,11 @@ io.on('connection', (socket) => {
             }
         }
     });
+    socket.on('end-chat', (chatId) => {
+        console.log("ending chat: " + chatId );
+        socket.to(chatId).emit('end-chat');
+    });
+
 });
 
 server.listen(port, () => {

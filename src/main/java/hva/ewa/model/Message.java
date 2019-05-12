@@ -4,8 +4,6 @@ import hva.ewa.model.embeddable.MessageId;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 @Entity
 public class Message implements Serializable {
@@ -15,7 +13,7 @@ public class Message implements Serializable {
 
     @Basic
     @Column(name = "sent")
-    private Timestamp sent;
+    private long sent;
 
     @Basic
     @Column(name = "content")
@@ -34,11 +32,11 @@ public class Message implements Serializable {
         this.id = id;
     }
 
-    public Timestamp getSent() {
+    public long getSent() {
         return sent;
     }
 
-    public void setSent(Timestamp sent) {
+    public void setSent(long sent) {
         this.sent = sent;
     }
 

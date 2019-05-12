@@ -2,8 +2,7 @@ package hva.ewa.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Timestamp;
-import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class Chat implements Serializable {
@@ -13,7 +12,7 @@ public class Chat implements Serializable {
 
     @Basic
     @Column(name = "created")
-    private Timestamp created;
+    private long created;
 
     @Basic
     @Column(name = "rating")
@@ -21,7 +20,7 @@ public class Chat implements Serializable {
 
     @OneToMany(mappedBy="id.chat", cascade = CascadeType.ALL,
             orphanRemoval = true,fetch = FetchType.LAZY)
-    private Collection<Message> messages;
+    private List<Message> messages;
 
     public String getId() {
         return id;
@@ -31,11 +30,11 @@ public class Chat implements Serializable {
         this.id = id;
     }
 
-    public Timestamp getCreated() {
+    public long getCreated() {
         return created;
     }
 
-    public void setCreated(Timestamp created) {
+    public void setCreated(long created) {
         this.created = created;
     }
 
@@ -48,11 +47,11 @@ public class Chat implements Serializable {
     }
 
 
-    public Collection<Message> getMessages() {
+    public List<Message> getMessages() {
         return messages;
     }
 
-    public void setMessages(Collection<Message> messages) {
+    public void setMessages(List<Message> messages) {
         this.messages = messages;
     }
 }

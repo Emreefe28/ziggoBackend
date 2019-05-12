@@ -6,6 +6,7 @@
 package hva.ewa.rest;
 
 import hva.ewa.model.Category;
+import hva.ewa.model.CategoryAndDate;
 import hva.ewa.model.Question;
 import hva.ewa.model.Questionnaire;
 import hva.ewa.service.QuestionnaireRepositoryService;
@@ -46,7 +47,7 @@ private QuestionnaireRepositoryService service;
         return service.getAllQuestion();
     }
 
-    @Path("/questions/{questionnaireId}")
+            @Path("/questionnaire/questions/{questionnaireId}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Collection<Question> getAllQuestionOfQuestionnaire(@PathParam("questionnaireId") int questionnaireId) {
@@ -183,6 +184,7 @@ private QuestionnaireRepositoryService service;
     }
 
 
+
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -194,6 +196,14 @@ private QuestionnaireRepositoryService service;
         } else {
             return Response.status(Response.Status.NO_CONTENT).build();
         }
+    }
+
+    @Path("/userquestionnaires/{userId}/category")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Collection<CategoryAndDate> getCategoryFromQuestionnaireFromUser(@PathParam("userId") int userId) {
+
+        return service.getCategoriesFromQuestionnaireFromUser(userId);
     }
 
 

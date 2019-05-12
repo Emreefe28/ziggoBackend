@@ -23,6 +23,7 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
     private static QuestionnaireRepositoryService instance = new QuestionnaireRepositoryServiceImpl();
 
 
+
     public static QuestionnaireRepositoryService getInstance() {
         return instance;
     }
@@ -124,7 +125,32 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         CustomerRepositoryServiceImpl instance = new CustomerRepositoryServiceImpl();
         Customer customer= instance.getCustomer(userId);
 
+        Collection<Questionnaire> questionnaires = customer.getIssues();
+
         return customer.getIssues();
+
+
+    }
+
+    @Override
+    public Collection<CategoryAndDate> getCategoriesFromQuestionnaireFromUser(int userId) {
+        CustomerRepositoryServiceImpl instance = new CustomerRepositoryServiceImpl();
+        Customer customer= instance.getCustomer(userId);
+
+        Collection<Questionnaire> questionnaires = customer.getIssues();
+
+        ArrayList<CategoryAndDate> categoryArrayList= new ArrayList<CategoryAndDate>();
+
+        for (Questionnaire questionnaire: questionnaires) {
+            CategoryAndDate categoryAndDate = new CategoryAndDate(questionnaire.getCategory().getName(),questionnaire.getCreated());
+
+
+                    categoryArrayList.add(categoryAndDate);
+        }
+
+        Collection<CategoryAndDate> categories = categoryArrayList;
+
+        return categories;
 
 
     }

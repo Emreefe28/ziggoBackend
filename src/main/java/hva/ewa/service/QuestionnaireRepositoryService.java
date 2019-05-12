@@ -1,6 +1,7 @@
 package hva.ewa.service;
 
 import hva.ewa.model.Category;
+import hva.ewa.model.CategoryAndDate;
 import hva.ewa.model.Question;
 import hva.ewa.model.Questionnaire;
 
@@ -34,6 +35,8 @@ public interface QuestionnaireRepositoryService {
     Category getCategory(int id);
 
     Collection<Questionnaire> getQuestionnairesFromUser(int userId);
+
+    Collection<CategoryAndDate> getCategoriesFromQuestionnaireFromUser(int userId);
 
     Questionnaire getQuestionnaireFromUser(int userId, int questionId);
 

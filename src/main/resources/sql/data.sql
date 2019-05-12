@@ -33,4 +33,6 @@ INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `quest
 INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('1', '2');
 INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('1', '3');
 
+INSERT INTO `vodafoneziggo`.`customer_questionnaire` (`Customer_idUser`, `issues_id`) VALUES ('2335216', '1');
+INSERT INTO `vodafoneziggo`.`customer_questionnaire` (`Customer_idUser`, `issues_id`) VALUES ('2335216', '2');
 

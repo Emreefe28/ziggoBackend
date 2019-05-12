@@ -47,7 +47,7 @@ private QuestionnaireRepositoryService service;
         return service.getAllQuestion();
     }
 
-            @Path("/questionnaire/questions/{questionnaireId}")
+    @Path("/questionnaire/questions/{questionnaireId}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Collection<Question> getAllQuestionOfQuestionnaire(@PathParam("questionnaireId") int questionnaireId) {

@@ -93,7 +93,9 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
     public Collection<Question> getQuestionsOfQuestionnaire(int questionnaireId) {
 
        Questionnaire questionnaire=getQuestionnaire(questionnaireId);
-       return questionnaire.getQuestions();
+
+       Collection<Question> questions = questionnaire.getQuestions();
+       return questions;
 
 
     }

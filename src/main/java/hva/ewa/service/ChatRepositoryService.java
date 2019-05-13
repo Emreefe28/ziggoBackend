@@ -4,6 +4,7 @@ import hva.ewa.model.Chat;
 import hva.ewa.model.Message;
 
 import java.util.List;
+import java.util.Map;
 
 
 public interface ChatRepositoryService {
@@ -14,6 +15,6 @@ public interface ChatRepositoryService {
     List<Chat> getAllChats();
     Integer getAmountOfChats();
     void saveMessages(List<Message> messages, Chat chat);
-    List<Long> getAmountOfChatsByMonth();
+    Map<String, Long> getAmountOfChatsByMonth();
     Double getCustomerSatisfaction();
 }

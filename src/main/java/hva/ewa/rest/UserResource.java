@@ -7,6 +7,7 @@ import hva.ewa.service.UserRepositoryService;
 import hva.ewa.service.impl.CustomerRepositoryServiceImpl;
 import hva.ewa.service.impl.EmployeeRespositoryServiceImpl;
 import hva.ewa.service.impl.UserRepositoryServiceImpl;
+import org.json.simple.JSONObject;
 
 import java.util.List;
 import javax.ws.rs.*;
@@ -127,10 +128,13 @@ public class UserResource {
     public Response checkUserType(@PathParam("id") int id) {
         User user = CustomerRepositoryServiceImpl.getInstance().getCustomer(id);
         String userType = "customer";
+        JSONObject obj = new JSONObject();
         if (user == null) {
             Employee employee = EmployeeRespositoryServiceImpl.getInstance().getEmployee(id);
             userType = employee.getDepartment();
+
         }
-        return Response.status(Response.Status.OK).entity(userType).build();
+        obj.put("role", userType);
+        return Response.status(Response.Status.OK).entity(obj).build();
     }
 }

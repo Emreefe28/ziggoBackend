@@ -61,7 +61,7 @@ public class ChatRepositoryServiceImpl extends RepositoryService implements Chat
     public Integer getAmountOfChats() {
         EntityManager em = getEntityManager();
         Query query = em.createQuery("SELECT COUNT(c) FROM Chat c ");
-        System.out.println("AmountOfChats = " +  query.getSingleResult());
+        System.out.println("AmountOfChats = " + query.getSingleResult());
         Long count = (Long) query.getSingleResult();
         em.close();
         return count.intValue();
@@ -84,12 +84,17 @@ public class ChatRepositoryServiceImpl extends RepositoryService implements Chat
     }
 
     @Override
-    public List<Long> getAmountOfChatsByMonth() {
+    public Map<String, Long> getAmountOfChatsByMonth() {
         EntityManager em = getEntityManager();
-        Query query = em.createQuery("SELECT COUNT(c) FROM Chat c group by month(c.created)");
-        List<Long> data = query.getResultList();
-        System.out.println(data.toString());
-        return data;
+        Query query = em.createQuery("SELECT MONTHNAME(c.created), COUNT(c.created) FROM Chat c GROUP BY MONTH(c.created)");
+        List<Object[]> list = query.getResultList();
+        Map<String, Long> stats = new HashMap();
+        for (Object[] obj : list) {
+            System.out.println((String) obj[0]);
+            System.out.println((Long) obj[1]);
+            stats.put((String) obj[0], (Long) obj[1]);
+        }
+        return stats;
     }
 
     @Override

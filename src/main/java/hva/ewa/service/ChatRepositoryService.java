@@ -15,6 +15,6 @@ public interface ChatRepositoryService {
     List<Chat> getAllChats();
     Integer getAmountOfChats();
     void saveMessages(List<Message> messages, Chat chat);
-    Map<String, Integer> getAmountOfChatsByMonth();
+    List<Integer> getAmountOfChatsByMonth();
     Double getCustomerSatisfaction();
 }

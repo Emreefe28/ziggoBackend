@@ -29,6 +29,7 @@ public class StatResource {
              jsonObject = Json.createObjectBuilder()
                     .add("satisfaction", service.getCustomerSatisfaction())
                      .add("totalChats", service.getAmountOfChats())
+                     .add("chatsPerMonth", service.getAmountOfChats())
                     .build();
             return Response.status(Response.Status.OK).entity(jsonObject.toString()).build();
         } catch(NullPointerException nx){

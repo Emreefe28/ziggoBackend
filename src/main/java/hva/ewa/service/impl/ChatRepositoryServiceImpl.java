@@ -85,7 +85,9 @@ public class ChatRepositoryServiceImpl extends RepositoryService implements Chat
 
     @Override
     public Map<String, Integer> getAmountOfChatsByMonth() {
-        return null;
+        EntityManager em = getEntityManager();
+        Query query = em.createQuery("SELECT COUNT(c) FROM Chat c group by month(c.created)");
+        List<>
     }
 
     @Override

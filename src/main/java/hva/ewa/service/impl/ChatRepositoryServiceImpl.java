@@ -84,10 +84,10 @@ public class ChatRepositoryServiceImpl extends RepositoryService implements Chat
     }
 
     @Override
-    public List<Integer> getAmountOfChatsByMonth() {
+    public List<Long> getAmountOfChatsByMonth() {
         EntityManager em = getEntityManager();
         Query query = em.createQuery("SELECT COUNT(c) FROM Chat c group by month(c.created)");
-        List<Integer> data = query.getResultList();
+        List<Long> data = query.getResultList();
         System.out.println(data.toString());
         return data;
     }
@@ -99,7 +99,7 @@ public class ChatRepositoryServiceImpl extends RepositoryService implements Chat
         Query query = em.createQuery("SELECT SUM(rating) FROM Chat c ");
         Long score = (Long) query.getSingleResult();
         em.close();
-        return (Double) (score.doubleValue() / totalScore.doubleValue() * 100.0);
+        return (score.doubleValue() / totalScore.doubleValue() * 100.0);
     }
 
 

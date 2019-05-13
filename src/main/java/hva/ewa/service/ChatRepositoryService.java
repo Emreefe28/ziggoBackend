@@ -4,7 +4,6 @@ import hva.ewa.model.Chat;
 import hva.ewa.model.Message;
 
 import java.util.List;
-import java.util.Map;
 
 
 public interface ChatRepositoryService {

@@ -6,10 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1526bc6a-da32-4508-83de-c784fe725bb3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/service/ChatRepositoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/service/ChatRepositoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/ChatRepositoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/ChatRepositoryServiceImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="1526bc6a-da32-4508-83de-c784fe725bb3" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,12 +25,7 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="vodafoneziggo@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
@@ -44,8 +36,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/ChatResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
+            <state relative-caret-position="-196">
               <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#606#607#0" expanded="true" />
+                <element signature="e#671#672#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/StatResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,7 +59,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="25" column="62" lean-forward="true" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/ChatRepositoryServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="89">
@@ -71,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/ChatRepositoryService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            <state relative-caret-position="85">
+              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -170,9 +185,9 @@
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/embeddable/MessageId.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/Chat.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/rest/ChatResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/ChatRepositoryServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/rest/StatResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/service/ChatRepositoryService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/ChatRepositoryServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -259,6 +274,11 @@
             <path>
               <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
               <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -266,96 +286,6 @@
               <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ewa" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ewa" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ewa" type="462c0819:PsiDirectoryNode" />
-              <item name="rest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ewa" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ewa" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="chat-server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -559,7 +489,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116385000" />
+    <option name="totallyTimeSpent" value="116579000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -574,7 +504,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.67608696" visible="true" weight="0.3067114" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67608696" visible="true" weight="0.3067114" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -656,29 +586,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="uml://Persistence/JavaeeElement:/1e1625ea/vodafoneziggoPU/EWAZiggo-backend/jpa/JPA/PersistenceModel">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>Persistence</ID>
-          <OriginalElement>JavaeeElement:/1e1625ea/vodafoneziggoPU/EWAZiggo-backend/jpa/JPA/PersistenceModel</OriginalElement>
-          <nodes>
-            <node x="" y="">Chat#file://C:/Users/GG/Documents/GitHub/EWAZiggo-backend/src/main/java/hva/ewa/model/Chat.java</node>
-            <node x="" y="">Message#file://C:/Users/GG/Documents/GitHub/EWAZiggo-backend/src/main/java/hva/ewa/model/Message.java</node>
-            <node x="" y="">User#file://C:/Users/GG/Documents/GitHub/EWAZiggo-backend/src/main/java/hva/ewa/model/User.java</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="169.0" y="118.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Properties</Category>
-            <Category>Embeddables</Category>
-            <Category>Superclasses</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/MonteursafspraakPK.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/shin/Category.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/shin/Customer.java" />
@@ -1069,31 +976,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/ChatResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
+        <state relative-caret-position="-196">
           <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/StatResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
+        <state relative-caret-position="293">
+          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/ChatRepositoryService.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="292">
+          <caret line="25" column="62" lean-forward="true" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -1109,6 +1015,16 @@
             <element signature="e#0#27#0" expanded="true" />
             <element signature="e#0#53#0" expanded="true" />
             <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/ChatRepositoryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -40,4 +40,13 @@ public class MessageId implements Serializable {
     public void setChat(Chat chat) {
         this.chat = chat;
     }
+
+    @Override
+    public String toString() {
+        return "MessageId{" +
+                "id=" + id +
+                ", chat=" + chat +
+                '}';
+    }
+
 }

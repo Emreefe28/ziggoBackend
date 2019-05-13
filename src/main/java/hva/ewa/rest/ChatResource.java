@@ -9,6 +9,7 @@ import hva.ewa.service.impl.ChatRepositoryServiceImpl;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.sql.Timestamp;
 import java.util.List;
 
 
@@ -29,17 +30,13 @@ public class ChatResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response saveChat(Chat chat) {
+    @Path("/{date}")
+    public Response saveChat(@PathParam("date") long date, Chat chat) {
+        chat.setCreated(new Timestamp(date));
         System.out.println("Chat is being saved...");
         List<Message> messages = chat.getMessages();
-        for (int i = 0; i < messages.size(); i++) {
-            Message message = messages.get(i);
-            MessageId id = new MessageId(chat, i);
-            message.setId(id);
-            messages.set(i, message);
-        }
-        chat.setMessages(messages);
         service.saveChat(chat);
+        service.saveMessages(messages, chat);
         return Response.status(Response.Status.OK).build();
     }
 
@@ -50,7 +47,7 @@ public class ChatResource {
     public Response rateChat(@PathParam("id") String id, int rating) {
         System.out.println("RATING = " + rating);
         Chat chat = service.getChat(id);
-        if(chat == null){
+        if (chat == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
         chat.setRating(rating);

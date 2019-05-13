@@ -26,7 +26,6 @@ public class EmployeeRespositoryServiceImpl extends RepositoryService implements
             em.close();
             return true;
         } catch (Exception e) {
-
             return false;
         }
     }
@@ -35,7 +34,9 @@ public class EmployeeRespositoryServiceImpl extends RepositoryService implements
     public List<Employee> getAllEmployees() {
         EntityManager em = getEntityManager();
         Query query = em.createQuery("SELECT e FROM Employee e");
-        return query.getResultList();
+        List<Employee> employees = query.getResultList();
+        em.close();
+        return employees;
     }
 
     @Override
@@ -46,7 +47,9 @@ public class EmployeeRespositoryServiceImpl extends RepositoryService implements
     @Override
     public Employee getEmployee(int id) {
         EntityManager em = getEntityManager();
-        return em.find(Employee.class, id);
+        Employee employee = em.find(Employee.class, id);
+        em.close();
+        return employee;
     }
 
     @Override

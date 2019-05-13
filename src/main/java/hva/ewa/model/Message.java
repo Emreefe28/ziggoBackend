@@ -4,6 +4,7 @@ import hva.ewa.model.embeddable.MessageId;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 @Entity
 public class Message implements Serializable {
@@ -11,9 +12,11 @@ public class Message implements Serializable {
     @EmbeddedId
     private MessageId id;
 
-    @Basic
-    @Column(name = "sent")
+    @Transient
     private long sent;
+
+    @Column(name = "timestamp")
+    private Timestamp timestamp;
 
     @Basic
     @Column(name = "content")
@@ -40,6 +43,7 @@ public class Message implements Serializable {
         this.sent = sent;
     }
 
+
     public String getContent() {
         return content;
     }
@@ -54,5 +58,13 @@ public class Message implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
     }
 }

@@ -16,6 +16,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.List;
 
@@ -103,9 +104,10 @@ private QuestionnaireRepositoryService service;
     public Response addQuestionToQuestionnaire (@PathParam("questionnaireId") int id, @PathParam("questionId") int questionId) {
 
 
-        service.addQuestionToQuestionnaire(id,questionId);
 
-        return Response.ok().build();
+        service.addQuestionToQuestionnaire(id,questionId);
+        return Response.status(Response.Status.OK).build();
+
 
     }
 
@@ -124,8 +126,7 @@ private QuestionnaireRepositoryService service;
 
 
         service.addQuestionnaireToCustomer(customerId,questionnaireId);
-
-        return Response.ok().build();
+        return Response.status(Response.Status.OK).build();
 
     }
 
@@ -160,19 +161,18 @@ private QuestionnaireRepositoryService service;
         return service.getAllQuestionnaire();
     }
 
-
-
     @POST
-    @Path("/addquestionnaire/{categoryId}")
+    @Path("/addquestionnaire/{categoryId}/{date}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
 
-    public Response addQuestionnaire (@PathParam("categoryId") int id, Questionnaire questionnaire) {
+    public Response addQuestionnaire (@PathParam("categoryId") int id,@PathParam("date") long date, Questionnaire questionnaire) {
 
+
+        questionnaire.setCreated(new Timestamp(date));
 
             service.addQuestionnaire(id,questionnaire);
             return Response.status(Response.Status.CREATED).entity(questionnaire).build();
-
     }
 
 

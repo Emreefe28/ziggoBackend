@@ -42,7 +42,11 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
             EntityManager em = getEntityManager();
             Query query = em.createQuery("SELECT q FROM Question q");
-            return query.getResultList();
+
+
+            List<Question> questions= query.getResultList();
+            em.close();
+            return questions;
 
         }
 
@@ -50,13 +54,17 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
     public List<Questionnaire> getAllQuestionnaire() {
         EntityManager em = getEntityManager();
         Query query = em.createQuery("SELECT q FROM Questionnaire q");
-        return query.getResultList();
+
+        List<Questionnaire> questionnaires= query.getResultList();
+        em.close();
+        return questionnaires;
     }
 
     public List<Question> getAllSolvedQuestion() {
 
         EntityManager em = getEntityManager();
         Query query = em.createQuery("select count(q) from Question q where solved is true");
+        em.close();
         return query.getResultList();
     }
 
@@ -66,8 +74,11 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         EntityManager em = getEntityManager();
         System.out.println("GET QUESTION BITCH");
         System.out.println(em.find(Question.class, questionId));
-        return em.find(Question.class, questionId);
 
+
+        Question question= em.find(Question.class, questionId);
+        em.close();
+        return question;
 
     }
 
@@ -124,7 +135,9 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         EntityManager em = getEntityManager();
         System.out.println("GET QUESTIONNAIRE");
         System.out.println(em.find(Questionnaire.class, id));
-        return em.find(Questionnaire.class, id);
+
+        Questionnaire questionnaire= em.find(Questionnaire.class, id);
+        return questionnaire;
     }
 
     @Override
@@ -132,7 +145,14 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         EntityManager em = getEntityManager();
         System.out.println("GET QUESTION BITCH");
         System.out.println(em.find(Category.class, id));
-        return em.find(Category.class, id);
+
+
+        Category cat= em.find(Category.class, id);
+        em.close();
+        return cat;
+
+
+
     }
 
     @Override
@@ -169,6 +189,7 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         return categories;
 
 
+
     }
 
     @Override
@@ -198,7 +219,6 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         Questionnaire questionnaire = getQuestionnaire(questionnaireId);
         Question question = getQuestionFromId(questionId);
 
-
         questionnaire.addQuestion(question);
         EntityManager em = getEntityManager();
         em.getTransaction().begin();
@@ -217,14 +237,10 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
         CustomerRepositoryServiceImpl instance = new CustomerRepositoryServiceImpl();
         Customer customer = instance.getCustomer(user);
+
         Questionnaire questionnaire = getQuestionnaire(questionnaireId);
 
-
-        System.out.println("--------------DIT IS DE LINE VAN CUSTOMER:"+customer.getAdres()+"--------------");
-        System.out.println("--------------DIT IS DE LINE VAN QUESTIONNAIRE"+questionnaire.getId()+"-------------");
         customer.addIssues(questionnaire);
-
-
         EntityManager em = getEntityManager();
         em.getTransaction().begin();
 

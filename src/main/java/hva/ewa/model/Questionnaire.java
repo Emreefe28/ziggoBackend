@@ -19,7 +19,7 @@ public class Questionnaire {
     @Basic
     @Column(name = "created")
     @JsonDeserialize
-    private Long created;
+    private Timestamp created;
 
     @ManyToOne
     @JoinColumn(name = "category", nullable = false)
@@ -38,11 +38,11 @@ public class Questionnaire {
         this.id = id;
     }
 
-    public Long getCreated() {
+    public Timestamp getCreated() {
         return created;
     }
 
-    public void setCreated(Long created) {
+    public void setCreated(Timestamp created) {
         this.created = created;
     }
 

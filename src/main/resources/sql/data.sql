@@ -38,3 +38,21 @@ INSERT INTO `vodafoneziggo`.`equipment` (`type`, `model`, `idUser`) VALUES ('mod
 INSERT INTO `vodafoneziggo`.`equipment` (`type`, `model`, `idUser`) VALUES ('modem', 'Connectbox', '2335216');
 INSERT INTO `vodafoneziggo`.`equipment` (`type`, `model`, `idUser`) VALUES ('modem', 'Technicolor', '1544216');
 
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`) VALUES ('1544746836133aarsbergen', '2019-01-13 13:27:16');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`) VALUES ('15577461153790aarsbergen', '2019-01-13 13:27:16');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`) VALUES ('1557746823790aarsbergen', '2019-02-13 13:27:16');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('1557746836133aarsbergen', '2019-05-13 13:27:16', '3');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('1557746853790aarsbergen', '2019-05-13 13:27:34', '1');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('155774453790aarsbergen', '2019-01-13 13:27:34', '5');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('1557746653790aarsbergen', '2019-03-13 13:27:34', '3');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('1533746853790aarsbergen', '2019-03-13 13:27:34', '4');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('2257746853790aarsbergen', '2019-03-13 13:27:34', '4');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('1559846853790aarsbergen', '2019-04-13 13:27:34', '3');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('1257746853790aarsbergen', '2019-04-13 13:27:34', '1');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('227746853790aarsbergen', '2019-04-13 13:27:34', '1');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('142746853790aarsbergen', '2019-04-13 13:27:34', '4');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('142746853790Bonnet', '2019-06-13 13:27:34', '6');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('142746843790Bonnet', '2019-06-13 13:27:34', '7');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('142746851790Bonnet', '2019-07-13 13:27:34', '8');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('142746853744Bonnet', '2019-07-13 13:27:34', '1');
+INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('142742853744Bonnet', '2019-07-13 13:27:34', '3');

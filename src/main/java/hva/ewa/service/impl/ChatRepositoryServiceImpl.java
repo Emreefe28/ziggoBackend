@@ -61,7 +61,6 @@ public class ChatRepositoryServiceImpl extends RepositoryService implements Chat
     public Integer getAmountOfChats() {
         EntityManager em = getEntityManager();
         Query query = em.createQuery("SELECT COUNT(c) FROM Chat c ");
-        System.out.println("AmountOfChats = " + query.getSingleResult());
         Long count = (Long) query.getSingleResult();
         em.close();
         return count.intValue();
@@ -69,7 +68,6 @@ public class ChatRepositoryServiceImpl extends RepositoryService implements Chat
 
     @Override
     public void saveMessages(List<Message> messages, Chat chat) {
-        System.out.println("SAVING MESSAGES!");
         EntityManager em = getEntityManager();
         for (int i = 0; i < messages.size(); i++) {
             Message message = messages.get(i);
@@ -86,14 +84,12 @@ public class ChatRepositoryServiceImpl extends RepositoryService implements Chat
     @Override
     public Map<String, Long> getAmountOfChatsByMonth() {
         EntityManager em = getEntityManager();
-        Query query = em.createQuery("SELECT MONTHNAME(c.created), COUNT(c.created) FROM Chat c GROUP BY MONTH(c.created) ORDER BY c.created");
+        Query query = em.createQuery("SELECT MONTHNAME(c.created), COUNT(c.created) FROM Chat c GROUP BY MONTH(c.created)");
         List<Object[]> list = query.getResultList();
-        Map<String, Long> stats = new HashMap();
+        Map<String, Long> stats = new HashMap<>();
         for (Object[] obj : list) {
-            System.out.println((String) obj[0]);
-            System.out.println((Long) obj[1]);
             stats.put((String) obj[0], (Long) obj[1]);
-        } 
+        }
         em.close();
         return stats;
     }
@@ -101,7 +97,8 @@ public class ChatRepositoryServiceImpl extends RepositoryService implements Chat
     @Override
     public Double getCustomerSatisfaction() {
         EntityManager em = getEntityManager();
-        Integer totalScore = (getAmountOfChats() * 5);
+        Long chatAmount =(Long) em.createQuery("SELECT COUNT(c) FROM Chat c WHERE c.rating IS NOT NULL").getSingleResult();
+        Integer totalScore = (chatAmount.intValue() * 5);
         Query query = em.createQuery("SELECT SUM(rating) FROM Chat c ");
         Long score = (Long) query.getSingleResult();
         em.close();

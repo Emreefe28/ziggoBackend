@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1526bc6a-da32-4508-83de-c784fe725bb3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/ChatRepositoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/ChatRepositoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/data.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,17 +45,36 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/ChatRepositoryServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="95" column="10" selection-start-line="95" selection-start-column="10" selection-end-line="95" selection-end-column="10" />
+            <state relative-caret-position="276">
+              <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
                 <element signature="e#0#27#0" expanded="true" />
-                <element signature="e#0#103#1" expanded="true" />
+                <element signature="e#0#83#1" expanded="true" />
+                <element signature="e#0#54#0" expanded="true" />
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/sql/data.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="782">
+              <caret line="46" column="84" lean-forward="true" selection-start-line="46" selection-start-column="84" selection-end-line="46" selection-end-column="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/chat-server/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
             </state>
           </provider>
         </entry>
@@ -202,7 +222,6 @@
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/embeddable/EquipmentId.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/embeddable/AppointmentId.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/chat-server/index.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/sql/data.sql" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/service/StatisticsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/Message.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/CustomerRepositoryServiceImpl.java" />
@@ -215,6 +234,7 @@
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/rest/StatResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/ChatRepositoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/sql/data.sql" />
       </list>
     </option>
   </component>
@@ -342,6 +362,36 @@
               <item name="ewa" type="462c0819:PsiDirectoryNode" />
               <item name="rest" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="chat-server" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -401,7 +451,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="GlassFish Server.payara5">
+  <component name="RunManager" selected="Node.js.index.js">
     <configuration name="All Features in: chat-server" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="3" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/webapp/chat-server" />
@@ -489,12 +539,17 @@
         </option>
       </method>
     </configuration>
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/src/main/webapp/chat-server">
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Cucumber java.All Features in: chat-server" />
       <item itemvalue="GlassFish Server.payara5" />
+      <item itemvalue="Node.js.index.js" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.index.js" />
         <item itemvalue="Cucumber java.All Features in: chat-server" />
       </list>
     </recent_temporary>
@@ -544,7 +599,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129580000" />
+    <option name="totallyTimeSpent" value="132944000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -813,13 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/chat-server/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/classes/hva/ewa/rest/CustomerResource.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-102">
@@ -893,13 +941,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/StatisticsService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/data.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/EmployeeRespositoryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -1070,14 +1111,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/ChatRepositoryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="95" column="10" selection-start-line="95" selection-start-column="10" selection-end-line="95" selection-end-column="10" />
+        <state relative-caret-position="276">
+          <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
             <element signature="e#0#27#0" expanded="true" />
-            <element signature="e#0#103#1" expanded="true" />
+            <element signature="e#0#83#1" expanded="true" />
+            <element signature="e#0#54#0" expanded="true" />
             <element signature="e#0#30#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/data.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="84" lean-forward="true" selection-start-line="46" selection-start-column="84" selection-end-line="46" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/chat-server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
         </state>
       </provider>
     </entry>

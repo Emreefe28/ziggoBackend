@@ -169,10 +169,12 @@ private QuestionnaireRepositoryService service;
     public Response addQuestionnaire (@PathParam("categoryId") int id,@PathParam("date") long date, Questionnaire questionnaire) {
 
 
-        questionnaire.setCreated(new Timestamp(date));
+
+            questionnaire.setCreated(new Timestamp(date));
 
             service.addQuestionnaire(id,questionnaire);
             return Response.status(Response.Status.CREATED).entity(questionnaire).build();
+
     }
 
 

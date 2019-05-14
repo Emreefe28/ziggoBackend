@@ -45,6 +45,7 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
 
             List<Question> questions= query.getResultList();
+
             em.close();
             return questions;
 
@@ -56,6 +57,7 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         Query query = em.createQuery("SELECT q FROM Questionnaire q");
 
         List<Questionnaire> questionnaires= query.getResultList();
+
         em.close();
         return questionnaires;
     }
@@ -64,7 +66,6 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
         EntityManager em = getEntityManager();
         Query query = em.createQuery("select count(q) from Question q where solved is true");
-        em.close();
         return query.getResultList();
     }
 
@@ -72,7 +73,7 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
     @Override
     public Question getQuestionFromId(int questionId) {
         EntityManager em = getEntityManager();
-        System.out.println("GET QUESTION BITCH");
+        System.out.println("vindbaretext de question id is: "+questionId);
         System.out.println(em.find(Question.class, questionId));
 
 
@@ -133,7 +134,7 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
     @Override
     public Questionnaire getQuestionnaire(int id) {
         EntityManager em = getEntityManager();
-        System.out.println("GET QUESTIONNAIRE");
+        System.out.println("supervindbaar de questionnaire id is: "+id);
         System.out.println(em.find(Questionnaire.class, id));
 
         Questionnaire questionnaire= em.find(Questionnaire.class, id);
@@ -186,6 +187,7 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
         Collection<CategoryAndDate> categories = categoryArrayList;
 
+
         return categories;
 
 
@@ -237,7 +239,6 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
         CustomerRepositoryServiceImpl instance = new CustomerRepositoryServiceImpl();
         Customer customer = instance.getCustomer(user);
-
         Questionnaire questionnaire = getQuestionnaire(questionnaireId);
 
         customer.addIssues(questionnaire);

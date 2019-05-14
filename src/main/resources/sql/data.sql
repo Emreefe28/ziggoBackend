@@ -28,12 +28,29 @@ INSERT INTO `vodafoneziggo`.`questionnaire` (`id`, `created`, `category`) VALUES
 INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('1', 'werkt internet?', 'check verbinding');
 INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('2', 'hoeveel mensen zijn op uw wifi', 'check gebruikers');
 INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('3', 'is je verbinding nu beter?', 'gelukt?');
-INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `solved`, `title`) VALUES ('4', 'asda', b'1', 'asda');
+INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('4', 'is je trage wifi nu beter?', 'gelukt?');
+INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('5', 'geen idee man?', 'gelukt?');
+INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('6', 'derde vraag wifi traag', 'gelukt?');
+INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('7', 'werkt je wifi niet?', 'gelukt?');
+INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('8', 'waarom dan?', 'gelukt?');
+INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('9', 'skere guy?', 'gelukt?');
+
+
 
 
 INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('1', '1');
 INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('1', '2');
 INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('1', '3');
+
+
+INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('2', '4');
+INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('2', '5');
+INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('2', '6');
+
+
+INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('3', '7');
+INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('3', '8');
+INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('3', '9');
 
 INSERT INTO `vodafoneziggo`.`customer_questionnaire` (`Customer_idUser`, `issues_id`) VALUES ('2335216', '1');
 INSERT INTO `vodafoneziggo`.`customer_questionnaire` (`Customer_idUser`, `issues_id`) VALUES ('2335216', '2');

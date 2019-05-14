@@ -152,6 +152,14 @@ private QuestionnaireRepositoryService service;
        return service.getQuestionnairesFromUser(userId);
     }
 
+    @Path("/questionnaire")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Questionnaire> getAllQuestionnaire() {
+
+        return service.getAllQuestionnaire();
+    }
+
 
 
     @POST

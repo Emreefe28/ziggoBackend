@@ -46,12 +46,18 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
         }
 
+    @Override
+    public List<Questionnaire> getAllQuestionnaire() {
+        EntityManager em = getEntityManager();
+        Query query = em.createQuery("SELECT q FROM Questionnaire q");
+        return query.getResultList();
+    }
+
     public List<Question> getAllSolvedQuestion() {
 
         EntityManager em = getEntityManager();
         Query query = em.createQuery("select count(q) from Question q where solved is true");
         return query.getResultList();
-
     }
 
 

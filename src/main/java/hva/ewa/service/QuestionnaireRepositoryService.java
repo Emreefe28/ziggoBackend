@@ -15,6 +15,8 @@ public interface QuestionnaireRepositoryService {
 
     List<Question> getAllQuestion();
 
+    List<Questionnaire> getAllQuestionnaire();
+
     List<Question> getAllSolvedQuestion();
 
 

@@ -28,6 +28,8 @@ INSERT INTO `vodafoneziggo`.`questionnaire` (`id`, `created`, `category`) VALUES
 INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('1', 'werkt internet?', 'check verbinding');
 INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('2', 'hoeveel mensen zijn op uw wifi', 'check gebruikers');
 INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('3', 'is je verbinding nu beter?', 'gelukt?');
+INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `solved`, `title`) VALUES ('4', 'asda', b'1', 'asda');
+
 
 INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('1', '1');
 INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('1', '2');

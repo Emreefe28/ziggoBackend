@@ -46,6 +46,14 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
         }
 
+    public List<Question> getAllSolvedQuestion() {
+
+        EntityManager em = getEntityManager();
+        Query query = em.createQuery("select count(q) from Question q where solved is true");
+        return query.getResultList();
+
+    }
+
 
     @Override
     public Question getQuestionFromId(int questionId) {

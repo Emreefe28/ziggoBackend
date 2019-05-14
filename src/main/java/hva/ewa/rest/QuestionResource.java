@@ -47,6 +47,14 @@ private QuestionnaireRepositoryService service;
         return service.getAllQuestion();
     }
 
+    @Path("/true")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Question> getAllSolvedQuestion() {
+
+        return service.getAllSolvedQuestion();
+    }
+
     @Path("/questionnaire/questions/{questionnaireId}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -63,10 +71,10 @@ private QuestionnaireRepositoryService service;
 
         Question existingQuestion = service.getQuestionFromId(question.getId());
 
-        if (existingQuestion == null) {
+       if (existingQuestion == null) {
             service.addQuestion(question);
             return Response.status(Response.Status.CREATED).entity(question).build();
-        } else {
+      } else {
             return Response.status(Response.Status.BAD_REQUEST).entity("question already exists").build();
         }
     }

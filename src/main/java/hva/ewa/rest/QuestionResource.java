@@ -54,6 +54,7 @@ private QuestionnaireRepositoryService service;
     public List<Question> getAllSolvedQuestion() {
 
         return service.getAllSolvedQuestion();
+
     }
 
     @Path("/questionnaire/questions/{questionnaireId}")

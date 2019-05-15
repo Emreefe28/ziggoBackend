@@ -68,7 +68,9 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
         EntityManager em = getEntityManager();
         Query query = em.createQuery("select count(q) from Question q where solved is true");
-        return query.getResultList();
+        List<Question> solvedQuestions=query.getResultList();
+        em.close();
+        return solvedQuestions;
     }
 
 
@@ -140,6 +142,7 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         System.out.println(em.find(Questionnaire.class, id));
 
         Questionnaire questionnaire= em.find(Questionnaire.class, id);
+//        em.close();
         return questionnaire;
     }
 
@@ -250,7 +253,6 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
         em.close();
     }
-
 
     @Override
     public void setResponce(String test) {

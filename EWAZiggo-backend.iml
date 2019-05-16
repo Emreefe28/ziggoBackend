@@ -19,7 +19,9 @@
           <factory-entry name="userPU" />
           <factory-entry name="vodafoneziggoPU" value="8209c8d7-8bef-4284-893b-1db96a1d75aa" />
         </datasource-mapping>
-        <naming-strategy-map />
+        <naming-strategy-map>
+          <unit-entry name="vodafoneziggoPU" />
+        </naming-strategy-map>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
       </configuration>
     </facet>

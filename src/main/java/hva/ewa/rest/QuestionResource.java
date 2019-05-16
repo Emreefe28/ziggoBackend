@@ -1,51 +1,235 @@
-///*
-// * To change this license header, choose License Headers in Project Properties.
-// * To change this template file, choose Tools | Templates
-// * and open the template in the editor.
-// */
-//package hva.ewa.rest;
-//
-//import hva.ewa.model.Category;
-//import hva.ewa.model.Question;
-//import hva.ewa.rest.model.ClientError;
-//import hva.ewa.service.QuestionnaireRepositoryService;
-////import hva.ewa.service.impl.QuestionnaireRepositoryServiceImpl;
-//import javax.ws.rs.*;
-//import javax.ws.rs.core.MediaType;
-//import javax.ws.rs.core.Response;
-//
-//import java.util.List;
-//
-//import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
-//
-//public class QuestionResource {
-//
-//    /** A reference to the repository service */
-//    private QuestionnaireRepositoryService service;
-//
-//    public QuestionResource() {
-//        service = QuestionnaireRepositoryServiceImpl.getInstance();
-//    }
-//
-//    @GET
-//    @Path("/")
-//    @Produces(APPLICATION_JSON)
-//    public Response getAllQuestions(
-//            @PathParam("categorieId") int categorieId) {
-//
-//        Category category = service.getCategorieFromId(categorieId);
-//
-//        if(category == null) {
-//            return Response.status(Response.Status.NOT_FOUND).
-//                    entity(new ClientError("Category not found for id " + categorieId)).build();
-//        }
-//        List<Question> questions = service.getQuestionsOfCategorie(category);
-//
-//        return Response.status(Response.Status.OK).
-//                    entity(questions).build();
-//    }
-//
-//
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hva.ewa.rest;
+
+import hva.ewa.model.Category;
+import hva.ewa.model.CategoryAndDate;
+import hva.ewa.model.Question;
+import hva.ewa.model.Questionnaire;
+import hva.ewa.service.QuestionnaireRepositoryService;
+import hva.ewa.service.impl.QuestionnaireRepositoryServiceImpl;
+//import hva.ewa.service.impl.QuestionnaireRepositoryServiceImpl;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import java.sql.Timestamp;
+import java.util.Collection;
+import java.util.List;
+
+
+//http://localhost:8080/VodafoneZiggoApi-1.2/services/rest/question
+
+@Path("/question")
+public class QuestionResource {
+
+    /**
+ * A reference to the repository service
+ */
+private QuestionnaireRepositoryService service;
+
+    public QuestionResource() {
+        service = QuestionnaireRepositoryServiceImpl.getInstance();
+    }
+
+    /*
+    ---------------------------------------------------------------------------------
+    HIERZO ZIJN METHODES DIE MET QUESTION TE MAKEN HEBBEN MET QUESTION OPHALEN/POSTEN
+    ---------------------------------------------------------------------------------
+     */
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Question> getAllQuestion() {
+
+        return service.getAllQuestion();
+    }
+
+    @Path("/true")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Question> getAllSolvedQuestion() {
+
+        return service.getAllSolvedQuestion();
+
+    }
+
+    @Path("/questionnaire/questions/{questionnaireId}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Collection<Question> getAllQuestionOfQuestionnaire(@PathParam("questionnaireId") int questionnaireId) {
+
+        return service.getQuestionsOfQuestionnaire(questionnaireId);
+    }
+
+    @POST
+    @Path("/addquestion")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addQuestion(Question question) {
+
+        Question existingQuestion = service.getQuestionFromId(question.getId());
+
+       if (existingQuestion == null) {
+            service.addQuestion(question);
+            return Response.status(Response.Status.CREATED).entity(question).build();
+      } else {
+            return Response.status(Response.Status.BAD_REQUEST).entity("question already exists").build();
+        }
+    }
+
+
+
+
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{id}")
+    public Response getQuestion(@PathParam("id") int id) {
+        Question question = service.getQuestionFromId(id);
+        if (question != null) {
+            return Response.status(Response.Status.OK).entity(question).build();
+        } else {
+            return Response.status(Response.Status.NO_CONTENT).build();
+        }
+    }
+
+
+    @POST
+    @Path("/addquestion/questionnaire/{questionnaireId}/{questionId}")
+    @Produces(MediaType.APPLICATION_JSON)
+
+    public Response addQuestionToQuestionnaire (@PathParam("questionnaireId") int id, @PathParam("questionId") int questionId) {
+
+
+
+        service.addQuestionToQuestionnaire(id,questionId);
+        return Response.status(Response.Status.OK).build();
+
+
+    }
+
+
+    /*
+    ---------------------------------------------------------------------------
+    HIER ZIJN DE METHODES DIE TE MAKEN HEBBEN MET QUESTIONNAIRES POSTEN/OPHALEN
+    ---------------------------------------------------------------------------
+     */
+
+    @POST
+    @Path("/addquestionaire/user/{customerId}/{questionnaireId}")
+    @Produces(MediaType.APPLICATION_JSON)
+
+    public Response addQuestionnaireToCustomer (@PathParam("customerId") int customerId, @PathParam("questionnaireId") int questionnaireId) {
+
+
+        service.addQuestionnaireToCustomer(customerId,questionnaireId);
+        return Response.status(Response.Status.OK).build();
+
+    }
+
+
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/questionnaire/{id}")
+    public Response getQuestionnaire(@PathParam("id") int id) {
+        System.out.println("eerste gedeelte");
+        Questionnaire questionnaire = service.getQuestionnaire(id);
+        System.out.println("tweede gedeelte");
+        if (questionnaire != null) {
+            return Response.status(Response.Status.OK).entity(questionnaire).build();
+        } else {
+            return Response.status(Response.Status.NO_CONTENT).build();
+        }
+    }
+    @Path("/userquestionnaires/{userId}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Collection<Questionnaire> getQuestionnairesFromUser(@PathParam("userId") int userId) {
+
+       return service.getQuestionnairesFromUser(userId);
+    }
+
+    @Path("/questionnaire")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Questionnaire> getAllQuestionnaire() {
+
+        return service.getAllQuestionnaire();
+    }
+
+    @POST
+    @Path("/addquestionnaire/{categoryId}/{date}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+
+    public Response addQuestionnaire (@PathParam("categoryId") int id,@PathParam("date") long date, Questionnaire questionnaire) {
+
+
+
+            questionnaire.setCreated(new Timestamp(date));
+
+            service.addQuestionnaire(id,questionnaire);
+            return Response.status(Response.Status.CREATED).entity(questionnaire).build();
+
+    }
+
+
+    /*
+    ---------------------------------------------------------------------
+    HIER ZIJN DE METHODES DIE TE MAKEN HEBBEN MET CATEGORY OPHALEN/POSTEN
+    ---------------------------------------------------------------------
+     */
+    @POST
+    @Path("/addcategory")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+
+    public Response addCategory(Category category) {
+        System.out.println("dit is het begin");
+        Category existingCategory = service.getCategory(category.getId());
+
+        System.out.println("we zijn hier voorbij");
+        if (existingCategory == null) {
+            service.addCategory(category);
+            return Response.status(Response.Status.CREATED).entity(category).build();
+        } else {
+            return Response.status(Response.Status.BAD_REQUEST).entity("user already exists").build();
+        }
+    }
+
+
+
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/category/{id}")
+    public Response getCategory(@PathParam("id") int id) {
+        Category category = service.getCategory(id);
+        if (category != null) {
+            return Response.status(Response.Status.OK).entity(category).build();
+        } else {
+            return Response.status(Response.Status.NO_CONTENT).build();
+        }
+    }
+
+    @Path("/userquestionnaires/{userId}/category")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Collection<CategoryAndDate> getCategoryFromQuestionnaireFromUser(@PathParam("userId") int userId) {
+
+        return service.getCategoriesFromQuestionnaireFromUser(userId);
+    }
+
+
+
+
+
+    //
 //    @GET
 //    @Path("/{questionId}")
 //    @Produces(APPLICATION_JSON)
@@ -108,32 +292,6 @@
 //    }
 //
 //
-//    @POST
-//    @Path("/question/{id}")
-//    @Consumes(APPLICATION_JSON)
-//    @Produces(APPLICATION_JSON)
-//    public Response addQuestion(
-//            @PathParam("id") int questionId,
-//            Question question) {
-//
-//        Category card = service.getCategorieFromId(questionId);
-//
-//        if(card == null) {
-//            return Response.status(Response.Status.NOT_FOUND).
-//                        entity(new ClientError("Question not found for id " + questionId)).build();
-//        }
-//
-//        boolean created = service.addQuestion(card, question);
-//
-//        if(created) {
-//            return Response.status(Response.Status.CREATED).build();
-//        } else {
-//            return Response.status(Response.Status.BAD_REQUEST).
-//                        entity(new ClientError("Question already exists for id " + question.getId())).build();
-//
-//        }
-//
-//    }
-//
-//
-//}
+
+
+}

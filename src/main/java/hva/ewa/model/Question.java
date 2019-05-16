@@ -1,5 +1,7 @@
 package hva.ewa.model;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +21,15 @@ public class Question implements Serializable {
     @Basic
     @Column(name = "question")
     private String question;
-    
+
+    @Column(name = "solved")
+    private Boolean solved;
+//
+//    @Basic
+//    @Column(name = "answer")
+//    private boolean answer;
+
+
     public Question() {}
     
     public Question(int id, String title, String question) {
@@ -51,5 +61,14 @@ public class Question implements Serializable {
 
     public void setQuestion(String question) {
         this.question = question;
+    }
+
+
+    public Boolean isSolved() {
+        return solved;
+    }
+
+    public void setSolved(Boolean solved) {
+        this.solved = solved;
     }
 }

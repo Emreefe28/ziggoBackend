@@ -26,7 +26,6 @@ public class Customer extends User implements Serializable {
     @Column(name = "mobilePhone")
     private String mobilePhone;
 
-    @OneToMany(fetch = FetchType.EAGER)
     private Collection<Questionnaire> issues;
 
 
@@ -70,6 +69,9 @@ public class Customer extends User implements Serializable {
         this.mobilePhone = mobilePhone;
     }
 
+    public void addIssues(Questionnaire questionnaire){
+        issues.add(questionnaire);
+    }
     public Collection<Questionnaire> getIssues() {
         return issues;
     }

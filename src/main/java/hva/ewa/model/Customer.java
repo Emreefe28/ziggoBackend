@@ -26,6 +26,7 @@ public class Customer extends User implements Serializable {
     @Column(name = "mobilePhone")
     private String mobilePhone;
 
+   @Transient
     private Collection<Questionnaire> issues;
 
 

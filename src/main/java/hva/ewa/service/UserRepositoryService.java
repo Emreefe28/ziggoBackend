@@ -2,6 +2,7 @@ package hva.ewa.service;
 
 import java.util.List;
 
+import hva.ewa.model.Customer;
 import hva.ewa.model.User;
 
 /**

@@ -2,6 +2,7 @@ package hva.ewa.service.impl;
 
 import java.util.List;
 
+import hva.ewa.model.Customer;
 import hva.ewa.rest.model.WebToken;
 import hva.ewa.service.UserRepositoryService;
 import hva.ewa.model.User;
@@ -167,7 +168,6 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
 
 
     private void loadExamples() {
-
         User us = new User("t", "t");
         addUser(us);
     }

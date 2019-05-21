@@ -1,34 +1,25 @@
 package hva.ewa.model;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.Collection;
+import java.util.UUID;
 
 @Entity
 public class Customer extends User implements Serializable {
 
     @Basic
-    @Column(name = " customerCode", nullable = false, unique = true)
+    @Column(name = "customerCode")
     private String customerCode;
-
-    @Basic
-    @Column(name = "address", nullable = false, unique = true)
-    private String address;
-    @Basic
-    @Column(name = "birthdate", nullable = false)
-    private Date birthdate;
-
-    @Basic
-    @Column(name = "phone", nullable = false, unique = true)
-    private String phone;
-
-    @Basic
-    @Column(name = "mobilePhone")
-    private String mobilePhone;
 
    @Transient
     private Collection<Questionnaire> issues;
 
+    public Customer() {
+        String uuid = UUID.randomUUID().toString();
+        setCustomerCode(uuid);
+    }
 
     public String getCustomerCode() {
         return customerCode;
@@ -38,41 +29,10 @@ public class Customer extends User implements Serializable {
         this.customerCode = customerCode;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public Date getBirthdate() {
-        return birthdate;
-    }
-
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getMobilePhone() {
-        return mobilePhone;
-    }
-
-    public void setMobilePhone(String mobilePhone) {
-        this.mobilePhone = mobilePhone;
-    }
-
     public void addIssues(Questionnaire questionnaire){
         issues.add(questionnaire);
     }
+
     public Collection<Questionnaire> getIssues() {
         return issues;
     }
@@ -80,4 +40,5 @@ public class Customer extends User implements Serializable {
     public void setIssues(Collection<Questionnaire> issues) {
         this.issues = issues;
     }
+
 }

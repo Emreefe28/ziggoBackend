@@ -1,5 +1,6 @@
 package hva.ewa.rest;
 
+import hva.ewa.model.Customer;
 import hva.ewa.model.Employee;
 import hva.ewa.model.User;
 import hva.ewa.rest.model.WebToken;

@@ -142,7 +142,7 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         System.out.println(em.find(Questionnaire.class, id));
 
         Questionnaire questionnaire= em.find(Questionnaire.class, id);
-//        em.close();
+        em.close();
         return questionnaire;
     }
 

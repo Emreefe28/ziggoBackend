@@ -23,11 +23,11 @@ public class User implements Serializable {
     @Column(name = "password")
     private String password;
     @Basic
-    @Column(name = "name")
-    private String name;
+    @Column(name = "firstName")
+    private String firstName;
     @Basic
-    @Column(name = "surname")
-    private String surname;
+    @Column(name = "lastName")
+    private String lastName;
 
     @Transient
     private String jwtToken;
@@ -64,20 +64,20 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getJwtToken() {

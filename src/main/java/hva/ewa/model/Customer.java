@@ -8,18 +8,18 @@ import java.util.Collection;
 public class Customer extends User implements Serializable {
 
     @Basic
-    @Column(name = " customerCode", nullable = false, unique = true)
+    @Column(name = " customerCode", nullable = true)
     private String customerCode;
 
     @Basic
-    @Column(name = "address", nullable = false, unique = true)
+    @Column(name = "address", nullable = true)
     private String address;
     @Basic
-    @Column(name = "birthdate", nullable = false)
+    @Column(name = "birthdate", nullable = true)
     private Date birthdate;
 
     @Basic
-    @Column(name = "phone", nullable = false, unique = true)
+    @Column(name = "phone", nullable = true)
     private String phone;
 
     @Basic
@@ -79,5 +79,17 @@ public class Customer extends User implements Serializable {
 
     public void setIssues(Collection<Questionnaire> issues) {
         this.issues = issues;
+    }
+
+
+    @Override
+    public String toString() {
+        return super.toString() +  "Customer{" +
+                "customerCode='" + customerCode + '\'' +
+                ", address='" + address + '\'' +
+                ", birthdate=" + birthdate +
+                ", phone='" + phone + '\'' +
+                ", mobilePhone='" + mobilePhone + '\'' +
+                '}';
     }
 }

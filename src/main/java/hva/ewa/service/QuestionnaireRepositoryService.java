@@ -52,6 +52,6 @@ public interface QuestionnaireRepositoryService {
 
     void addQuestionnaireToCustomer(int user, int questionnaireId);
 
-    void setResponce(String test);
+    void setResponse(String test);
 
 }

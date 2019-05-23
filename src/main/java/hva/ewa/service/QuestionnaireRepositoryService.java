@@ -25,7 +25,7 @@ public interface QuestionnaireRepositoryService {
 
     void addCategory(Category cat);
 
-    void setResponce(Question question);
+    void setResponse(Question question);
 
     void deleteQuestion(int questionId);
 

@@ -100,7 +100,7 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
     }
 
     @Override
-    public void setResponce(Question question) {
+    public void setResponse(Question question) {
 
     }
 

@@ -60,6 +60,12 @@ INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('14274685
 INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('142746853744Bonnet', '2019-07-13 13:27:34', '1');
 INSERT INTO `vodafoneziggo`.`chat` (`id`, `created`, `rating`) VALUES ('142742853744Bonnet', '2019-07-13 13:27:34', '3');
 
+
+INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('1', '1');
+INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('1', '2');
+INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('1', '3');
+
+
 INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('2', '4');
 INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('2', '5');
 INSERT INTO `vodafoneziggo`.`questionnaire_question` (`Questionnaire_id`, `questions_id`) VALUES ('2', '6');

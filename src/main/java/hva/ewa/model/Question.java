@@ -2,10 +2,7 @@ package hva.ewa.model;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -24,14 +21,14 @@ public class Question implements Serializable {
 
     @Column(name = "solved")
     private Boolean solved;
-//
-//    @Basic
-//    @Column(name = "answer")
-//    private boolean answer;
 
+    @ManyToOne
+    @JoinColumn(name = "questionnaire", nullable = false)
+    private Questionnaire questionnaire;
 
-    public Question() {}
-    
+    public Question() {
+    }
+
     public Question(int id, String title, String question) {
         setId(id);
         setTitle(title);

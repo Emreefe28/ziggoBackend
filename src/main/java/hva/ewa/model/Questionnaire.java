@@ -26,8 +26,8 @@ public class Questionnaire {
     @JsonbTransient
     private Category category;
 
-    @OneToMany
-    @JsonbTransient
+    @OneToMany(mappedBy="questionnaire", cascade = CascadeType.ALL,
+            orphanRemoval = true)
     private Collection<Question> questions;
 
     public int getId() {

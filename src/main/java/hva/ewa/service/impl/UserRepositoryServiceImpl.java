@@ -107,16 +107,10 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
     }
 
     @Override
-    public void addUser(User user) {
+    public void addUser(Customer customer) {
 
         EntityManager em = getEntityManager();
         em.getTransaction().begin();
-        em.persist(user);
-
-        user = em.merge(user);
-        user = em.find(User.class, user.getIdUser());
-        Customer customer = new Customer();
-        customer.setUser(user);
         em.persist(customer);
         em.getTransaction().commit();
 
@@ -157,12 +151,9 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
         q.where(emailPredicate, passwordPredicate);
         TypedQuery<User> query = em.createQuery(q);
 
-        WebToken jwt = new WebToken();
-
         User user;
         try {
             user = query.getSingleResult();
-            user.setJwtToken(jwt.generateToken(user));
         } catch (NoResultException e) {
             user = null;
         }
@@ -174,7 +165,9 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
 
 
     private void loadExamples() {
-        User us = new User("t", "t");
+        Customer us = new Customer();
+        us.setEmail("t");
+        us.setPassword("t");
         addUser(us);
     }
 }

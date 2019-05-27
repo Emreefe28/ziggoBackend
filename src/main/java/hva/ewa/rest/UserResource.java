@@ -50,7 +50,7 @@ public class UserResource {
     @Path("/adduser")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addUser(User user) {
+    public Response addUser(Customer user) {
 
         User existingUser = service.getUser(user);
 

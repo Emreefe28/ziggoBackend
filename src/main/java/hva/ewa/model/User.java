@@ -29,9 +29,6 @@ public class User implements Serializable {
     @Column(name = "lastName")
     private String lastName;
 
-    @OneToOne(mappedBy = "user")
-    private Customer customer;
-
     @Transient
     private String jwtToken;
 
@@ -41,14 +38,6 @@ public class User implements Serializable {
     public User(String email, String password) {
         this.email = email;
         this.password = password;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
     }
 
     public int getIdUser() {

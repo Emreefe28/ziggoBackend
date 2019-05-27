@@ -26,9 +26,9 @@ public interface UserRepositoryService {
 
     /**
      * Adding a user
-     * @param user
+     * @param customer
      */
-    void addUser(User user);
+    void addUser(Customer customer);
 
     User checkCredentials(String email, String password);
 

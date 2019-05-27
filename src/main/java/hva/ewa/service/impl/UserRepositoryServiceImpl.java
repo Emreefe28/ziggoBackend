@@ -112,6 +112,12 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
         EntityManager em = getEntityManager();
         em.getTransaction().begin();
         em.persist(user);
+
+        user = em.merge(user);
+        user = em.find(User.class, user.getIdUser());
+        Customer customer = new Customer();
+        customer.setUser(user);
+        em.persist(customer);
         em.getTransaction().commit();
 
         em.close();

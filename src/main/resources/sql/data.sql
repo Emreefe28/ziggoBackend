@@ -5,9 +5,9 @@ INSERT INTO `vodafoneziggo`.`user` (`idUser`, `email`, `firstName`, `password`, 
 INSERT INTO `vodafoneziggo`.`user` (`idUser`, `email`, `firstName`, `password`, `lastName`) VALUES ('4535214', 'asselt-suringh@planet.nl', 'Chris ', 'ytoakfx', 'van Asselt');
 INSERT INTO `vodafoneziggo`.`user` (`idUser`, `email`, `firstName`, `password`, `lastName`) VALUES ('6675219', 'nbadir@xs4all.nl ', 'Nagy ', 'baridoa443', 'Badir');
 
-INSERT INTO `vodafoneziggo`.`customer` (`customerCode`, `idUser`) VALUES ('test', '1557216');
-INSERT INTO `vodafoneziggo`.`customer` (`customerCode`, `idUser`) VALUES ('test', '1544216');
-INSERT INTO `vodafoneziggo`.`customer` (`customerCode`, `idUser`) VALUES ('test', '2335216');
+INSERT INTO `vodafoneziggo`.`customer` (`idUser`) VALUES ('1557216');
+INSERT INTO `vodafoneziggo`.`customer` (`idUser`) VALUES ('1544216');
+INSERT INTO `vodafoneziggo`.`customer` (`idUser`) VALUES ('2335216');
 
 INSERT INTO `vodafoneziggo`.`employee` (`department`, `idUser`) VALUES ('admin', '2335214');
 INSERT INTO `vodafoneziggo`.`employee` (`department`, `idUser`) VALUES ('kcc', '4535214');

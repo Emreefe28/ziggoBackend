@@ -124,19 +124,19 @@ public class UserResource {
 
     }
 
-    @GET
-    @Path("/{id}/type")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response checkUserType(@PathParam("id") int id) {
-        User user = CustomerRepositoryServiceImpl.getInstance().getCustomer(id);
-        String userType = "customer";
-        JSONObject obj = new JSONObject();
-        if (user == null) {
-            Employee employee = EmployeeRespositoryServiceImpl.getInstance().getEmployee(id);
-            userType = employee.getDepartment();
-
-        }
-        obj.put("role", userType);
-        return Response.status(Response.Status.OK).entity(obj).build();
-    }
+//    @GET
+//    @Path("/{id}/type")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response checkUserType(@PathParam("id") int id) {
+//        User user = CustomerRepositoryServiceImpl.getInstance().getCustomer(id);
+//        String userType = "customer";
+//        JSONObject obj = new JSONObject();
+//        if (user == null) {
+//            Employee employee = EmployeeRespositoryServiceImpl.getInstance().getEmployee(id);
+//            userType = employee.getDepartment();
+//
+//        }
+//        obj.put("role", userType);
+//        return Response.status(Response.Status.OK).entity(obj).build();
+//    }
 }

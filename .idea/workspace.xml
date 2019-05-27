@@ -7,15 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e62c3b90-df73-40e1-8510-4a54be2dfa91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VodafoneZiggoAPI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/VodafoneZiggoAPI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VodafoneZiggoApi.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/service/UserRepositoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/service/UserRepositoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/QuestionnaireRepositoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/QuestionnaireRepositoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/UserRepositoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/UserRepositoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sql/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/data.sql" afterDir="false" />
     </list>
@@ -28,58 +23,112 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-705776896">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="1" />
-          <entry key="java" value="72" />
-          <entry key="sql" value="7" />
+          <entry key="class" value="2" />
+          <entry key="java" value="85" />
+          <entry key="sql" value="12" />
+          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="72" />
-          <entry key="SQL" value="7" />
+          <entry key="CLASS" value="2" />
+          <entry key="JAVA" value="85" />
+          <entry key="SQL" value="12" />
+          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="936" />
-          <entry key="sql" value="30" />
+          <entry key="java" value="1252" />
+          <entry key="sql" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="936" />
-          <entry key="SQL" value="30" />
+          <entry key="JAVA" value="1252" />
+          <entry key="SQL" value="38" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Questionnaire.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="88" column="20" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
+            <state relative-caret-position="238">
+              <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+              <folding>
+                <element signature="method#User#1;class#User#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/QuestionnaireRepositoryServiceImpl.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+            <state relative-caret-position="340">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/sql/data.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/UserRepositoryServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1496">
+              <caret line="116" column="22" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,12 +156,12 @@
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/embeddable/AppointmentId.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/embeddable/CustomerId.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/service/UserRepositoryService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/UserRepositoryServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/sql/data.sql" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/QuestionnaireRepositoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/UserRepositoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/sql/data.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java" />
       </list>
     </option>
   </component>
@@ -129,6 +178,98 @@
     <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/accepts/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/after/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/array-flatten/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/arraybuffer.slice/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/async-limiter/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/backo2/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/base64-arraybuffer/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/base64id/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/better-assert/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/blob/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/body-parser/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/bytes/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/callsite/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/component-bind/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/component-emitter/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/component-inherit/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/content-disposition/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/content-type/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/cookie-signature/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/cookie/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/depd/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/destroy/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/ee-first/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/encodeurl/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/engine.io-client/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/engine.io-client/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/engine.io-parser/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/engine.io/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/engine.io/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/escape-html/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/etag/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/express/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/finalhandler/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/forwarded/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/fresh/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/has-binary2/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/has-cors/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/http-errors/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/iconv-lite/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/indexof/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/ipaddr.js/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/media-typer/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/merge-descriptors/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/methods/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/mime-db/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/mime-types/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/mime/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/negotiator/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/object-component/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/on-finished/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/parseqs/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/parseuri/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/parseurl/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/path-to-regexp/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/proxy-addr/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/qs/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/range-parser/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/raw-body/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/safer-buffer/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/send/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/serve-static/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/setprototypeof/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/socket.io-adapter/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/socket.io-client/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/socket.io-client/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/socket.io-parser/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/socket.io-parser/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/socket.io/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/socket.io/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/socket.io/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/statuses/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/to-array/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/type-is/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/unpipe/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/utils-merge/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/vary/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/ws/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/xmlhttprequest-ssl/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/yeast/package.json" />
+      <path value="$PROJECT_DIR$/src/main/webapp/chat-server/package.json" />
+    </packageJsonPaths>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="width" value="740" />
@@ -139,7 +280,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -209,6 +349,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ewa" type="462c0819:PsiDirectoryNode" />
+              <item name="rest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VodafoneZiggoApi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ewa" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -248,13 +397,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558455072827" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558467484724" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
@@ -362,29 +512,30 @@
       <option name="presentableId" value="Default" />
       <updated>1558005359404</updated>
       <workItem from="1558005360918" duration="1396000" />
-      <workItem from="1558441418927" duration="12719000" />
+      <workItem from="1558441418927" duration="13853000" />
+      <workItem from="1558458179890" duration="6360000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14115000" />
+    <option name="totallyTimeSpent" value="21609000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2521322" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25479743" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
+      <window_info id="Image Layers" order="7" />
+      <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.3275488" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.3275488" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -397,9 +548,6 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="right" id="Theme Preview" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -410,6 +558,9 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="CDI" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="right" id="Capture Analysis" order="10" />
+      <window_info anchor="right" id="Maven Projects" order="11" />
+      <window_info anchor="right" id="Theme Preview" order="12" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,16 +629,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/embeddable/UserId.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/embeddable/UserId.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/EmployeeRespositoryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-261">
@@ -523,10 +665,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/javaee-web-api/7.0/javaee-web-api-7.0.jar!/javax/persistence/GenerationType.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/QuestionnaireRepositoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="160" selection-start-line="160" selection-end-line="160" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Questionnaire.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="88" column="20" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/CustomerRepositoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Category.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/javaee-web-api/7.0/javaee-web-api-7.0.jar!/javax/persistence/Transient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -540,108 +717,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/javaee-web-api/7.0/javaee-web-api-7.0.jar!/javax/persistence/GenerationType.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/CustomerRepositoryService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#252#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/UserRepositoryServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="109" column="33" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/UserRepositoryService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="30" column="12" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="e#1281#1282#0" expanded="true" />
-            <element signature="e#1310#1311#0" expanded="true" />
-            <element signature="e#1351#1352#0" expanded="true" />
-            <element signature="e#1387#1388#0" expanded="true" />
-            <element signature="e#1419#1420#0" expanded="true" />
-            <element signature="e#1447#1448#0" expanded="true" />
-            <element signature="e#1489#1490#0" expanded="true" />
-            <element signature="e#1523#1524#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1589#1590#0" expanded="true" />
-            <element signature="e#1637#1638#0" expanded="true" />
-            <element signature="e#1677#1678#0" expanded="true" />
-            <element signature="e#1713#1714#0" expanded="true" />
-            <element signature="e#1745#1746#0" expanded="true" />
-            <element signature="e#1795#1796#0" expanded="true" />
-            <element signature="e#1837#1838#0" expanded="true" />
-            <element signature="e#1872#1873#0" expanded="true" />
-            <element signature="e#1903#1904#0" expanded="true" />
-            <element signature="e#1951#1952#0" expanded="true" />
-            <element signature="e#1991#1992#0" expanded="true" />
-            <element signature="e#2026#2027#0" expanded="true" />
-            <element signature="e#2057#2058#0" expanded="true" />
-            <element signature="e#2105#2106#0" expanded="true" />
-            <element signature="e#2145#2146#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/CustomerRepositoryServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/data.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="59" column="81" lean-forward="true" selection-start-line="59" selection-start-column="81" selection-end-line="59" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-992">
-          <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+        <state relative-caret-position="88">
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Questionnaire.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/UserRepositoryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="88" column="20" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
+        <state relative-caret-position="1496">
+          <caret line="116" column="22" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/QuestionnaireRepositoryServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/data.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding>
+            <element signature="method#User#1;class#User#0" />
+          </folding>
         </state>
       </provider>
     </entry>

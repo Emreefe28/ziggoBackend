@@ -2,30 +2,39 @@ package hva.ewa.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Date;
 import java.util.Collection;
-import java.util.UUID;
 
 @Entity
-public class Customer extends User implements Serializable {
+public class Customer implements Serializable {
 
-    @Basic
-    @Column(name = "customerCode")
-    private String customerCode;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "customerCode", updatable = false)
+    private int customerCode;
 
-   @Transient
+    @Transient
     private Collection<Questionnaire> issues;
 
+    @OneToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name="idUser")
+    private User user;
+
     public Customer() {
-        String uuid = UUID.randomUUID().toString();
-        setCustomerCode(uuid);
     }
 
-    public String getCustomerCode() {
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public int getCustomerCode() {
         return customerCode;
     }
 
-    public void setCustomerCode(String customerCode) {
+    public void setCustomerCode(int customerCode) {
         this.customerCode = customerCode;
     }
 

@@ -17,13 +17,15 @@ public class CustomerRepositoryServiceImpl extends RepositoryService implements 
     public static CustomerRepositoryService getInstance() {
         return instance;
     }
+    EntityManager costie = getEntityManager();
+
 
     @Override
     public Customer getCustomer(int id) {
-        EntityManager em = getEntityManager();
-        System.out.println("GET CUSTOMER BITCH");
-        System.out.println(em.find(Customer.class, id));
-        return em.find(Customer.class, id);
+
+        Customer customer = costie.find(Customer.class, id);
+        System.out.println(customer);
+        return customer;
 
 //        EntityManager em = getEntityManager();
 //         Customer customer = em.find(Customer.class, id);

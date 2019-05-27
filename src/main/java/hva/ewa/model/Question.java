@@ -31,7 +31,7 @@ public class Question implements Serializable {
 
 
     public Question() {}
-    
+
     public Question(int id, String title, String question) {
         setId(id);
         setTitle(title);

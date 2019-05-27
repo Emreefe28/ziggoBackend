@@ -8,7 +8,7 @@ import java.util.Collection;
 public class Customer extends User implements Serializable {
 
     @Basic
-    @Column(name = " customerCode", nullable = false, unique = true)
+    @Column(name = "customerCode", nullable = false, unique = true)
     private String customerCode;
 
     @Basic
@@ -26,7 +26,7 @@ public class Customer extends User implements Serializable {
     @Column(name = "mobilePhone")
     private String mobilePhone;
 
-   @Transient
+   @OneToMany
     private Collection<Questionnaire> issues;
 
 

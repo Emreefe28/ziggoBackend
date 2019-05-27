@@ -21,9 +21,14 @@ public class CustomerRepositoryServiceImpl extends RepositoryService implements 
     @Override
     public Customer getCustomer(int id) {
         EntityManager em = getEntityManager();
-         Customer customer = em.find(Customer.class, id);
-         em.close();
-         return customer;
+        System.out.println("GET CUSTOMER BITCH");
+        System.out.println(em.find(Customer.class, id));
+        return em.find(Customer.class, id);
+
+//        EntityManager em = getEntityManager();
+//         Customer customer = em.find(Customer.class, id);
+//         em.close();
+//         return customer;
     }
     @Override
     public List<Appointment> getAppointments(int id) {

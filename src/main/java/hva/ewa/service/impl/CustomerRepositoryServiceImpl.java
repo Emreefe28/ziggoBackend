@@ -17,13 +17,13 @@ public class CustomerRepositoryServiceImpl extends RepositoryService implements 
     public static CustomerRepositoryService getInstance() {
         return instance;
     }
-    EntityManager costie = getEntityManager();
+    EntityManager customerManager = getEntityManager();
 
 
     @Override
     public Customer getCustomer(int id) {
 
-        Customer customer = costie.find(Customer.class, id);
+        Customer customer = customerManager.find(Customer.class, id);
         System.out.println(customer);
         return customer;
 
@@ -31,11 +31,22 @@ public class CustomerRepositoryServiceImpl extends RepositoryService implements 
 //         Customer customer = em.find(Customer.class, id);
 //         em.close();
 //         return customer;
+
     }
+
+    @Override
+    public void addCustomer(Customer customer) {
+        EntityManager em = getEntityManager();
+        em.getTransaction().begin();
+        em.persist(customer);
+        em.getTransaction().commit();
+        em.close();
+    }
+
     @Override
     public List<Appointment> getAppointments(int id) {
         EntityManager em = getEntityManager();
-        Query query = em.createQuery("SELECT m FROM Appointment m WHERE m.id.customer.id = "  + id );
+        Query query = em.createQuery("SELECT m FROM Appointment m WHERE m.id.customer.id = " + id);
         List<Appointment> appointments = query.getResultList();
         em.close();
         return appointments;
@@ -44,7 +55,7 @@ public class CustomerRepositoryServiceImpl extends RepositoryService implements 
     @Override
     public List<Equipment> getEquipment(int id) {
         EntityManager em = getEntityManager();
-        Query query = em.createQuery("SELECT m FROM Equipment m WHERE m.id.customer.id = "  + id );
+        Query query = em.createQuery("SELECT m FROM Equipment m WHERE m.id.customer.id = " + id);
         List<Equipment> equipment = query.getResultList();
         em.close();
         return equipment;

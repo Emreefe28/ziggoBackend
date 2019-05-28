@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CustomerRepositoryService {
     Customer getCustomer(int id);
-
+    void addCustomer(Customer customer);
     List<Appointment> getAppointments(int id);
     List<Equipment> getEquipment(int id);
 }

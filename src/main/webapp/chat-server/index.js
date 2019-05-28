@@ -25,19 +25,24 @@ io.on('connection', (socket) => {
         employee.socketId = socket.id;
         console.log('checking in...' + employee);
         employees.push(employee);
+        console.log('employees online: ' + employees.length);
     });
-
     socket.on('new-message', (message) => {
         io.in(message.room).emit('new-message', message);
     });
 
-    socket.on('check-out', () => {
+    socket.on('check-out', (chats) => {
         for (var i = 0; i < employees.length; ++i) {
             var e = employees[i];
             console.log(employees[i].employee + ' checked out');
             if (e.socketId === socket.id) {
                 employees.splice(i, 1);
             }
+        }
+        for (var x = 0; x < chats.length; ++x) {
+            console.log('ending chat:');
+            console.log(chats[x].chat.id);
+            socket.to(chats[x].chat.id).emit('checked-out');
         }
     });
 
@@ -49,17 +54,17 @@ io.on('connection', (socket) => {
 
     socket.on('match', (token) => {
         console.log('MATCHING...');
-        let employee = employees[next];
-        console.log('matched with ' + employees[next].employee);
-        token.employee = employee.employee;
-        socket.join(token.chat.id);
         if (next >= employees.length - 1) {
             next = 0;
         } else {
             next++;
         }
-        io.sockets.to(employee.socketId).emit('chat-request', token);
+        let employee = employees[next];
+        console.log('matched with ' + employees[next].employee);
+        token.employee = employee.employee;
+        socket.join(token.chat.id);
 
+        io.sockets.to(employee.socketId).emit('chat-request', token);
     });
 
     socket.on('disconnect', function () {
@@ -72,7 +77,7 @@ io.on('connection', (socket) => {
         }
     });
     socket.on('end-chat', (chatId) => {
-        console.log("ending chat: " + chatId );
+        console.log("ending chat: " + chatId);
         socket.to(chatId).emit('end-chat');
     });
 

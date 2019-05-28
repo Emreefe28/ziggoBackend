@@ -87,4 +87,17 @@ public class User implements Serializable {
     public void setJwtToken(String jwtToken) {
         this.jwtToken = jwtToken;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "idUser=" + idUser +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", jwtToken='" + jwtToken + '\'' +
+                '}';
+    }
 }
+

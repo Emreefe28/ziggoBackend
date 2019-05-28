@@ -7,8 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e62c3b90-df73-40e1-8510-4a54be2dfa91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/QuestionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/QuestionResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/QuestionnaireRepositoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/QuestionnaireRepositoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/model/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/model/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/model/Questionnaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/model/Questionnaire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/service/CustomerRepositoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/service/CustomerRepositoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/CustomerRepositoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/CustomerRepositoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/chat-server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/chat-server/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/src/main/webapp/chat-server/node_modules/" />
@@ -34,40 +41,17 @@
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/QuestionResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="162" />
+            <state relative-caret-position="198">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
-                <element signature="e#955#956#0" expanded="true" />
                 <element signature="e#1029#1030#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/StatResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/QuestionnaireRepositoryService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="364">
-              <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
+              <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
             </state>
           </provider>
         </entry>
@@ -95,22 +79,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/EmployeeRespositoryServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="42" column="25" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#24#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/QuestionnaireRepositoryServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="223" column="8" lean-forward="true" selection-start-line="223" selection-start-column="8" selection-end-line="223" selection-end-column="8" />
+            <state relative-caret-position="180">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="e#0#24#1" expanded="true" />
                 <element signature="e#0#29#1" expanded="true" />
@@ -120,40 +92,32 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Questionnaire.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-593">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="189">
+              <caret line="31" column="45" lean-forward="true" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#783#784#0" expanded="true" />
-                <element signature="e#818#819#0" expanded="true" />
-                <element signature="e#874#875#0" expanded="true" />
-                <element signature="e#922#923#0" expanded="true" />
-                <element signature="e#956#957#0" expanded="true" />
-                <element signature="e#986#987#0" expanded="true" />
-                <element signature="e#1032#1033#0" expanded="true" />
-                <element signature="e#1070#1071#0" expanded="true" />
-                <element signature="e#1104#1105#0" expanded="true" />
-                <element signature="e#1136#1137#0" expanded="true" />
-                <element signature="e#1184#1185#0" expanded="true" />
-                <element signature="e#1226#1227#0" expanded="true" />
-                <element signature="e#1258#1259#0" expanded="true" />
-                <element signature="e#1286#1287#0" expanded="true" />
-                <element signature="e#1328#1329#0" expanded="true" />
-                <element signature="e#1362#1363#0" expanded="true" />
-                <element signature="e#1400#1401#0" expanded="true" />
-                <element signature="e#1434#1435#0" expanded="true" />
-                <element signature="e#1488#1489#0" expanded="true" />
-                <element signature="e#1534#1535#0" expanded="true" />
-                <element signature="e#1591#1592#0" expanded="true" />
-                <element signature="e#1632#1633#0" expanded="true" />
-                <element signature="e#1683#1684#0" expanded="true" />
-                <element signature="e#1712#1713#0" expanded="true" />
-                <element signature="e#1775#1776#0" expanded="true" />
-                <element signature="e#1811#1812#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Question.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -161,14 +125,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/CustomerRepositoryServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+            <state relative-caret-position="578">
+              <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#582#583#0" expanded="true" />
                 <element signature="e#613#614#0" expanded="true" />
                 <element signature="e#0#65#1" expanded="true" />
                 <element signature="e#0#63#1" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="67" lean-forward="true" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -204,8 +178,8 @@
       <find>merge</find>
       <find>getquestionnaire</find>
       <find>addquestionto</find>
-      <find>getquestion</find>
       <find>addquestion</find>
+      <find>getquestion</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -214,15 +188,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/Questionnaire.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/Category.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/Question.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java" />
         <option value="$PROJECT_DIR$/src/main/resources/sql/data.sql" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/CustomerRepositoryServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/rest/QuestionResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/QuestionnaireRepositoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/Question.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hva/ewa/model/Questionnaire.java" />
       </list>
     </option>
   </component>
@@ -233,8 +207,8 @@
     <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" value="" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1273" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
     <option name="width" value="1294" />
     <option name="height" value="1047" />
   </component>
@@ -252,6 +226,11 @@
             <path>
               <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
               <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EWAZiggo-backend" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="VodafoneZiggoAPI" type="b2602c69:ProjectViewProjectNode" />
@@ -511,7 +490,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23608000" />
+    <option name="totallyTimeSpent" value="24293000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -523,10 +502,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
+    <frame x="-7" y="0" width="1294" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16295707" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33225283" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Persistence" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -535,15 +514,15 @@
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49920508" visible="true" weight="0.33150986" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32932165" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49960256" weight="0.32827735" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32822758" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007949" side_tool="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" />
@@ -704,64 +683,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Question.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="22" column="28" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Questionnaire.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="34" column="5" selection-end-line="94" />
-          <folding>
-            <element signature="e#1193#1194#0" expanded="true" />
-            <element signature="e#1225#1226#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/sql/data.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-593">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#818#819#0" expanded="true" />
-            <element signature="e#874#875#0" expanded="true" />
-            <element signature="e#922#923#0" expanded="true" />
-            <element signature="e#956#957#0" expanded="true" />
-            <element signature="e#986#987#0" expanded="true" />
-            <element signature="e#1032#1033#0" expanded="true" />
-            <element signature="e#1070#1071#0" expanded="true" />
-            <element signature="e#1104#1105#0" expanded="true" />
-            <element signature="e#1136#1137#0" expanded="true" />
-            <element signature="e#1184#1185#0" expanded="true" />
-            <element signature="e#1226#1227#0" expanded="true" />
-            <element signature="e#1258#1259#0" expanded="true" />
-            <element signature="e#1286#1287#0" expanded="true" />
-            <element signature="e#1328#1329#0" expanded="true" />
-            <element signature="e#1362#1363#0" expanded="true" />
-            <element signature="e#1400#1401#0" expanded="true" />
-            <element signature="e#1434#1435#0" expanded="true" />
-            <element signature="e#1488#1489#0" expanded="true" />
-            <element signature="e#1534#1535#0" expanded="true" />
-            <element signature="e#1591#1592#0" expanded="true" />
-            <element signature="e#1632#1633#0" expanded="true" />
-            <element signature="e#1683#1684#0" expanded="true" />
-            <element signature="e#1712#1713#0" expanded="true" />
-            <element signature="e#1775#1776#0" expanded="true" />
-            <element signature="e#1811#1812#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -784,9 +709,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/CustomerRepositoryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        <state relative-caret-position="578">
+          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#582#583#0" expanded="true" />
             <element signature="e#613#614#0" expanded="true" />
             <element signature="e#0#65#1" expanded="true" />
@@ -822,7 +748,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
-          <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
+          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
         </state>
       </provider>
     </entry>
@@ -836,26 +762,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="67" lean-forward="true" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="31" column="45" lean-forward="true" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/rest/QuestionResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="162" />
+        <state relative-caret-position="198">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
-            <element signature="e#955#956#0" expanded="true" />
             <element signature="e#1029#1030#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Question.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/QuestionnaireRepositoryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="223" column="8" lean-forward="true" selection-start-line="223" selection-start-column="8" selection-end-line="223" selection-end-column="8" />
+        <state relative-caret-position="180">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="e#0#24#1" expanded="true" />
             <element signature="e#0#29#1" expanded="true" />
             <element signature="e#0#52#1" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/model/Questionnaire.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>

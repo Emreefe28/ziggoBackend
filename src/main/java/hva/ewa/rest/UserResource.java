@@ -1,8 +1,10 @@
 package hva.ewa.rest;
 
+import hva.ewa.model.Customer;
 import hva.ewa.model.Employee;
 import hva.ewa.model.User;
 import hva.ewa.rest.model.WebToken;
+import hva.ewa.service.CustomerRepositoryService;
 import hva.ewa.service.UserRepositoryService;
 import hva.ewa.service.impl.CustomerRepositoryServiceImpl;
 import hva.ewa.service.impl.EmployeeRespositoryServiceImpl;
@@ -49,16 +51,11 @@ public class UserResource {
     @Path("/adduser")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addUser(User user) {
-
-        User existingUser = service.getUser(user);
-
-        if (existingUser == null) {
-            service.addUser(user);
+    public Response addUser(Customer user) {
+        System.out.println(user);
+            CustomerRepositoryService customerRepositoryService = CustomerRepositoryServiceImpl.getInstance();
+            customerRepositoryService.addCustomer(user);
             return Response.status(Response.Status.CREATED).entity(user).build();
-        } else {
-            return Response.status(Response.Status.BAD_REQUEST).entity("user already exists").build();
-        }
     }
 
     @POST

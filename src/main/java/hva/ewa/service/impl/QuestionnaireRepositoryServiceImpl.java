@@ -30,7 +30,8 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         return instance;
     }
 
-    private EntityManagerFactory entityManagerFactory;
+    EntityManager questionnaireManager = getEntityManager();
+
 
 
     @Override
@@ -137,13 +138,9 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
     @Override
     public Questionnaire getQuestionnaire(int id) {
-        EntityManager em = getEntityManager();
-        System.out.println("supervindbaar de questionnaire id is: "+id);
-        System.out.println(em.find(Questionnaire.class, id));
+//        Questionnaire questionnaire= questionnaireManager.find(Questionnaire.class, id);
 
-        Questionnaire questionnaire= em.find(Questionnaire.class, id);
-//        em.close();
-        return questionnaire;
+        return  questionnaireManager.find(Questionnaire.class, id);
     }
 
     @Override
@@ -221,17 +218,17 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
     public void addQuestionToQuestionnaire(int questionnaireId, int questionId) {
 
         //retrieve het questionnaire object van database, voeg er een question aan toe en persist t
-        Questionnaire questionnaire = getQuestionnaire(questionnaireId);
+
         Question question = getQuestionFromId(questionId);
 
-        questionnaire.addQuestion(question);
         EntityManager em = getEntityManager();
+        Questionnaire questionnaire =  em.find(Questionnaire.class, questionnaireId);
+        questionnaire.addQuestion(question);
+
+
         em.getTransaction().begin();
-
         em.merge(questionnaire);
-
         em.getTransaction().commit();
-
         em.close();
 
     }

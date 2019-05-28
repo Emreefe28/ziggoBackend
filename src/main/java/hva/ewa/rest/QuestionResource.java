@@ -66,7 +66,6 @@ private QuestionnaireRepositoryService service;
     }
 
     @POST
-    @Path("/addquestion")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response addQuestion(Question question) {
@@ -99,7 +98,7 @@ private QuestionnaireRepositoryService service;
 
 
     @POST
-    @Path("/addquestion/questionnaire/{questionnaireId}/{questionId}")
+    @Path("/questionnaire/{questionnaireId}/question/{questionId}")
     @Produces(MediaType.APPLICATION_JSON)
 
     public Response addQuestionToQuestionnaire (@PathParam("questionnaireId") int id, @PathParam("questionId") int questionId) {
@@ -120,10 +119,10 @@ private QuestionnaireRepositoryService service;
      */
 
     @POST
-    @Path("/addquestionaire/user/{customerId}/{questionnaireId}")
+    @Path("/questionnaire/{questionnaireId}/user/{customerId}")
     @Produces(MediaType.APPLICATION_JSON)
 
-    public Response addQuestionnaireToCustomer (@PathParam("customerId") int customerId, @PathParam("questionnaireId") int questionnaireId) {
+    public Response addQuestionnaireToUser (@PathParam("customerId") int customerId, @PathParam("questionnaireId") int questionnaireId) {
 
 
         service.addQuestionnaireToCustomer(customerId,questionnaireId);
@@ -146,7 +145,7 @@ private QuestionnaireRepositoryService service;
             return Response.status(Response.Status.NO_CONTENT).build();
         }
     }
-    @Path("/userquestionnaires/{userId}")
+    @Path("/questionnaire/user/{userId}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Collection<Questionnaire> getQuestionnairesFromUser(@PathParam("userId") int userId) {
@@ -185,7 +184,7 @@ private QuestionnaireRepositoryService service;
     ---------------------------------------------------------------------
      */
     @POST
-    @Path("/addcategory")
+    @Path("/category")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
 

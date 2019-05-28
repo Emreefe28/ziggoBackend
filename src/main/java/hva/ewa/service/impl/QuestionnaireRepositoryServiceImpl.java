@@ -219,10 +219,13 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
         //retrieve het questionnaire object van database, voeg er een question aan toe en persist t
 
-        Question question = getQuestionFromId(questionId);
 
         EntityManager em = getEntityManager();
+
+        Question question = em.find(Question.class,questionId);
+
         Questionnaire questionnaire =  em.find(Questionnaire.class, questionnaireId);
+
         questionnaire.addQuestion(question);
 
 

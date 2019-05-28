@@ -162,7 +162,7 @@ private QuestionnaireRepositoryService service;
     }
 
     @POST
-    @Path("/addquestionnaire/{categoryId}/{date}")
+    @Path("/questionnaire/{categoryId}/{date}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
 

@@ -48,7 +48,7 @@ public class UserResource {
 
 
     @POST
-    @Path("/adduser")
+    @Path("/register")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response addUser(Customer user) {

@@ -31,11 +31,18 @@ public interface QuestionnaireRepositoryService {
 
     void addQuestion(Question question);
 
+    Questionnaire setActiveQuestionnaire(Questionnaire questionnaire);
+
     Collection<Question> getQuestionsOfQuestionnaire(int questionnaireId);
 
     Question getQuestionOfQuestionnaire(Questionnaire questionnaire, int questionId);
 
     Questionnaire getQuestionnaire(int id);
+
+    Questionnaire getActiveQuestionnaire(int categoryId);
+
+    Collection<Question> getActiveQuestionnaireQuestions(int categoryId);
+
 
     Category getCategory(int id);
 

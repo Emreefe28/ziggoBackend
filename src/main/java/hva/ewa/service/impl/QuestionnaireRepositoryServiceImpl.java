@@ -65,10 +65,12 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         return questionnaires;
     }
 
+
+
     public List<Question> getAllSolvedQuestion() {
 
         EntityManager em = getEntityManager();
-        Query query = em.createQuery("select count(q) from Question q where solved is true");
+        Query query = em.createQuery("select count(q) from Question q where solved is TRUE");
         List<Question> solvedQuestions=query.getResultList();
         em.close();
         return solvedQuestions;
@@ -121,6 +123,35 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
     }
 
     @Override
+    public Questionnaire setActiveQuestionnaire(Questionnaire questionnaire) {
+
+        int category = questionnaire.getCategory().getId();
+
+        EntityManager em = getEntityManager();
+        Query query = em.createQuery("select q from Questionnaire q where q.active = true and q.category.id = '" + category + "'");
+        Questionnaire questionnaireNew= (Questionnaire) query.getSingleResult();
+
+        questionnaireNew.setActive(false);
+        questionnaire.setActive(true);
+
+        em.getTransaction().begin();
+        em.merge(questionnaireNew);
+        em.getTransaction().commit();
+
+
+        em.getTransaction().begin();
+        em.merge(questionnaire);
+        em.getTransaction().commit();
+
+
+        em.close();
+        return questionnaireNew;
+
+
+
+    }
+
+    @Override
     public Collection<Question> getQuestionsOfQuestionnaire(int questionnaireId) {
 
        Questionnaire questionnaire=getQuestionnaire(questionnaireId);
@@ -142,6 +173,36 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
         return  questionnaireManager.find(Questionnaire.class, id);
     }
+
+    @Override
+    public Questionnaire getActiveQuestionnaire(int categoryId) {
+
+
+        EntityManager em = getEntityManager();
+        Query query = em.createQuery("select q from Questionnaire q where q.active = true and q.category.id = '" + categoryId + "'");
+        Questionnaire questionnaireNew= (Questionnaire) query.getSingleResult();
+
+        em.close();
+        return questionnaireNew;
+
+    }
+
+    @Override
+    public Collection<Question> getActiveQuestionnaireQuestions(int categoryId) {
+
+
+        EntityManager em = getEntityManager();
+        Query query = em.createQuery("select q from Questionnaire q where q.active = true and q.category.id = '" + categoryId + "'");
+        Questionnaire questionnaireNew= (Questionnaire) query.getSingleResult();
+
+        em.close();
+
+        Collection<Question> questions = getQuestionsOfQuestionnaire(questionnaireNew.getId());
+
+        return questions;
+
+    }
+
 
     @Override
     public Category getCategory(int id) {

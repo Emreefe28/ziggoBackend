@@ -26,6 +26,10 @@ public class Questionnaire {
     @JsonbTransient
     private Category category;
 
+
+    @Column(name="active", nullable = true)
+    private Boolean active;
+
     @OneToMany
     @JsonbTransient
     private Collection<Question> questions;
@@ -63,12 +67,21 @@ public class Questionnaire {
     }
 
 
+
     public boolean addQuestion(Question q) {
         if (checkDuplicates(q)) {
             return false;
         }
         getQuestions().add(q);
         return true;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 
     public Question getQuestionFromId(int id) {

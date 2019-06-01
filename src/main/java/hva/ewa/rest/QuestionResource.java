@@ -96,6 +96,46 @@ private QuestionnaireRepositoryService service;
         }
     }
 
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/active/{id}")
+    public Response getActiveQuestionnaire(@PathParam("id") int id) {
+        Questionnaire questionnaire = service.getActiveQuestionnaire(id);
+        if (questionnaire != null) {
+            return Response.status(Response.Status.OK).entity(questionnaire).build();
+        } else {
+            return Response.status(Response.Status.NO_CONTENT).build();
+        }
+    }
+
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/active/questions/{id}")
+
+    public Collection<Question> getQuestionsOfActiveQuestionnaire(@PathParam("id") int id) {
+
+        return service.getActiveQuestionnaireQuestions(id);
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/active/{questionnaireId}")
+    public Response setActiveQuestionnaire(@PathParam("questionnaireId") int questionnaireId) {
+
+        Questionnaire questionnaire =service.getQuestionnaire(questionnaireId);
+         service.setActiveQuestionnaire(questionnaire);
+        System.out.println("vindbaretext "+ questionnaire.getQuestions());
+
+        if (questionnaire != null) {
+            return Response.status(Response.Status.OK).entity(questionnaire).build();
+        } else {
+            return Response.status(Response.Status.NO_CONTENT).build();
+        }
+    }
+
 
     @POST
     @Path("/questionnaire/{questionnaireId}/question/{questionId}")

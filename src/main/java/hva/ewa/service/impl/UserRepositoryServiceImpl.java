@@ -1,5 +1,11 @@
 package hva.ewa.service.impl;
 
+import hva.ewa.model.Employee;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import hva.ewa.service.jwt.JWTUtils;
+import java.security.Key;
+import java.util.Date;
 import java.util.List;
 
 import hva.ewa.rest.model.WebToken;
@@ -8,6 +14,7 @@ import hva.ewa.model.User;
 
 import javax.persistence.*;
 import javax.persistence.criteria.*;
+import javax.ws.rs.core.UriInfo;
 
 /**
  *
@@ -138,31 +145,17 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
         em.close();
     }
     @Override
-    public User checkCredentials(String email, String password) {
+    public Boolean checkCredentials(String email, String password) {
 
         EntityManager em = getEntityManager();
-        CriteriaBuilder cb = em.getCriteriaBuilder();
-
-        CriteriaQuery<User> q = cb.createQuery(User.class);
-        Root<User> c = q.from(User.class);
-        Predicate emailPredicate = cb.equal(c.get("email"), email);
-        Predicate passwordPredicate = cb.equal(c.get("password"), password);
-        q.where(emailPredicate, passwordPredicate);
-        TypedQuery<User> query = em.createQuery(q);
-
-        WebToken jwt = new WebToken();
-
-        User user;
-        try {
-            user = query.getSingleResult();
-            user.setJwtToken(jwt.generateToken(user));
-        } catch (NoResultException e) {
-            user = null;
+        User user = em.find(User.class, 2335214);
+        if(password != user.getPassword()) {
+            return false;
         }
 
         em.close();
 
-        return user;
+        return true;
     }
 
 
@@ -170,5 +163,61 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
 
         User us = new User("t", "t");
         addUser(us);
+    }
+
+    private String getRole(String userEmail) {
+
+        EntityManager em = getEntityManager();
+        User user = em.find(User.class, 2335214);
+        Employee employee = em.find(Employee.class, user.getIdUser());
+
+        if (employee != null) {
+            if (employee.getDepartment() == "admin"){
+                return "true";
+            }
+        }
+//        CriteriaBuilder cb = em.getCriteriaBuilder();
+//        EmployeeRespositoryServiceImpl er = new EmployeeRespositoryServiceImpl();
+//
+//        CriteriaQuery<User> q = cb.createQuery(User.class);
+//        Root<User> c = q.from(User.class);
+//        Predicate emailPredicate = cb.equal(c.get("email"), userEmail);
+//        q.where(emailPredicate);
+//        TypedQuery<User> query = em.createQuery(q);
+//
+//        User user;
+//        try {
+//            user = query.getSingleResult();
+//        } catch (NoResultException e) {
+//            user = null;
+//        }
+//        Employee employee = er.getEmployee(user.getIdUser());
+//        if (employee != null) {
+//            if (employee.getDepartment() == "admin") {
+//                return "admin";
+//            }
+//        }
+        em.close();
+
+        //true for testing purposes
+        return "true";
+    }
+
+    public String issueToken(String email, UriInfo uri) {
+        Key key = JWTUtils.getKey();
+
+        // Could have more than one role, but now it is just one
+        String roles = getRole(email);
+
+        String jwtToken = Jwts.builder()
+                .setSubject(email)
+                .claim("roles",roles)
+                .setIssuer(uri.getPath())
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis()+15*60*1000)) // 15 minutes
+                .signWith(key,SignatureAlgorithm.HS512)
+                .compact();
+
+        return jwtToken;
     }
 }

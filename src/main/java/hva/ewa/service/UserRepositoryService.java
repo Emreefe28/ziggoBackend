@@ -4,6 +4,8 @@ import java.util.List;
 
 import hva.ewa.model.User;
 
+import javax.ws.rs.core.UriInfo;
+
 /**
  * An interface containing utility methods to manage flash card data
  * @author Emre Efe
@@ -29,12 +31,14 @@ public interface UserRepositoryService {
      */
     void addUser(User user);
 
-    User checkCredentials(String email, String password);
+    Boolean checkCredentials(String email, String password);
 
     User getUserFromId(int id);
 
     void deleteUser(User user);
 
     void changeUser(User user);
+
+    String issueToken(String email, UriInfo uri);
 
 }

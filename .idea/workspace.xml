@@ -8,8 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e62c3b90-df73-40e1-8510-4a54be2dfa91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/rest/UserResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/UserRepositoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/UserRepositoryServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -56,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/UserRepositoryServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="199" column="39" lean-forward="true" selection-start-line="199" selection-start-column="39" selection-end-line="199" selection-end-column="39" />
+            <state relative-caret-position="374">
+              <caret line="200" column="46" lean-forward="true" selection-start-line="200" selection-start-column="46" selection-end-line="200" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#0#20#1" expanded="true" />
@@ -488,12 +486,12 @@
       <option name="presentableId" value="Default" />
       <updated>1558005359404</updated>
       <workItem from="1558005360918" duration="1396000" />
-      <workItem from="1559319074355" duration="16926000" />
+      <workItem from="1559319074355" duration="17389000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41219000" />
+    <option name="totallyTimeSpent" value="41682000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -890,8 +888,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hva/ewa/service/impl/UserRepositoryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="199" column="39" lean-forward="true" selection-start-line="199" selection-start-column="39" selection-end-line="199" selection-end-column="39" />
+        <state relative-caret-position="374">
+          <caret line="200" column="46" lean-forward="true" selection-start-line="200" selection-start-column="46" selection-end-line="200" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#0#20#1" expanded="true" />

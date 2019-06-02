@@ -192,7 +192,7 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
         Query query = em.createQuery("SELECT q FROM User q WHERE email = " + "\'" + email + "\'");
         User user = (User) query.getSingleResult();
 
-        // Could have more than one role, but now it is just one
+        // Checks wether the user is an employee and wether this employee is an admin or not
         String isAdmin = getRole(email);
 
         String jwtToken = Jwts.builder()

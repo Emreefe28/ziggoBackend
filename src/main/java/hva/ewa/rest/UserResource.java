@@ -66,26 +66,6 @@ public class UserResource {
             return Response.status(Response.Status.CREATED).entity(user).build();
     }
 
-//    @POST
-//    @Path("/login")
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response checkUser(User user) {
-//
-//        user = service.checkCredentials(user.getEmail(), user.getPassword());
-//
-//        if (user != null) {
-//            return Response.status(Response.Status.CREATED).entity(user).build();
-//        } else {
-//            return Response.status(Response.Status.BAD_REQUEST).build();
-//        }
-//
-//    }
-
-
-    //http://localhost:8080/VodafoneZiggoApi-1.2/services/rest/users/login
-    //email         Jos.anema@planet.nl
-    //password      sweex291
     @POST
     @Path("/login")
     @Consumes(APPLICATION_FORM_URLENCODED)
@@ -98,7 +78,7 @@ public class UserResource {
             // Note that we are using a hardcoded user and password
             // for the sake of simplicity
 
-            if(service.checkCredentials(email, password) == false) {
+            if(!service.checkCredentials(email, password)) {
                 throw new IllegalAccessException("Not authorized!");
             }
 

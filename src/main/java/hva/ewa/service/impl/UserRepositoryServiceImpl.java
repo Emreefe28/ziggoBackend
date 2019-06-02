@@ -145,11 +145,12 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
         em.close();
     }
     @Override
-    public Boolean checkCredentials(String email, String password) {
+    public Boolean checkCredentials(String userEmail, String password) {
 
         EntityManager em = getEntityManager();
-        User user = em.find(User.class, 2335214);
-        if(password != user.getPassword()) {
+        Query query = em.createQuery("SELECT q FROM User q WHERE email = " + "\'" + userEmail + "\'");
+        User user = (User) query.getSingleResult();
+        if(!password.equals(user.getPassword())) {
             return false;
         }
 
@@ -168,51 +169,36 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
     private String getRole(String userEmail) {
 
         EntityManager em = getEntityManager();
-        User user = em.find(User.class, 2335214);
+        Query query = em.createQuery("SELECT q FROM User q WHERE email = " + "\'" + userEmail + "\'");
+        User user = (User) query.getSingleResult();
         Employee employee = em.find(Employee.class, user.getIdUser());
 
         if (employee != null) {
-            if (employee.getDepartment() == "admin"){
+            if (employee.getDepartment().equalsIgnoreCase("admin")){
                 return "true";
             }
         }
-//        CriteriaBuilder cb = em.getCriteriaBuilder();
-//        EmployeeRespositoryServiceImpl er = new EmployeeRespositoryServiceImpl();
-//
-//        CriteriaQuery<User> q = cb.createQuery(User.class);
-//        Root<User> c = q.from(User.class);
-//        Predicate emailPredicate = cb.equal(c.get("email"), userEmail);
-//        q.where(emailPredicate);
-//        TypedQuery<User> query = em.createQuery(q);
-//
-//        User user;
-//        try {
-//            user = query.getSingleResult();
-//        } catch (NoResultException e) {
-//            user = null;
-//        }
-//        Employee employee = er.getEmployee(user.getIdUser());
-//        if (employee != null) {
-//            if (employee.getDepartment() == "admin") {
-//                return "admin";
-//            }
-//        }
+
         em.close();
 
-        //true for testing purposes
-        return "true";
+        return "false";
     }
 
     public String issueToken(String email, UriInfo uri) {
+        EntityManager em = getEntityManager();
         Key key = JWTUtils.getKey();
 
+        // Get the user
+        Query query = em.createQuery("SELECT q FROM User q WHERE email = " + "\'" + email + "\'");
+        User user = (User) query.getSingleResult();
+
         // Could have more than one role, but now it is just one
-        String roles = getRole(email);
+        String isAdmin = getRole(email);
 
         String jwtToken = Jwts.builder()
                 .setSubject(email)
-                .claim("roles",roles)
-                .setIssuer(uri.getPath())
+                .claim("admin",isAdmin)
+                .claim("name", user.getName())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis()+15*60*1000)) // 15 minutes
                 .signWith(key,SignatureAlgorithm.HS512)

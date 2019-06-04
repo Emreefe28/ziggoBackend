@@ -297,8 +297,6 @@ private QuestionnaireRepositoryService service;
 //    }
 //
     @DELETE
-    @Consumes(MediaType.APPLICATION_JSON)
-
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/delete/{id}")
     public Response deleteQuestion(@PathParam("id") int id){

@@ -296,41 +296,35 @@ private QuestionnaireRepositoryService service;
 //        return resp;
 //    }
 //
-//    @DELETE
-//    @Path("categorie/question/{id}")
-//    @Produces(APPLICATION_JSON)
-//    public Response deleteQuestion(@PathParam("id") String id){
-//        Question question = new Question();
-//        try{
-//            service.deleteQuestion();
-//            service.setResponce("Succes");
-//        }
-//        catch (Exception e){
-//            service.setResponce("Failed");
-//            e.printStackTrace();
-//        }
-//        return Response.status(200).entity(question).build();
-//    }
-//
-//    @PUT
-//    @Path("/customers/{id}")
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    public Response updateQuestion(@PathParam("id") int id,
-//                                   Question updateQuestion) {
-//
-//        Question quest = service.getQuestionFromId(id);
-//        if (quest == null) {
-//            throw new WebApplicationException("Cannot find question", 404);
-//        }
-//
-//        quest.setTitle(updateQuestion.getTitle());
-//        quest.setQuestion(updateQuestion.getQuestion());
-//
-//
-//        return Response.noContent().build();
-//    }
-//
-//
+    @DELETE
+    @Consumes(MediaType.APPLICATION_JSON)
+
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/delete/{id}")
+    public Response deleteQuestion(@PathParam("id") int id){
+
+
+        Question question = service.getQuestionFromId(id);
+
+
+            service.deleteQuestion(question);
+            service.setResponce("Succes");
+
+            return Response.ok().build();
+    }
+
+
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response updateQuestion(Question updateQuestion) {
+
+       service.updateQuestion(updateQuestion);
+
+
+
+        return Response.ok(updateQuestion).build();
+    }
+
 
 
 }

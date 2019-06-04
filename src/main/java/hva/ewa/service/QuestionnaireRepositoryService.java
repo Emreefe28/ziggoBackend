@@ -27,7 +27,7 @@ public interface QuestionnaireRepositoryService {
 
     void setResponce(Question question);
 
-    void deleteQuestion(int questionId);
+    void deleteQuestion(Question question);
 
     void addQuestion(Question question);
 
@@ -52,6 +52,7 @@ public interface QuestionnaireRepositoryService {
 
     Questionnaire getQuestionnaireFromUser(int userId, int questionId);
 
+    Question updateQuestion(Question question);
 
     void addQuestionnaire(int category, Questionnaire questionnaire);
 

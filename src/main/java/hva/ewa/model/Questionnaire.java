@@ -30,7 +30,7 @@ public class Questionnaire {
     @Column(name="active", nullable = true)
     private Boolean active;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval=true)
     @JsonbTransient
     private Collection<Question> questions;
 
@@ -75,6 +75,15 @@ public class Questionnaire {
         getQuestions().add(q);
         return true;
     }
+
+    public boolean removeQuestion(Question q) {
+        if (checkDuplicates(q)) {
+            return false;
+        }
+        getQuestions().remove(q);
+        return true;
+    }
+
 
     public Boolean getActive() {
         return active;

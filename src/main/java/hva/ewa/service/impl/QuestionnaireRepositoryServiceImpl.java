@@ -107,8 +107,19 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
     }
 
+
     @Override
-    public void deleteQuestion(int questionId) {
+    public void deleteQuestion(Question question) {
+
+        System.out.println("vindtext "+ question.getId());
+
+
+        EntityManager em = getEntityManager();
+        em.getTransaction().begin();
+        question = em.merge(question);
+        em.remove(question);
+        em.getTransaction().commit();
+        em.close();
 
     }
 
@@ -258,6 +269,22 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
     @Override
     public Questionnaire getQuestionnaireFromUser(int userId, int questionId) {
         return null;
+    }
+
+    @Override
+    public Question updateQuestion(Question question) {
+
+
+
+        EntityManager em = getEntityManager();
+
+        em.getTransaction().begin();
+        em.merge(question);
+        em.getTransaction().commit();
+
+        em.close();
+        return question;
+
     }
 
     @Override

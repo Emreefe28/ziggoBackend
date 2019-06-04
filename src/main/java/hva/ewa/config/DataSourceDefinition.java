@@ -7,7 +7,7 @@ import javax.ejb.Stateless;
         className = "com.mysql.cj.jdbc.MysqlXADataSource",
         url = "jdbc:mysql://localhost:3306/vodafoneziggo?createDatabaseIfNotExist=true&serverTimezone=CET",
         user = "root",
-        password = "root")
+        password = "4qxcx88j")
 @Stateless
 
 // TODO: Make sure that you change the host and credentials to your environment

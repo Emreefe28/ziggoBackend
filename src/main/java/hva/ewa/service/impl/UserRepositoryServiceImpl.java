@@ -1,5 +1,11 @@
 package hva.ewa.service.impl;
 
+import hva.ewa.model.Employee;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import hva.ewa.service.jwt.JWTUtils;
+import java.security.Key;
+import java.util.Date;
 import java.util.List;
 
 import hva.ewa.rest.model.WebToken;
@@ -8,6 +14,7 @@ import hva.ewa.model.User;
 
 import javax.persistence.*;
 import javax.persistence.criteria.*;
+import javax.ws.rs.core.UriInfo;
 
 /**
  *
@@ -138,31 +145,18 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
         em.close();
     }
     @Override
-    public User checkCredentials(String email, String password) {
+    public Boolean checkCredentials(String userEmail, String password) {
 
         EntityManager em = getEntityManager();
-        CriteriaBuilder cb = em.getCriteriaBuilder();
-
-        CriteriaQuery<User> q = cb.createQuery(User.class);
-        Root<User> c = q.from(User.class);
-        Predicate emailPredicate = cb.equal(c.get("email"), email);
-        Predicate passwordPredicate = cb.equal(c.get("password"), password);
-        q.where(emailPredicate, passwordPredicate);
-        TypedQuery<User> query = em.createQuery(q);
-
-        WebToken jwt = new WebToken();
-
-        User user;
-        try {
-            user = query.getSingleResult();
-            user.setJwtToken(jwt.generateToken(user));
-        } catch (NoResultException e) {
-            user = null;
+        Query query = em.createQuery("SELECT q FROM User q WHERE email = " + "\'" + userEmail + "\'");
+        User user = (User) query.getSingleResult();
+        if(!password.equals(user.getPassword())) {
+            return false;
         }
 
         em.close();
 
-        return user;
+        return true;
     }
 
 
@@ -170,5 +164,46 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
 
         User us = new User("t", "t");
         addUser(us);
+    }
+
+    private String getRole(String userEmail) {
+
+        EntityManager em = getEntityManager();
+        Query query = em.createQuery("SELECT q FROM User q WHERE email = " + "\'" + userEmail + "\'");
+        User user = (User) query.getSingleResult();
+        Employee employee = em.find(Employee.class, user.getIdUser());
+
+        if (employee != null) {
+            if (employee.getDepartment().equalsIgnoreCase("admin")){
+                return "true";
+            }
+        }
+
+        em.close();
+
+        return "false";
+    }
+
+    public String issueToken(String email, UriInfo uri) {
+        EntityManager em = getEntityManager();
+        Key key = JWTUtils.getKey();
+
+        // Get the user
+        Query query = em.createQuery("SELECT q FROM User q WHERE email = " + "\'" + email + "\'");
+        User user = (User) query.getSingleResult();
+
+        // Could have more than one role, but now it is just one
+        String isAdmin = getRole(email);
+
+        String jwtToken = Jwts.builder()
+                .setSubject(email)
+                .claim("admin",isAdmin)
+                .claim("name", user.getName())
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis()+15*60*1000)) // 15 minutes
+                .signWith(key,SignatureAlgorithm.HS512)
+                .compact();
+
+        return jwtToken;
     }
 }

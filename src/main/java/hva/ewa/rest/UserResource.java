@@ -11,10 +11,18 @@ import hva.ewa.service.impl.EmployeeRespositoryServiceImpl;
 import hva.ewa.service.impl.UserRepositoryServiceImpl;
 import org.json.simple.JSONObject;
 
+import java.security.Key;
+import java.util.Date;
 import java.util.List;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
+
+import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
+import static javax.ws.rs.core.MediaType.APPLICATION_FORM_URLENCODED;
+import static javax.ws.rs.core.Response.Status.UNAUTHORIZED;
 
 
 /**
@@ -60,19 +68,32 @@ public class UserResource {
 
     @POST
     @Path("/login")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response checkUser(User user) {
+    @Consumes(APPLICATION_FORM_URLENCODED)
+    public Response authenticateUser(@FormParam("email") String email,
+                                     @FormParam("password") String password,
+                                     @Context UriInfo uri) {
+        try {
 
-        user = service.checkCredentials(user.getEmail(), user.getPassword());
+            // Authenticate the user using the credentials provided
+            // Note that we are using a hardcoded user and password
+            // for the sake of simplicity
 
-        if (user != null) {
-            return Response.status(Response.Status.CREATED).entity(user).build();
-        } else {
-            return Response.status(Response.Status.BAD_REQUEST).build();
+            if(!service.checkCredentials(email, password)) {
+                throw new IllegalAccessException("Not authorized!");
+            }
+
+            // Issue a token for the user
+            String token = service.issueToken(email, uri);
+
+            // Return the token on the response
+            return Response.ok().header(AUTHORIZATION, "Bearer " + token).build();
+
+        } catch (IllegalAccessException e) {
+            return Response.status(UNAUTHORIZED).build();
         }
-
     }
+
+
 
     @GET
     @Path("/jwt/{jwtToken}")

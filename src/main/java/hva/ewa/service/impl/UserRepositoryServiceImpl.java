@@ -175,13 +175,16 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
 
         if (employee != null) {
             if (employee.getDepartment().equalsIgnoreCase("admin")){
-                return "true";
+                return "admin";
+            }
+            if (employee.getDepartment().equalsIgnoreCase("kcc")){
+                return "kcc";
             }
         }
 
         em.close();
 
-        return "false";
+        return "customer";
     }
 
     public String issueToken(String email, UriInfo uri) {
@@ -193,11 +196,11 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
         User user = (User) query.getSingleResult();
 
         // Could have more than one role, but now it is just one
-        String isAdmin = getRole(email);
+        String role = getRole(email);
 
         String jwtToken = Jwts.builder()
                 .setSubject(email)
-                .claim("admin",isAdmin)
+                .claim("role",role)
                 .claim("name", user.getName())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis()+15*60*1000)) // 15 minutes

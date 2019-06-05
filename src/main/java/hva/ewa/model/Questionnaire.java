@@ -30,7 +30,7 @@ public class Questionnaire {
     @Column(name="active", nullable = true)
     private Boolean active;
 
-    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval=true)
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.REMOVE, orphanRemoval=true)
     @JsonbTransient
     private Collection<Question> questions;
 

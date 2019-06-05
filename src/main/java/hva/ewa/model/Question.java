@@ -22,7 +22,7 @@ public class Question implements Serializable {
     @Column(name = "solved")
     private Boolean solved;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "questionnaire", nullable = true)
     private Questionnaire questionnaire;
 

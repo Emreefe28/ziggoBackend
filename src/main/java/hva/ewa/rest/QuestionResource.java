@@ -102,6 +102,8 @@ private QuestionnaireRepositoryService service;
     @Path("/active/{id}")
     public Response getActiveQuestionnaire(@PathParam("id") int id) {
         Questionnaire questionnaire = service.getActiveQuestionnaire(id);
+
+
         if (questionnaire != null) {
             return Response.status(Response.Status.OK).entity(questionnaire).build();
         } else {

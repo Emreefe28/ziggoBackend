@@ -30,7 +30,6 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         return instance;
     }
 
-    EntityManager questionnaireManager = getEntityManager();
 
 
 
@@ -165,10 +164,20 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
     @Override
     public Collection<Question> getQuestionsOfQuestionnaire(int questionnaireId) {
 
-       Questionnaire questionnaire=getQuestionnaire(questionnaireId);
 
-       Collection<Question> questions = questionnaire.getQuestions();
+
+        EntityManager em = getEntityManager();
+
+        Questionnaire questionnaire= em.find(Questionnaire.class, questionnaireId);
+
+        Collection<Question> questions = questionnaire.getQuestions();
+
+        em.close();
+
+
        return questions;
+
+
 
 
     }
@@ -180,9 +189,14 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
     @Override
     public Questionnaire getQuestionnaire(int id) {
-//        Questionnaire questionnaire= questionnaireManager.find(Questionnaire.class, id);
 
-        return  questionnaireManager.find(Questionnaire.class, id);
+        EntityManager em = getEntityManager();
+
+        Questionnaire questionnaire= em.find(Questionnaire.class, id);
+
+        em.close();
+        return questionnaire;
+
     }
 
     @Override
@@ -206,9 +220,10 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         Query query = em.createQuery("select q from Questionnaire q where q.active = true and q.category.id = '" + categoryId + "'");
         Questionnaire questionnaireNew= (Questionnaire) query.getSingleResult();
 
+        Collection<Question> questions = getQuestionsOfQuestionnaire(questionnaireNew.getId());
+
         em.close();
 
-        Collection<Question> questions = getQuestionsOfQuestionnaire(questionnaireNew.getId());
 
         return questions;
 
@@ -313,7 +328,6 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         Question question = em.find(Question.class,questionId);
 
         Questionnaire questionnaire =  em.find(Questionnaire.class, questionnaireId);
-
         questionnaire.addQuestion(question);
 
 
@@ -326,13 +340,14 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
     @Override
     public void addQuestionnaireToCustomer(int user, int questionnaireId) {
+        EntityManager em = getEntityManager();
 
 
         Customer customer = customerRepositoryService.getCustomer(user);
-        Questionnaire questionnaire = getQuestionnaire(questionnaireId);
+        Questionnaire questionnaire =  em.find(Questionnaire.class, questionnaireId);
+
 
         customer.addIssues(questionnaire);
-        EntityManager em = getEntityManager();
         em.getTransaction().begin();
 
         em.merge(customer);

@@ -9,26 +9,26 @@ public class Customer extends User implements Serializable {
 
     @Basic
 
-    @Column(name = " customerCode", nullable = true)
+    @Column(name = " customerCode" )
 
     private String customerCode;
 
     @Basic
-    @Column(name = "address", nullable = true)
+    @Column(name = "address" )
     private String address;
     @Basic
-    @Column(name = "birthdate", nullable = true)
+    @Column(name = "birthdate" )
     private Date birthdate;
 
     @Basic
-    @Column(name = "phone", nullable = true)
+    @Column(name = "phone" )
     private String phone;
 
     @Basic
     @Column(name = "mobilePhone")
     private String mobilePhone;
 
-   @OneToMany
+   @OneToMany(fetch = FetchType.EAGER)
     private Collection<Questionnaire> issues;
 
 

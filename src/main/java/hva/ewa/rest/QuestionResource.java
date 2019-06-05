@@ -51,7 +51,7 @@ private QuestionnaireRepositoryService service;
     @Path("/true")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Question> getAllSolvedQuestion() {
+    public Long getAllSolvedQuestion() {
 
         return service.getAllSolvedQuestion();
 

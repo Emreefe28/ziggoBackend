@@ -65,11 +65,11 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
         return questionnaires;
     }
 
-    public List<Question> getAllSolvedQuestion() {
+    public Long getAllSolvedQuestion() {
 
         EntityManager em = getEntityManager();
-        Query query = em.createQuery("select count(q) from Question q where solved is true");
-        List<Question> solvedQuestions=query.getResultList();
+        Query query = em.createQuery("select count(q) from Question q where solved = true");
+        Long solvedQuestions = (Long) query.getSingleResult();
         em.close();
         return solvedQuestions;
     }
@@ -77,7 +77,7 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
     @Override
     public Question getQuestionFromId(int questionId) {
-        EntityManager em = getEntityManager();
+                EntityManager em = getEntityManager();
         System.out.println("vindbaretext de question id is: "+questionId);
         System.out.println(em.find(Question.class, questionId));
 

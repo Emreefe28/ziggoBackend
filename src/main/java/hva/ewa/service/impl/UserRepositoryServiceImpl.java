@@ -144,6 +144,7 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
 
         em.close();
     }
+
     @Override
     public Boolean checkCredentials(String userEmail, String password) {
 
@@ -166,6 +167,8 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
         addUser(us);
     }
 
+
+
     private String getRole(String userEmail) {
 
         EntityManager em = getEntityManager();
@@ -183,6 +186,22 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
 
         return "false";
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public String issueToken(String email, UriInfo uri) {
         EntityManager em = getEntityManager();

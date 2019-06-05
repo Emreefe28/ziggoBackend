@@ -31,14 +31,39 @@ public interface UserRepositoryService {
      */
     void addUser(User user);
 
+    /**
+     *
+     * @param email
+     * @param password
+     * @return
+     */
     Boolean checkCredentials(String email, String password);
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     User getUserFromId(int id);
 
+    /**
+     *
+     * @param user
+     */
     void deleteUser(User user);
 
+    /**
+     *
+     * @param user
+     */
     void changeUser(User user);
 
+    /**
+     * Issues a token for the user
+     * @param email
+     * @param uri
+     * @return
+     */
     String issueToken(String email, UriInfo uri);
 
 }

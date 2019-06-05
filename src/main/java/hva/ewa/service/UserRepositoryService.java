@@ -31,7 +31,14 @@ public interface UserRepositoryService {
      */
     void addUser(User user);
 
-    Boolean checkCredentials(String email, String password);
+    /**
+     * Reverted old login. If we want to use JWT, uncomment the code below.
+     * Uncomment in the following:
+     * UserResource, UserRepositoryService, UserRepositoryServiceImpl.
+     */
+//    Boolean checkCredentials(String email, String password);
+
+    User checkCredentials(String email, String password);
 
     User getUserFromId(int id);
 

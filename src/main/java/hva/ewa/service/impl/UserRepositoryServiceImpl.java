@@ -144,20 +144,51 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
 
         em.close();
     }
+
     @Override
-    public Boolean checkCredentials(String userEmail, String password) {
+    public User checkCredentials(String email, String password) {
 
         EntityManager em = getEntityManager();
-        Query query = em.createQuery("SELECT q FROM User q WHERE email = " + "\'" + userEmail + "\'");
-        User user = (User) query.getSingleResult();
-        if(!password.equals(user.getPassword())) {
-            return false;
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+
+        CriteriaQuery<User> q = cb.createQuery(User.class);
+        Root<User> c = q.from(User.class);
+        Predicate emailPredicate = cb.equal(c.get("email"), email);
+        Predicate passwordPredicate = cb.equal(c.get("password"), password);
+        q.where(emailPredicate, passwordPredicate);
+        TypedQuery<User> query = em.createQuery(q);
+
+        User user;
+        try {
+            user = query.getSingleResult();
+        } catch (NoResultException e) {
+            user = null;
         }
 
         em.close();
 
-        return true;
+        return user;
     }
+
+    /**
+     * Reverted old login. If we want to use JWT, uncomment the code below.
+     * Uncomment in the following:
+     * UserResource, UserRepositoryService, UserRepositoryServiceImpl.
+     */
+//    @Override
+//    public Boolean checkCredentials(String userEmail, String password) {
+//
+//        EntityManager em = getEntityManager();
+//        Query query = em.createQuery("SELECT q FROM User q WHERE email = " + "\'" + userEmail + "\'");
+//        User user = (User) query.getSingleResult();
+//        if(!password.equals(user.getPassword())) {
+//            return false;
+//        }
+//
+//        em.close();
+//
+//        return true;
+//    }
 
 
     private void loadExamples() {

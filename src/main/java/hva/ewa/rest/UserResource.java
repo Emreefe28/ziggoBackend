@@ -68,30 +68,51 @@ public class UserResource {
 
     @POST
     @Path("/login")
-    @Consumes(APPLICATION_FORM_URLENCODED)
-    public Response authenticateUser(@FormParam("email") String email,
-                                     @FormParam("password") String password,
-                                     @Context UriInfo uri) {
-        try {
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response checkUser(User user) {
 
-            // Authenticate the user using the credentials provided
-            // Note that we are using a hardcoded user and password
-            // for the sake of simplicity
+        user = service.checkCredentials(user.getEmail(), user.getPassword());
 
-            if(!service.checkCredentials(email, password)) {
-                throw new IllegalAccessException("Not authorized!");
-            }
-
-            // Issue a token for the user
-            String token = service.issueToken(email, uri);
-
-            // Return the token on the response
-            return Response.ok().header(AUTHORIZATION, "Bearer " + token).build();
-
-        } catch (IllegalAccessException e) {
-            return Response.status(UNAUTHORIZED).build();
+        if (user != null) {
+            return Response.status(Response.Status.CREATED).entity(user).build();
+        } else {
+            return Response.status(Response.Status.BAD_REQUEST).build();
         }
+
     }
+
+    /**
+     * Reverted old login. If we want to use JWT, uncomment the code below.
+     * Uncomment in the following:
+     * UserResource, UserRepositoryService, UserRepositoryServiceImpl.
+     */
+//    @POST
+//    @Path("/login")
+//    @Consumes(APPLICATION_FORM_URLENCODED)
+//    public Response authenticateUser(@FormParam("email") String email,
+//                                     @FormParam("password") String password,
+//                                     @Context UriInfo uri) {
+//        try {
+//
+//            // Authenticate the user using the credentials provided
+//            // Note that we are using a hardcoded user and password
+//            // for the sake of simplicity
+//
+//            if(!service.checkCredentials(email, password)) {
+//                throw new IllegalAccessException("Not authorized!");
+//            }
+//
+//            // Issue a token for the user
+//            String token = service.issueToken(email, uri);
+//
+//            // Return the token on the response
+//            return Response.ok().header(AUTHORIZATION, "Bearer " + token).build();
+//
+//        } catch (IllegalAccessException e) {
+//            return Response.status(UNAUTHORIZED).build();
+//        }
+//    }
 
 
 

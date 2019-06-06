@@ -120,18 +120,12 @@ public class UserResource {
     @Path("/jwt/{jwtToken}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response checkJWT(@PathParam("jwtToken") String jwtToken) {
-
         WebToken jwt = new WebToken();
-
         User user = jwt.validateToken(jwtToken);
-
         if (user == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-
         return Response.status(Response.Status.OK).entity(user).build();
-
-
     }
 
     @DELETE

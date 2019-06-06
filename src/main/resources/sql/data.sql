@@ -30,17 +30,18 @@ INSERT INTO `vodafoneziggo`.`questionnaire` (`id`, `active` ,`created`, `categor
 
 
 
+INSERT INTO vodafoneziggo.question (id, question, title) VALUES ('1', ' Probeer uw modem te resetten.  Dit lost over het algemeen de meeste problemen op.', 'Reset uw modem');
+INSERT INTO vodafoneziggo.question (id, question, title) VALUES ('2', 'Probeer een andere kabel. Mogelijk is het de kabel die niet werkt.', 'Probeer andere kabel.');
+INSERT INTO vodafoneziggo.question (id, question, title) VALUES ('3', 'Controleer of uw computer internet instellingen goed staan. Mogelijk heeft u een verkeerd wachtwoord ingevuld of het netwerk geblokkeerd
+', 'Controleer internetinstellingen');
 
-INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('1', 'werkt internet?', 'check verbinding');
-INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('2', 'hoeveel mensen zijn op uw wifi', 'check gebruikers');
-INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('3', 'is je verbinding nu beter?', 'gelukt?');
-INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('4', 'is je trage wifi nu beter?', 'gelukt?');
-INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('5', 'geen idee man?', 'gelukt?');
-INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('6', 'derde vraag wifi traag', 'gelukt?');
-INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('7', 'werkt je wifi niet?', 'gelukt?');
-INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('8', 'waarom dan?', 'gelukt?');
-INSERT INTO `vodafoneziggo`.`question` (`id`, `question`, `title`) VALUES ('9', 'skere guy?', 'gelukt?');
+INSERT INTO vodafoneziggo.question (id, question, title) VALUES ('4', 'Bent u verbonden aan het correcte netwerk? check dit bij uw netwerkverbindingen.', 'Verbonden aan het correcte netwerk');
+INSERT INTO vodafoneziggo.question (id, question, title) VALUES ('5', 'Check uw verbinding binnen 5 meter van de modem. Als dit beter is moet uw dichterbij uw modem gebruik maken van uw apparaat of een wifiversterker gebruiken.', 'Te grote afstand');
+INSERT INTO vodafoneziggo.question (id, question, title) VALUES ('6', 'Check of er andere mensen zijn die intensief gebruik maken van het internet. Dit kan uw wifi trager maken.', 'Andere gebruikers');
 
+INSERT INTO vodafoneziggo.question (id, question, title) VALUES ('7', ' Bent u verbonden? Het is mogelijk dat u uw wifi uit heeft staan op uw apparaat. Zet het aan en check of u verbonden bent met het juiste netwerk', 'Verbonden?');
+INSERT INTO vodafoneziggo.question (id, question, title) VALUES ('8', 'Check voor mogelijke stoorbronnen in uw huis en schakel ze uit. Dit kunnen zijn: een babyfoon, waarstation of een draadloze lichtschakelaar', 'Mogelijke stoorbronnen');
+INSERT INTO vodafoneziggo.question (id, question, title) VALUES ('9', 'Als er te veel mensen met het wifinetwerk zijn verbonden kan het onstabiel worden. Check uw verbinding wanneer er minder dan 5 gebruikers op zitten.', 'Teveel mensen op netwerk');
 
 INSERT INTO `vodafoneziggo`.`equipment` (`type`, `model`, `idUser`) VALUES ('splitter', 'POA-01-UPC', '1557216');
 INSERT INTO `vodafoneziggo`.`equipment` (`type`, `model`, `idUser`) VALUES ('modem', 'Mediabox XL', '1557216');

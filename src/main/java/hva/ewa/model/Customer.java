@@ -28,7 +28,7 @@ public class Customer extends User implements Serializable {
     @Column(name = "mobilePhone")
     private String mobilePhone;
 
-   @OneToMany
+   @OneToMany(fetch = FetchType.EAGER)
     private Collection<Questionnaire> issues;
 
 

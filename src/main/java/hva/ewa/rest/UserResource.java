@@ -66,51 +66,17 @@ public class UserResource {
             return Response.status(Response.Status.CREATED).entity(user).build();
     }
 
-    @POST
-    @Path("/login")
-    @Consumes(APPLICATION_FORM_URLENCODED)
-    public Response authenticateUser(@FormParam("email") String email,
-                                     @FormParam("password") String password,
-                                     @Context UriInfo uri) {
-        try {
-
-            // Authenticate the user using the credentials provided
-            // Note that we are using a hardcoded user and password
-            // for the sake of simplicity
-
-            if(!service.checkCredentials(email, password)) {
-                throw new IllegalAccessException("Not authorized!");
-            }
-
-            // Issue a token for the user
-            String token = service.issueToken(email, uri);
-
-            // Return the token on the response
-            return Response.ok().header(AUTHORIZATION, "Bearer " + token).build();
-
-        } catch (IllegalAccessException e) {
-            return Response.status(UNAUTHORIZED).build();
-        }
-    }
-
-
 
     @GET
     @Path("/jwt/{jwtToken}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response checkJWT(@PathParam("jwtToken") String jwtToken) {
-
         WebToken jwt = new WebToken();
-
         User user = jwt.validateToken(jwtToken);
-
         if (user == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-
         return Response.status(Response.Status.OK).entity(user).build();
-
-
     }
 
     @DELETE

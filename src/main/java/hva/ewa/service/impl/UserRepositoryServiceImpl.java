@@ -144,21 +144,6 @@ public class UserRepositoryServiceImpl implements UserRepositoryService {
 
         em.close();
     }
-    @Override
-    public Boolean checkCredentials(String userEmail, String password) {
-
-        EntityManager em = getEntityManager();
-        Query query = em.createQuery("SELECT q FROM User q WHERE email = " + "\'" + userEmail + "\'");
-        User user = (User) query.getSingleResult();
-        if(!password.equals(user.getPassword())) {
-            return false;
-        }
-
-        em.close();
-
-        return true;
-    }
-
 
     private void loadExamples() {
 

@@ -31,7 +31,6 @@ public interface UserRepositoryService {
      */
     void addUser(User user);
 
-    Boolean checkCredentials(String email, String password);
 
     User getUserFromId(int id);
 

@@ -66,11 +66,11 @@ public class QuestionnaireRepositoryServiceImpl extends RepositoryService implem
 
 
 
-    public List<Question> getAllSolvedQuestion() {
+    public Long getAllSolvedQuestion() {
 
         EntityManager em = getEntityManager();
-        Query query = em.createQuery("select count(q) from Question q where solved is TRUE");
-        List<Question> solvedQuestions=query.getResultList();
+        Query query = em.createQuery("select count(q) from Question q where solved = true");
+        Long solvedQuestions = (Long) query.getSingleResult();
         em.close();
         return solvedQuestions;
     }

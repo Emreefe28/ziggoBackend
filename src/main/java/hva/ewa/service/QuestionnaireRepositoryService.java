@@ -17,7 +17,7 @@ public interface QuestionnaireRepositoryService {
 
     List<Questionnaire> getAllQuestionnaire();
 
-    List<Question> getAllSolvedQuestion();
+    Long getAllSolvedQuestion();
 
 
     Question getQuestionFromId(int questionId);
